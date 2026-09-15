@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+.env
+venv/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Data (Ignore large datasets to avoid GitHub 100MB limits)
+data/raw/*.zip
+data/raw/*.txt
+data/processed/combined_reports.csv
+data/processed/msha_cleaned.csv
+
+# Allow smaller sample/subset data to be committed
+!data/processed/oil_gas_subset.csv
+!data/processed/synthetic_reports.csv
+!data/processed/oisd_cleaned.csv
+
+# Allow empty directories to be tracked
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!data/raw/oisd_pdfs/.gitkeep
