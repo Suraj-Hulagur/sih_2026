@@ -4,17 +4,26 @@ AI/NLP engine to detect Serious Injury & Fatality (SIF) precursors in safety rep
 
 ## Project Structure
 
-```
 sih_2026/
 ├── src/
-│   └── data_pipeline/      ← Step 1: Data download, clean, combine
+│   ├── extract_pipeline.py        <- Step 2: LLM JSON extraction (Groq)
+│   ├── rule_engine.py             <- Step 3, Method 1: Deterministic rules
+│   ├── train_random_forest.py     <- Step 3, Method 2: ML + SHAP
+│   ├── raw_text_classifier.py     <- Step 3, Method 3: Raw-text fallback
+│   ├── final_sif_voter.py         <- Step 3: Disagreement engine
+│   ├── academic_crosscheck.py     <- Validation against published studies
+│   ├── voice_intake.py            <- Voice-to-text (Groq Whisper)
+│   ├── vision_intake.py           <- Handwritten OCR (Gemini 3.5 Flash)
+│   └── data_pipeline/             <- Step 1: Data download and cleaning
 ├── data/
-│   ├── raw/                ← Downloaded ZIPs, CSVs, PDFs
-│   │   └── oisd_pdfs/      ← Manually downloaded OISD PDFs go here
-│   └── processed/          ← Cleaned & combined output CSVs
-├── notebooks/              ← EDA and experiments
-└── requirements.txt
-```
+│   └── processed/
+│       ├── hinglish_synthetic.csv      <- 50 Hinglish reports
+│       ├── extracted_features.json     <- LLM-extracted JSON
+│       ├── classified_reports.json     <- Rule engine output + weak labels
+│       ├── final_triaged_reports.csv   <- Final voted predictions
+│       ├── shap_summary_plot.png       <- SHAP explainability chart
+│       └── academic_validation.png     <- Validation chart
+└── .env                                <- API keys (not committed)
 
 ## Quick Start
 
@@ -214,27 +223,3 @@ This is a cross-sectional study of **317 petroleum workers** in Delta State, Nig
 
 ---
 
-### Current File Structure
-
-```
-sih_2026/
-├── src/
-│   ├── extract_pipeline.py        <- Step 2: LLM JSON extraction (Groq)
-│   ├── rule_engine.py             <- Step 3, Method 1: Deterministic rules
-│   ├── train_random_forest.py     <- Step 3, Method 2: ML + SHAP
-│   ├── raw_text_classifier.py     <- Step 3, Method 3: Raw-text fallback
-│   ├── final_sif_voter.py         <- Step 3: Disagreement engine
-│   ├── academic_crosscheck.py     <- Validation against published studies
-│   ├── voice_intake.py            <- Voice-to-text (Groq Whisper)
-│   ├── vision_intake.py           <- Handwritten OCR (Gemini 3.5 Flash)
-│   └── data_pipeline/             <- Step 1: Data download and cleaning
-├── data/
-│   └── processed/
-│       ├── hinglish_synthetic.csv      <- 50 Hinglish reports
-│       ├── extracted_features.json     <- LLM-extracted JSON
-│       ├── classified_reports.json     <- Rule engine output + weak labels
-│       ├── final_triaged_reports.csv   <- Final voted predictions
-│       ├── shap_summary_plot.png       <- SHAP explainability chart
-│       └── academic_validation.png     <- Validation chart
-└── .env                                <- API keys (not committed)
-```
