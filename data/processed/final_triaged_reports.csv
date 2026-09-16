@@ -1,0 +1,51 @@
+report_id,narrative,m1_rule_engine,m2_random_forest,m3_raw_text,final_status,needs_review
+hin_0000,"scaffolding par kaam kar raha tha bina safety belt ke. height almost 10 meter tha, fall arrestor nahi lagaya.",True,True,True,SIF_CONFIRMED,False
+hin_0001,"welding chal raha tha near tank 4, but fire blanket missing tha. helper bina goggles ke tha.",True,True,True,SIF_CONFIRMED,False
+hin_0002,crane lifting ke time exclusion zone me log khade the. rigger ne barricade cross kiya.,True,True,True,SIF_CONFIRMED,False
+hin_0003,confined space entry bina gas test kiye kar raha tha. supervisor ne immediately stop karwaya.,True,True,True,SIF_CONFIRMED,False
+hin_0004,pipe load karte waqt gloves nahi pehna tha. pinch point me hath rakh diya tha.,True,True,True,SIF_CONFIRMED,False
+hin_0005,LOTO tag nahi lagaya electrical panel me repair se pehle. breaker on hone ka chance tha.,True,True,True,SIF_CONFIRMED,False
+hin_0006,forklift driver phone pe baat kar raha tha driving ke time. blind corner me speed jyada thi.,True,True,True,SIF_CONFIRMED,False
+hin_0007,worker ne harness pehna tha but anchor point pe hook nahi kiya tha derrick pe.,True,True,True,SIF_CONFIRMED,False
+hin_0008,chemical drum bina PPE aur mask ke handle kar raha tha.,True,True,True,SIF_CONFIRMED,False
+hin_0009,grinding work near diesel pump. hot work permit nahi liya tha.,True,True,True,SIF_CONFIRMED,False
+hin_0010,"derrick floor pe oil leak ho raha tha pump seal se. bahut slippery tha, slip hazard.",True,True,True,SIF_CONFIRMED,False
+hin_0011,staircase ka handrail toota hua tha near mud pit. raat ko visibility kam thi.,True,True,True,SIF_CONFIRMED,False
+hin_0012,fire extinguisher ka pressure zero dikha raha tha inspection me. expiry date over tha.,False,False,False,SAFE,False
+hin_0013,high pressure line ka gauge broken tha. actual pressure check nai ho raha tha.,True,True,True,SIF_CONFIRMED,False
+hin_0014,"wire rope sling me damage tha, strands toote hue the.",True,True,True,SIF_CONFIRMED,False
+hin_0015,lighting kam tha rig floor pe night shift me. shadow ke wajah se hazard dikh nai raha tha.,False,False,False,SAFE,False
+hin_0016,emergency exit ke samne scrap pipe rakha hua tha. block ho gaya rasta.,True,True,True,SIF_CONFIRMED,False
+hin_0017,gas detector continuously beep kar raha tha but reading clear nai thi.,True,True,True,SIF_CONFIRMED,False
+hin_0018,h2s sensor calibration out of date. warning light flash nahi kar raha.,True,True,True,SIF_CONFIRMED,False
+hin_0019,temporary electrical cable pani me gira hua tha near generator.,True,True,True,SIF_CONFIRMED,False
+hin_0020,"crane lock nai tha, 500kg pipe slip hua. aadmi waha se just bach gaya, narrowly missed.",True,True,True,SIF_CONFIRMED,False
+hin_0021,"Baghjan well me pressure sudden badh gaya, kick aane wala tha. bop function kiya time pe.",False,False,False,SAFE,False
+hin_0022,"wireline truck reversing without spotter, reverse horn not working. crew member ko hit karne wala tha.",True,True,True,SIF_CONFIRMED,False
+hin_0023,drilling karte time flange burst hua. high pressure fluid nikla but koi line of fire me nahi tha.,True,True,True,SIF_CONFIRMED,False
+hin_0024,spanner height se gira seedha walkway pe. just ek second pehle waha se operator cross kiya tha.,True,True,True,SIF_CONFIRMED,False
+hin_0025,"welding spark dry grass pe gira near flare pit, chhota fire start hua, turant fire blanket se bujhaya.",False,False,False,SAFE,False
+hin_0026,"lifting sling achanak toot gaya load uthate time. load zameen pe gira, but no one was nearby.",True,True,True,SIF_CONFIRMED,False
+hin_0027,"chemical transfer hose loose ho gaya tha, acid spray hua. operator PPE me tha toh bach gaya.",True,True,True,SIF_CONFIRMED,False
+hin_0028,"forklift load balance nai tha, corner turn karte time pallet gir gaya near walkway.",True,True,True,SIF_CONFIRMED,False
+hin_0029,"scaffolding plank slip ho gaya, worker harness pe latak gaya. fall avoid hua.",False,False,False,SAFE,False
+hin_0030,"crane op overspeed me tha. rassi chigise (rope broke), dangor (big) accident hote hote bach gaya.",True,True,True,SIF_CONFIRMED,False
+hin_0031,manuh tu (the person) upar se slip hua. luckily harness tana rakha tha.,False,False,False,SAFE,False
+hin_0032,"mud pump aru (and) generator area bohut letera (dirty) hoise, slip and trip hazard.",False,False,False,SAFE,False
+hin_0033,pipe fitting okhomat (during) helper e gloves nepindhile (did not wear).,True,True,True,SIF_CONFIRMED,False
+hin_0034,jui (fire) spark udisil (flew) near diesel tank. hot work stopping fast.,True,True,True,SIF_CONFIRMED,False
+hin_0035,"scaffolding par kaam kar raha tha bina safety belt ke. height almost 10 meter tha, fall arrestor nahi lagaya.",True,True,True,SIF_CONFIRMED,False
+hin_0036,"welding chal raha tha near tank 4, but fire blanket missing tha at Duliajan Field. helper bina goggles ke tha at Duliajan Field.",True,True,True,SIF_CONFIRMED,False
+hin_0037,crane lifting ke time exclusion zone me log khade the. rigger ne barricade cross kiya.,True,True,True,SIF_CONFIRMED,False
+hin_0038,confined space entry bina gas test kiye kar raha tha at Duliajan Field. supervisor ne immediately stop karwaya.,True,True,True,SIF_CONFIRMED,False
+hin_0039,pipe load karte waqt gloves nahi pehna tha at Duliajan Field. pinch point me hath rakh diya tha at Duliajan Field.,True,True,True,SIF_CONFIRMED,False
+hin_0040,LOTO tag nahi lagaya electrical panel me repair se pehle. breaker on hone ka chance tha at Geleki Field.,True,True,True,SIF_CONFIRMED,False
+hin_0041,forklift driver phone pe baat kar raha tha driving ke time. blind corner me speed jyada thi.,True,True,True,SIF_CONFIRMED,False
+hin_0042,worker ne harness pehna tha but anchor point pe hook nahi kiya tha derrick pe.,True,True,True,SIF_CONFIRMED,False
+hin_0043,chemical drum bina PPE aur mask ke handle kar raha tha at Jorhat Workshop.,True,True,True,SIF_CONFIRMED,False
+hin_0044,grinding work near diesel pump. hot work permit nahi liya tha at Baghjan Well.,True,True,True,SIF_CONFIRMED,False
+hin_0045,"derrick floor pe oil leak ho raha tha pump seal se. bahut slippery tha, slip hazard.",True,True,True,SIF_CONFIRMED,False
+hin_0046,staircase ka handrail toota hua tha near mud pit. raat ko visibility kam thi.,True,True,True,SIF_CONFIRMED,False
+hin_0047,fire extinguisher ka pressure zero dikha raha tha inspection me. expiry date over tha at Numaligarh Refinery.,False,False,False,SAFE,False
+hin_0048,high pressure line ka gauge broken tha at Rudrasagar Field. actual pressure check nai ho raha tha at Rudrasagar Field.,True,True,True,SIF_CONFIRMED,False
+hin_0049,"wire rope sling me damage tha, strands toote hue the.",True,True,True,SIF_CONFIRMED,False

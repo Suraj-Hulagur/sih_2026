@@ -1,0 +1,820 @@
+[
+  {
+    "report_id": "hin_0000",
+    "energy_type": "gravity",
+    "energy_magnitude": "high",
+    "barrier_expected": "safety belt / fall arrestor",
+    "barrier_state": "missing",
+    "activity": "working on scaffolding",
+    "location": "scaffolding (10 meter height)",
+    "evidence_phrases": [
+      "bina safety belt ke",
+      "fall arrestor nahi lagaya"
+    ],
+    "sif_potential": true,
+    "iogp_rule": "Working at Height",
+    "label_source": "Method_1_Deterministic"
+  },
+  {
+    "report_id": "hin_0001",
+    "energy_type": "thermal",
+    "energy_magnitude": "high",
+    "barrier_expected": "fire blanket and goggles",
+    "barrier_state": "missing",
+    "activity": "welding",
+    "location": "near tank 4",
+    "evidence_phrases": [
+      "fire blanket missing tha",
+      "helper bina goggles ke"
+    ],
+    "sif_potential": true,
+    "iogp_rule": "Hot Work",
+    "label_source": "Method_1_Deterministic"
+  },
+  {
+    "report_id": "hin_0002",
+    "energy_type": "kinetic",
+    "energy_magnitude": "high",
+    "barrier_expected": "barricade / exclusion zone",
+    "barrier_state": "bypassed",
+    "activity": "crane lifting",
+    "location": "exclusion zone",
+    "evidence_phrases": [
+      "crane lifting ke time exclusion zone me log khade the",
+      "rigger ne barricade cross kiya"
+    ],
+    "sif_potential": true,
+    "iogp_rule": "Safe Mechanical Lifting",
+    "label_source": "Method_1_Deterministic"
+  },
+  {
+    "report_id": "hin_0003",
+    "energy_type": "chemical",
+    "energy_magnitude": "high",
+    "barrier_expected": "gas test / atmospheric monitoring",
+    "barrier_state": "missing",
+    "activity": "confined space entry",
+    "location": "confined space",
+    "evidence_phrases": [
+      "bina gas test kiye",
+      "supervisor ne immediately stop karwaya"
+    ],
+    "sif_potential": true,
+    "iogp_rule": "Confined Space",
+    "label_source": "Method_1_Deterministic"
+  },
+  {
+    "report_id": "hin_0004",
+    "energy_type": "kinetic",
+    "energy_magnitude": "high",
+    "barrier_expected": "gloves / hand protection",
+    "barrier_state": "missing",
+    "activity": "pipe loading",
+    "location": "pinch point during pipe loading",
+    "evidence_phrases": [
+      "gloves nahi pehna tha",
+      "pinch point me hath rakh diya tha"
+    ],
+    "sif_potential": true,
+    "iogp_rule": "Line of Fire",
+    "label_source": "Method_1_Deterministic"
+  },
+  {
+    "report_id": "hin_0005",
+    "energy_type": "electrical",
+    "energy_magnitude": "high",
+    "barrier_expected": "LOTO tag",
+    "barrier_state": "missing",
+    "activity": "repair of electrical panel",
+    "location": "electrical panel",
+    "evidence_phrases": [
+      "LOTO tag nahi lagaya",
+      "breaker on hone ka chance tha"
+    ],
+    "sif_potential": true,
+    "iogp_rule": "Energy Isolation",
+    "label_source": "Method_1_Deterministic"
+  },
+  {
+    "report_id": "hin_0006",
+    "energy_type": "kinetic",
+    "energy_magnitude": "high",
+    "barrier_expected": "no phone usage while driving",
+    "barrier_state": "missing",
+    "activity": "operating forklift",
+    "location": "blind corner",
+    "evidence_phrases": [
+      "phone pe baat kar raha tha",
+      "speed jyada thi"
+    ],
+    "sif_potential": true,
+    "iogp_rule": "Safe Mechanical Lifting",
+    "label_source": "Method_1_Deterministic"
+  },
+  {
+    "report_id": "hin_0007",
+    "energy_type": "gravity",
+    "energy_magnitude": "high",
+    "barrier_expected": "harness with hook attached to anchor point",
+    "barrier_state": "missing",
+    "activity": "working on derrick",
+    "location": "derrick",
+    "evidence_phrases": [
+      "harness pehna tha",
+      "anchor point pe hook nahi kiya tha"
+    ],
+    "sif_potential": true,
+    "iogp_rule": "Working at Height",
+    "label_source": "Method_1_Deterministic"
+  },
+  {
+    "report_id": "hin_0008",
+    "energy_type": "chemical",
+    "energy_magnitude": "high",
+    "barrier_expected": "PPE and mask",
+    "barrier_state": "missing",
+    "activity": "handling chemical drum",
+    "location": "chemical drum",
+    "evidence_phrases": [
+      "bina PPE aur mask ke"
+    ],
+    "sif_potential": true,
+    "iogp_rule": "System Defect / General Safety",
+    "label_source": "Method_1_Deterministic"
+  },
+  {
+    "report_id": "hin_0009",
+    "energy_type": "thermal",
+    "energy_magnitude": "high",
+    "barrier_expected": "hot work permit",
+    "barrier_state": "missing",
+    "activity": "grinding work",
+    "location": "near diesel pump",
+    "evidence_phrases": [
+      "grinding work near diesel pump",
+      "hot work permit nahi liya tha"
+    ],
+    "sif_potential": true,
+    "iogp_rule": "Hot Work",
+    "label_source": "Method_1_Deterministic"
+  },
+  {
+    "report_id": "hin_0010",
+    "energy_type": "chemical",
+    "energy_magnitude": "unknown",
+    "barrier_expected": "spill containment / anti\u2011slip measures",
+    "barrier_state": "missing",
+    "activity": "pump operation on derrick",
+    "location": "derrick floor",
+    "evidence_phrases": [
+      "derrick floor pe oil leak ho raha tha pump seal se",
+      "bahut slippery tha",
+      "slip hazard"
+    ],
+    "sif_potential": true,
+    "iogp_rule": "System Defect / General Safety",
+    "label_source": "Method_1_Deterministic"
+  },
+  {
+    "report_id": "hin_0011",
+    "energy_type": "gravity",
+    "energy_magnitude": "high",
+    "barrier_expected": "handrail",
+    "barrier_state": "missing",
+    "activity": "using staircase",
+    "location": "staircase near mud pit",
+    "evidence_phrases": [
+      "handrail toota hua tha",
+      "near mud pit",
+      "visibility kam thi"
+    ],
+    "sif_potential": true,
+    "iogp_rule": "Working at Height",
+    "label_source": "Method_1_Deterministic"
+  },
+  {
+    "report_id": "hin_0012",
+    "energy_type": "pressure",
+    "energy_magnitude": "low",
+    "barrier_expected": "functional fire extinguisher with proper pressure and valid expiry",
+    "barrier_state": "degraded",
+    "activity": "inspection of fire extinguisher",
+    "location": "fire extinguisher",
+    "evidence_phrases": [
+      "pressure zero dikha raha tha",
+      "expiry date over tha"
+    ],
+    "sif_potential": false,
+    "iogp_rule": "Line of Fire",
+    "label_source": "Method_1_Deterministic"
+  },
+  {
+    "report_id": "hin_0013",
+    "energy_type": "pressure",
+    "energy_magnitude": "high",
+    "barrier_expected": "pressure gauge / monitoring system",
+    "barrier_state": "degraded",
+    "activity": "pressure monitoring",
+    "location": "high pressure line",
+    "evidence_phrases": [
+      "gauge broken tha",
+      "actual pressure check nai ho raha tha"
+    ],
+    "sif_potential": true,
+    "iogp_rule": "Line of Fire",
+    "label_source": "Method_1_Deterministic"
+  },
+  {
+    "report_id": "hin_0014",
+    "energy_type": "gravity",
+    "energy_magnitude": "unknown",
+    "barrier_expected": "intact wire rope sling / proper inspection",
+    "barrier_state": "degraded",
+    "activity": "lifting operation using wire rope sling",
+    "location": "unspecified",
+    "evidence_phrases": [
+      "wire rope sling me damage tha",
+      "strands toote hue the"
+    ],
+    "sif_potential": true,
+    "iogp_rule": "Working at Height",
+    "label_source": "Method_1_Deterministic"
+  },
+  {
+    "report_id": "hin_0015",
+    "energy_type": "electrical",
+    "energy_magnitude": "low",
+    "barrier_expected": "adequate lighting / illumination",
+    "barrier_state": "degraded",
+    "activity": "night shift work on rig floor",
+    "location": "rig floor",
+    "evidence_phrases": [
+      "lighting kam tha",
+      "shadow ke wajah se hazard dikh nai raha tha"
+    ],
+    "sif_potential": false,
+    "iogp_rule": "Energy Isolation",
+    "label_source": "Method_1_Deterministic"
+  },
+  {
+    "report_id": "hin_0016",
+    "energy_type": "none",
+    "energy_magnitude": "unknown",
+    "barrier_expected": "clear emergency exit path",
+    "barrier_state": "missing",
+    "activity": "storing scrap pipe near emergency exit",
+    "location": "emergency exit",
+    "evidence_phrases": [
+      "scrap pipe rakha hua tha",
+      "block ho gaya rasta"
+    ],
+    "sif_potential": true,
+    "iogp_rule": "System Defect / General Safety",
+    "label_source": "Method_1_Deterministic"
+  },
+  {
+    "report_id": "hin_0017",
+    "energy_type": "chemical",
+    "energy_magnitude": "unknown",
+    "barrier_expected": "gas detector alarm / detection system",
+    "barrier_state": "degraded",
+    "activity": "gas detection monitoring",
+    "location": "unspecified location",
+    "evidence_phrases": [
+      "gas detector continuously beep kar raha tha",
+      "reading clear nai thi"
+    ],
+    "sif_potential": true,
+    "iogp_rule": "System Defect / General Safety",
+    "label_source": "Method_1_Deterministic"
+  },
+  {
+    "report_id": "hin_0018",
+    "energy_type": "chemical",
+    "energy_magnitude": "unknown",
+    "barrier_expected": "H2S sensor / warning light",
+    "barrier_state": "degraded",
+    "activity": "H2S sensor calibration",
+    "location": "unspecified location",
+    "evidence_phrases": [
+      "h2s sensor calibration out of date",
+      "warning light flash nahi kar raha"
+    ],
+    "sif_potential": true,
+    "iogp_rule": "System Defect / General Safety",
+    "label_source": "Method_1_Deterministic"
+  },
+  {
+    "report_id": "hin_0019",
+    "energy_type": "electrical",
+    "energy_magnitude": "unknown",
+    "barrier_expected": "proper cable insulation or waterproofing",
+    "barrier_state": "missing",
+    "activity": "temporary electrical cabling",
+    "location": "near generator (cable in water)",
+    "evidence_phrases": [
+      "temporary electrical cable",
+      "pani me gira hua tha",
+      "near generator"
+    ],
+    "sif_potential": true,
+    "iogp_rule": "Energy Isolation",
+    "label_source": "Method_1_Deterministic"
+  },
+  {
+    "report_id": "hin_0020",
+    "energy_type": "kinetic",
+    "energy_magnitude": "high",
+    "barrier_expected": "crane lock / securing device",
+    "barrier_state": "missing",
+    "activity": "crane lifting operation",
+    "location": "crane work area",
+    "evidence_phrases": [
+      "crane lock nai tha",
+      "500kg pipe slip hua",
+      "narrowly missed"
+    ],
+    "sif_potential": true,
+    "iogp_rule": "Safe Mechanical Lifting",
+    "label_source": "Method_1_Deterministic"
+  },
+  {
+    "report_id": "hin_0021",
+    "energy_type": "pressure",
+    "energy_magnitude": "high",
+    "barrier_expected": "blowout preventer (BOP)",
+    "barrier_state": "working",
+    "activity": "well operation",
+    "location": "Baghjan well",
+    "evidence_phrases": [
+      "pressure sudden badh gaya",
+      "kick aane wala tha",
+      "bop function kiya time pe"
+    ],
+    "sif_potential": false,
+    "iogp_rule": "Line of Fire",
+    "label_source": "Method_1_Deterministic"
+  },
+  {
+    "report_id": "hin_0022",
+    "energy_type": "kinetic",
+    "energy_magnitude": "high",
+    "barrier_expected": "spotter / reverse horn",
+    "barrier_state": "missing",
+    "activity": "wireline truck reversing",
+    "location": "wireline truck operation area",
+    "evidence_phrases": [
+      "wireline truck reversing without spotter",
+      "reverse horn not working",
+      "crew member ko hit karne wala tha"
+    ],
+    "sif_potential": true,
+    "iogp_rule": "Safe Driving",
+    "label_source": "Method_1_Deterministic"
+  },
+  {
+    "report_id": "hin_0023",
+    "energy_type": "pressure",
+    "energy_magnitude": "high",
+    "barrier_expected": "pressure containment / relief valve",
+    "barrier_state": "missing",
+    "activity": "drilling",
+    "location": "drilling site (flange)",
+    "evidence_phrases": [
+      "flange burst hua",
+      "high pressure fluid nikla",
+      "koi line of fire me nahi tha"
+    ],
+    "sif_potential": true,
+    "iogp_rule": "Line of Fire",
+    "label_source": "Method_1_Deterministic"
+  },
+  {
+    "report_id": "hin_0024",
+    "energy_type": "gravity",
+    "energy_magnitude": "high",
+    "barrier_expected": "tool tether / guardrail",
+    "barrier_state": "missing",
+    "activity": "handling spanner at height",
+    "location": "walkway",
+    "evidence_phrases": [
+      "spanner height se gira",
+      "seedha walkway pe",
+      "operator cross kiya tha"
+    ],
+    "sif_potential": true,
+    "iogp_rule": "Working at Height",
+    "label_source": "Method_1_Deterministic"
+  },
+  {
+    "report_id": "hin_0025",
+    "energy_type": "thermal",
+    "energy_magnitude": "low",
+    "barrier_expected": "fire blanket / fire watch",
+    "barrier_state": "working",
+    "activity": "welding",
+    "location": "dry grass near flare pit",
+    "evidence_phrases": [
+      "welding spark dry grass pe gira",
+      "chhota fire start hua",
+      "turant fire blanket se bujhaya"
+    ],
+    "sif_potential": false,
+    "iogp_rule": "Hot Work",
+    "label_source": "Method_1_Deterministic"
+  },
+  {
+    "report_id": "hin_0026",
+    "energy_type": "gravity",
+    "energy_magnitude": "high",
+    "barrier_expected": "lifting sling / proper load securing",
+    "barrier_state": "missing",
+    "activity": "lifting load with sling",
+    "location": "lifting area",
+    "evidence_phrases": [
+      "lifting sling achanak toot gaya",
+      "load zameen pe gira",
+      "but no one was nearby"
+    ],
+    "sif_potential": true,
+    "iogp_rule": "Working at Height",
+    "label_source": "Method_1_Deterministic"
+  },
+  {
+    "report_id": "hin_0027",
+    "energy_type": "chemical",
+    "energy_magnitude": "high",
+    "barrier_expected": "proper hose connection / secondary containment",
+    "barrier_state": "missing",
+    "activity": "chemical transfer",
+    "location": "chemical transfer hose",
+    "evidence_phrases": [
+      "chemical transfer hose loose ho gaya tha",
+      "acid spray hua",
+      "operator PPE me tha"
+    ],
+    "sif_potential": true,
+    "iogp_rule": "System Defect / General Safety",
+    "label_source": "Method_1_Deterministic"
+  },
+  {
+    "report_id": "hin_0028",
+    "energy_type": "gravity",
+    "energy_magnitude": "high",
+    "barrier_expected": "load balance check / proper load securing",
+    "barrier_state": "missing",
+    "activity": "forklift operation during corner turn",
+    "location": "near walkway",
+    "evidence_phrases": [
+      "load balance nai tha",
+      "corner turn karte time pallet gir gaya",
+      "near walkway"
+    ],
+    "sif_potential": true,
+    "iogp_rule": "Working at Height",
+    "label_source": "Method_1_Deterministic"
+  },
+  {
+    "report_id": "hin_0029",
+    "energy_type": "gravity",
+    "energy_magnitude": "high",
+    "barrier_expected": "safety harness",
+    "barrier_state": "working",
+    "activity": "working on scaffolding",
+    "location": "scaffolding",
+    "evidence_phrases": [
+      "scaffolding plank slip ho gaya",
+      "worker harness pe latak gaya",
+      "fall avoid hua"
+    ],
+    "sif_potential": false,
+    "iogp_rule": "Working at Height",
+    "label_source": "Method_1_Deterministic"
+  },
+  {
+    "report_id": "hin_0030",
+    "energy_type": "kinetic",
+    "energy_magnitude": "high",
+    "barrier_expected": "rope / hoist rope / speed governor",
+    "barrier_state": "missing",
+    "activity": "crane operation",
+    "location": "crane",
+    "evidence_phrases": [
+      "crane op overspeed me tha",
+      "rassi chigise (rope broke)"
+    ],
+    "sif_potential": true,
+    "iogp_rule": "Safe Mechanical Lifting",
+    "label_source": "Method_1_Deterministic"
+  },
+  {
+    "report_id": "hin_0031",
+    "energy_type": "gravity",
+    "energy_magnitude": "high",
+    "barrier_expected": "harness / fall arrest system",
+    "barrier_state": "working",
+    "activity": "working at height",
+    "location": "unspecified",
+    "evidence_phrases": [
+      "upar se slip hua",
+      "luckily harness tana rakha tha"
+    ],
+    "sif_potential": false,
+    "iogp_rule": "Working at Height",
+    "label_source": "Method_1_Deterministic"
+  },
+  {
+    "report_id": "hin_0032",
+    "energy_type": "gravity",
+    "energy_magnitude": "low",
+    "barrier_expected": "clean floor / housekeeping",
+    "barrier_state": "missing",
+    "activity": "working near mud pump and generator",
+    "location": "mud pump and generator area",
+    "evidence_phrases": [
+      "mud pump aru (and) generator area bohut letera (dirty) hoise",
+      "slip and trip hazard"
+    ],
+    "sif_potential": false,
+    "iogp_rule": "Working at Height",
+    "label_source": "Method_1_Deterministic"
+  },
+  {
+    "report_id": "hin_0033",
+    "energy_type": "none",
+    "energy_magnitude": "unknown",
+    "barrier_expected": "gloves",
+    "barrier_state": "missing",
+    "activity": "pipe fitting",
+    "location": "pipe fitting area",
+    "evidence_phrases": [
+      "helper e gloves nepindhile (did not wear)"
+    ],
+    "sif_potential": true,
+    "iogp_rule": "System Defect / General Safety",
+    "label_source": "Method_1_Deterministic"
+  },
+  {
+    "report_id": "hin_0034",
+    "energy_type": "thermal",
+    "energy_magnitude": "high",
+    "barrier_expected": "fire watch / hot work permit",
+    "barrier_state": "missing",
+    "activity": "hot work",
+    "location": "near diesel tank",
+    "evidence_phrases": [
+      "jui (fire)",
+      "spark udisil (flew) near diesel tank",
+      "hot work stopping fast"
+    ],
+    "sif_potential": true,
+    "iogp_rule": "Hot Work",
+    "label_source": "Method_1_Deterministic"
+  },
+  {
+    "report_id": "hin_0035",
+    "energy_type": "gravity",
+    "energy_magnitude": "high",
+    "barrier_expected": "safety belt / fall arrestor",
+    "barrier_state": "missing",
+    "activity": "working on scaffolding",
+    "location": "scaffolding (10 meter height)",
+    "evidence_phrases": [
+      "bina safety belt ke",
+      "fall arrestor nahi lagaya"
+    ],
+    "sif_potential": true,
+    "iogp_rule": "Working at Height",
+    "label_source": "Method_1_Deterministic"
+  },
+  {
+    "report_id": "hin_0036",
+    "energy_type": "thermal",
+    "energy_magnitude": "high",
+    "barrier_expected": "fire blanket / goggles",
+    "barrier_state": "missing",
+    "activity": "welding",
+    "location": "near tank 4, Duliajan Field",
+    "evidence_phrases": [
+      "fire blanket missing tha",
+      "bina goggles ke"
+    ],
+    "sif_potential": true,
+    "iogp_rule": "Hot Work",
+    "label_source": "Method_1_Deterministic"
+  },
+  {
+    "report_id": "hin_0037",
+    "energy_type": "kinetic",
+    "energy_magnitude": "high",
+    "barrier_expected": "barricade / exclusion zone",
+    "barrier_state": "bypassed",
+    "activity": "crane lifting",
+    "location": "exclusion zone",
+    "evidence_phrases": [
+      "exclusion zone me log khade the",
+      "rigger ne barricade cross kiya"
+    ],
+    "sif_potential": true,
+    "iogp_rule": "Safe Mechanical Lifting",
+    "label_source": "Method_1_Deterministic"
+  },
+  {
+    "report_id": "hin_0038",
+    "energy_type": "chemical",
+    "energy_magnitude": "high",
+    "barrier_expected": "gas test / atmospheric monitoring",
+    "barrier_state": "missing",
+    "activity": "confined space entry",
+    "location": "Duliajan Field",
+    "evidence_phrases": [
+      "bina gas test kiye",
+      "supervisor ne immediately stop karwaya"
+    ],
+    "sif_potential": true,
+    "iogp_rule": "Confined Space",
+    "label_source": "Method_1_Deterministic"
+  },
+  {
+    "report_id": "hin_0039",
+    "energy_type": "kinetic",
+    "energy_magnitude": "high",
+    "barrier_expected": "gloves / hand guard",
+    "barrier_state": "missing",
+    "activity": "pipe loading",
+    "location": "Duliajan Field",
+    "evidence_phrases": [
+      "gloves nahi pehna tha",
+      "pinch point me hath rakh diya tha"
+    ],
+    "sif_potential": true,
+    "iogp_rule": "Line of Fire",
+    "label_source": "Method_1_Deterministic"
+  },
+  {
+    "report_id": "hin_0040",
+    "energy_type": "electrical",
+    "energy_magnitude": "high",
+    "barrier_expected": "LOTO tag",
+    "barrier_state": "missing",
+    "activity": "repair of electrical panel",
+    "location": "Geleki Field",
+    "evidence_phrases": [
+      "LOTO tag nahi lagaya",
+      "breaker on hone ka chance tha",
+      "electrical panel me repair se pehle"
+    ],
+    "sif_potential": true,
+    "iogp_rule": "Energy Isolation",
+    "label_source": "Method_1_Deterministic"
+  },
+  {
+    "report_id": "hin_0041",
+    "energy_type": "kinetic",
+    "energy_magnitude": "high",
+    "barrier_expected": "no phone usage while driving / speed limit enforcement",
+    "barrier_state": "missing",
+    "activity": "forklift driving",
+    "location": "blind corner",
+    "evidence_phrases": [
+      "phone pe baat kar raha tha",
+      "speed jyada thi",
+      "blind corner"
+    ],
+    "sif_potential": true,
+    "iogp_rule": "Safe Mechanical Lifting",
+    "label_source": "Method_1_Deterministic"
+  },
+  {
+    "report_id": "hin_0042",
+    "energy_type": "gravity",
+    "energy_magnitude": "high",
+    "barrier_expected": "harness with hook attached to anchor point",
+    "barrier_state": "missing",
+    "activity": "working on derrick",
+    "location": "derrick",
+    "evidence_phrases": [
+      "harness pehna tha",
+      "anchor point pe hook nahi kiya tha",
+      "derrick pe"
+    ],
+    "sif_potential": true,
+    "iogp_rule": "Working at Height",
+    "label_source": "Method_1_Deterministic"
+  },
+  {
+    "report_id": "hin_0043",
+    "energy_type": "chemical",
+    "energy_magnitude": "high",
+    "barrier_expected": "PPE and mask",
+    "barrier_state": "missing",
+    "activity": "handling chemical drum",
+    "location": "Jorhat Workshop",
+    "evidence_phrases": [
+      "chemical drum bina PPE aur mask ke",
+      "bina PPE aur mask ke",
+      "handle kar raha tha"
+    ],
+    "sif_potential": true,
+    "iogp_rule": "System Defect / General Safety",
+    "label_source": "Method_1_Deterministic"
+  },
+  {
+    "report_id": "hin_0044",
+    "energy_type": "kinetic",
+    "energy_magnitude": "high",
+    "barrier_expected": "hot work permit",
+    "barrier_state": "missing",
+    "activity": "grinding work",
+    "location": "near diesel pump at Baghjan Well",
+    "evidence_phrases": [
+      "grinding work near diesel pump",
+      "hot work permit nahi liya tha"
+    ],
+    "sif_potential": true,
+    "iogp_rule": "Hot Work",
+    "label_source": "Method_1_Deterministic"
+  },
+  {
+    "report_id": "hin_0045",
+    "energy_type": "chemical",
+    "energy_magnitude": "unknown",
+    "barrier_expected": "spill containment / absorbent mats / anti\u2011slip floor measures",
+    "barrier_state": "missing",
+    "activity": "pump operation on derrick",
+    "location": "derrick floor",
+    "evidence_phrases": [
+      "derrick floor pe oil leak ho raha tha pump seal se",
+      "bahut slippery tha",
+      "slip hazard"
+    ],
+    "sif_potential": true,
+    "iogp_rule": "System Defect / General Safety",
+    "label_source": "Method_1_Deterministic"
+  },
+  {
+    "report_id": "hin_0046",
+    "energy_type": "gravity",
+    "energy_magnitude": "high",
+    "barrier_expected": "handrail / guardrail",
+    "barrier_state": "missing",
+    "activity": "using staircase",
+    "location": "staircase near mud pit",
+    "evidence_phrases": [
+      "handrail toota hua tha",
+      "near mud pit",
+      "visibility kam thi"
+    ],
+    "sif_potential": true,
+    "iogp_rule": "Working at Height",
+    "label_source": "Method_1_Deterministic"
+  },
+  {
+    "report_id": "hin_0047",
+    "energy_type": "pressure",
+    "energy_magnitude": "low",
+    "barrier_expected": "functional fire extinguisher (pressurized)",
+    "barrier_state": "degraded",
+    "activity": "inspection of fire extinguisher",
+    "location": "Numaligarh Refinery",
+    "evidence_phrases": [
+      "pressure zero dikha raha tha",
+      "expiry date over tha"
+    ],
+    "sif_potential": false,
+    "iogp_rule": "Line of Fire",
+    "label_source": "Method_1_Deterministic"
+  },
+  {
+    "report_id": "hin_0048",
+    "energy_type": "pressure",
+    "energy_magnitude": "high",
+    "barrier_expected": "pressure gauge / monitoring system",
+    "barrier_state": "missing",
+    "activity": "pressure checking",
+    "location": "Rudrasagar Field",
+    "evidence_phrases": [
+      "high pressure line ka gauge broken tha",
+      "actual pressure check nai ho raha tha"
+    ],
+    "sif_potential": true,
+    "iogp_rule": "Line of Fire",
+    "label_source": "Method_1_Deterministic"
+  },
+  {
+    "report_id": "hin_0049",
+    "energy_type": "gravity",
+    "energy_magnitude": "high",
+    "barrier_expected": "inspection of wire rope sling",
+    "barrier_state": "degraded",
+    "activity": "lifting with wire rope sling",
+    "location": "wire rope sling",
+    "evidence_phrases": [
+      "wire rope sling me damage tha",
+      "strands toote hue the"
+    ],
+    "sif_potential": true,
+    "iogp_rule": "Working at Height",
+    "label_source": "Method_1_Deterministic"
+  }
+]

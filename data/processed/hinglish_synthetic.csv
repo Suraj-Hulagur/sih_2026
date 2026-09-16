@@ -1,0 +1,51 @@
+report_id,source,date,narrative,severity_raw,severity_normalized,industry,location,injury_type,source_of_injury,naics_sic,language
+hin_0000,synthetic_hinglish,2024-10-26,"scaffolding par kaam kar raha tha bina safety belt ke. height almost 10 meter tha, fall arrestor nahi lagaya.",unsafe_act,no_injury,oil_gas,Baghjan Well,,,211,hi-en
+hin_0001,synthetic_hinglish,2024-12-26,"welding chal raha tha near tank 4, but fire blanket missing tha. helper bina goggles ke tha.",unsafe_act,no_injury,oil_gas,Baghjan Well,,,211,hi-en
+hin_0002,synthetic_hinglish,2024-09-04,crane lifting ke time exclusion zone me log khade the. rigger ne barricade cross kiya.,unsafe_act,no_injury,oil_gas,Jorhat Workshop,,,211,hi-en
+hin_0003,synthetic_hinglish,2024-07-15,confined space entry bina gas test kiye kar raha tha. supervisor ne immediately stop karwaya.,unsafe_act,no_injury,oil_gas,Numaligarh Refinery,,,211,hi-en
+hin_0004,synthetic_hinglish,2024-06-14,pipe load karte waqt gloves nahi pehna tha. pinch point me hath rakh diya tha.,unsafe_act,no_injury,oil_gas,Rudrasagar Field,,,211,hi-en
+hin_0005,synthetic_hinglish,2024-05-07,LOTO tag nahi lagaya electrical panel me repair se pehle. breaker on hone ka chance tha.,unsafe_act,no_injury,oil_gas,Digboi Field,,,211,hi-en
+hin_0006,synthetic_hinglish,2024-07-11,forklift driver phone pe baat kar raha tha driving ke time. blind corner me speed jyada thi.,unsafe_act,no_injury,oil_gas,Numaligarh Refinery,,,211,hi-en
+hin_0007,synthetic_hinglish,2024-11-11,worker ne harness pehna tha but anchor point pe hook nahi kiya tha derrick pe.,unsafe_act,no_injury,oil_gas,Jorhat Workshop,,,211,hi-en
+hin_0008,synthetic_hinglish,2024-02-12,chemical drum bina PPE aur mask ke handle kar raha tha.,unsafe_act,no_injury,oil_gas,Numaligarh Refinery,,,211,hi-en
+hin_0009,synthetic_hinglish,2024-10-24,grinding work near diesel pump. hot work permit nahi liya tha.,unsafe_act,no_injury,oil_gas,Duliajan Field,,,211,hi-en
+hin_0010,synthetic_hinglish,2024-09-20,"derrick floor pe oil leak ho raha tha pump seal se. bahut slippery tha, slip hazard.",unsafe_condition,no_injury,oil_gas,Geleki Field,,,211,hi-en
+hin_0011,synthetic_hinglish,2024-03-27,staircase ka handrail toota hua tha near mud pit. raat ko visibility kam thi.,unsafe_condition,no_injury,oil_gas,Digboi Field,,,211,hi-en
+hin_0012,synthetic_hinglish,2024-12-21,fire extinguisher ka pressure zero dikha raha tha inspection me. expiry date over tha.,unsafe_condition,no_injury,oil_gas,Numaligarh Refinery,,,211,hi-en
+hin_0013,synthetic_hinglish,2024-03-10,high pressure line ka gauge broken tha. actual pressure check nai ho raha tha.,unsafe_condition,no_injury,oil_gas,Digboi Field,,,211,hi-en
+hin_0014,synthetic_hinglish,2024-01-02,"wire rope sling me damage tha, strands toote hue the.",unsafe_condition,no_injury,oil_gas,Geleki Field,,,211,hi-en
+hin_0015,synthetic_hinglish,2024-06-28,lighting kam tha rig floor pe night shift me. shadow ke wajah se hazard dikh nai raha tha.,unsafe_condition,no_injury,oil_gas,Jorhat Workshop,,,211,hi-en
+hin_0016,synthetic_hinglish,2024-06-19,emergency exit ke samne scrap pipe rakha hua tha. block ho gaya rasta.,unsafe_condition,no_injury,oil_gas,Duliajan Field,,,211,hi-en
+hin_0017,synthetic_hinglish,2024-05-01,gas detector continuously beep kar raha tha but reading clear nai thi.,unsafe_condition,no_injury,oil_gas,Digboi Field,,,211,hi-en
+hin_0018,synthetic_hinglish,2024-12-21,h2s sensor calibration out of date. warning light flash nahi kar raha.,unsafe_condition,no_injury,oil_gas,Digboi Field,,,211,hi-en
+hin_0019,synthetic_hinglish,2024-06-06,temporary electrical cable pani me gira hua tha near generator.,unsafe_condition,no_injury,oil_gas,Digboi Field,,,211,hi-en
+hin_0020,synthetic_hinglish,2024-03-17,"crane lock nai tha, 500kg pipe slip hua. aadmi waha se just bach gaya, narrowly missed.",near_miss,near_miss,oil_gas,Digboi Field,,,211,hi-en
+hin_0021,synthetic_hinglish,2024-01-14,"Baghjan well me pressure sudden badh gaya, kick aane wala tha. bop function kiya time pe.",near_miss,near_miss,oil_gas,Duliajan Field,,,211,hi-en
+hin_0022,synthetic_hinglish,2024-11-16,"wireline truck reversing without spotter, reverse horn not working. crew member ko hit karne wala tha.",near_miss,near_miss,oil_gas,Moran Field,,,211,hi-en
+hin_0023,synthetic_hinglish,2024-10-25,drilling karte time flange burst hua. high pressure fluid nikla but koi line of fire me nahi tha.,near_miss,near_miss,oil_gas,Jorhat Workshop,,,211,hi-en
+hin_0024,synthetic_hinglish,2024-07-26,spanner height se gira seedha walkway pe. just ek second pehle waha se operator cross kiya tha.,near_miss,near_miss,oil_gas,Geleki Field,,,211,hi-en
+hin_0025,synthetic_hinglish,2024-11-19,"welding spark dry grass pe gira near flare pit, chhota fire start hua, turant fire blanket se bujhaya.",near_miss,near_miss,oil_gas,Numaligarh Refinery,,,211,hi-en
+hin_0026,synthetic_hinglish,2024-09-23,"lifting sling achanak toot gaya load uthate time. load zameen pe gira, but no one was nearby.",near_miss,near_miss,oil_gas,Duliajan Field,,,211,hi-en
+hin_0027,synthetic_hinglish,2024-03-16,"chemical transfer hose loose ho gaya tha, acid spray hua. operator PPE me tha toh bach gaya.",near_miss,near_miss,oil_gas,Numaligarh Refinery,,,211,hi-en
+hin_0028,synthetic_hinglish,2024-02-15,"forklift load balance nai tha, corner turn karte time pallet gir gaya near walkway.",near_miss,near_miss,oil_gas,Numaligarh Refinery,,,211,hi-en
+hin_0029,synthetic_hinglish,2024-09-27,"scaffolding plank slip ho gaya, worker harness pe latak gaya. fall avoid hua.",near_miss,near_miss,oil_gas,Rudrasagar Field,,,211,hi-en
+hin_0030,synthetic_hinglish,2024-08-01,"crane op overspeed me tha. rassi chigise (rope broke), dangor (big) accident hote hote bach gaya.",near_miss,near_miss,oil_gas,Baghjan Well,,,211,as-en
+hin_0031,synthetic_hinglish,2024-09-28,manuh tu (the person) upar se slip hua. luckily harness tana rakha tha.,near_miss,near_miss,oil_gas,Digboi Field,,,211,as-en
+hin_0032,synthetic_hinglish,2024-11-20,"mud pump aru (and) generator area bohut letera (dirty) hoise, slip and trip hazard.",unsafe_condition,no_injury,oil_gas,Moran Field,,,211,as-en
+hin_0033,synthetic_hinglish,2024-12-24,pipe fitting okhomat (during) helper e gloves nepindhile (did not wear).,unsafe_act,no_injury,oil_gas,Geleki Field,,,211,as-en
+hin_0034,synthetic_hinglish,2024-06-09,jui (fire) spark udisil (flew) near diesel tank. hot work stopping fast.,near_miss,near_miss,oil_gas,Geleki Field,,,211,as-en
+hin_0035,synthetic_hinglish,2024-10-02,"scaffolding par kaam kar raha tha bina safety belt ke. height almost 10 meter tha, fall arrestor nahi lagaya.",unsafe_act,no_injury,oil_gas,Numaligarh Refinery,,,211,hi-en
+hin_0036,synthetic_hinglish,2024-09-14,"welding chal raha tha near tank 4, but fire blanket missing tha at Duliajan Field. helper bina goggles ke tha at Duliajan Field.",unsafe_act,no_injury,oil_gas,Duliajan Field,,,211,hi-en
+hin_0037,synthetic_hinglish,2024-08-12,crane lifting ke time exclusion zone me log khade the. rigger ne barricade cross kiya.,unsafe_act,no_injury,oil_gas,Numaligarh Refinery,,,211,hi-en
+hin_0038,synthetic_hinglish,2024-10-10,confined space entry bina gas test kiye kar raha tha at Duliajan Field. supervisor ne immediately stop karwaya.,unsafe_act,no_injury,oil_gas,Duliajan Field,,,211,hi-en
+hin_0039,synthetic_hinglish,2024-06-19,pipe load karte waqt gloves nahi pehna tha at Duliajan Field. pinch point me hath rakh diya tha at Duliajan Field.,unsafe_act,no_injury,oil_gas,Duliajan Field,,,211,hi-en
+hin_0040,synthetic_hinglish,2024-12-16,LOTO tag nahi lagaya electrical panel me repair se pehle. breaker on hone ka chance tha at Geleki Field.,unsafe_act,no_injury,oil_gas,Geleki Field,,,211,hi-en
+hin_0041,synthetic_hinglish,2024-10-01,forklift driver phone pe baat kar raha tha driving ke time. blind corner me speed jyada thi.,unsafe_act,no_injury,oil_gas,Moran Field,,,211,hi-en
+hin_0042,synthetic_hinglish,2024-01-19,worker ne harness pehna tha but anchor point pe hook nahi kiya tha derrick pe.,unsafe_act,no_injury,oil_gas,Geleki Field,,,211,hi-en
+hin_0043,synthetic_hinglish,2024-08-22,chemical drum bina PPE aur mask ke handle kar raha tha at Jorhat Workshop.,unsafe_act,no_injury,oil_gas,Jorhat Workshop,,,211,hi-en
+hin_0044,synthetic_hinglish,2024-02-24,grinding work near diesel pump. hot work permit nahi liya tha at Baghjan Well.,unsafe_act,no_injury,oil_gas,Baghjan Well,,,211,hi-en
+hin_0045,synthetic_hinglish,2024-09-18,"derrick floor pe oil leak ho raha tha pump seal se. bahut slippery tha, slip hazard.",unsafe_condition,no_injury,oil_gas,Rudrasagar Field,,,211,hi-en
+hin_0046,synthetic_hinglish,2024-10-18,staircase ka handrail toota hua tha near mud pit. raat ko visibility kam thi.,unsafe_condition,no_injury,oil_gas,Geleki Field,,,211,hi-en
+hin_0047,synthetic_hinglish,2024-08-17,fire extinguisher ka pressure zero dikha raha tha inspection me. expiry date over tha at Numaligarh Refinery.,unsafe_condition,no_injury,oil_gas,Numaligarh Refinery,,,211,hi-en
+hin_0048,synthetic_hinglish,2024-02-27,high pressure line ka gauge broken tha at Rudrasagar Field. actual pressure check nai ho raha tha at Rudrasagar Field.,unsafe_condition,no_injury,oil_gas,Rudrasagar Field,,,211,hi-en
+hin_0049,synthetic_hinglish,2024-11-23,"wire rope sling me damage tha, strands toote hue the.",unsafe_condition,no_injury,oil_gas,Digboi Field,,,211,hi-en
