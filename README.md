@@ -3,28 +3,33 @@
 AI/NLP engine to detect Serious Injury & Fatality (SIF) precursors in safety reports.
 
 ## Project Structure
-
-sih_2026/
-├── src/
-│   ├── extract_pipeline.py        <- Step 2: LLM JSON extraction (Groq)
-│   ├── rule_engine.py             <- Step 3, Method 1: Deterministic rules
-│   ├── train_random_forest.py     <- Step 3, Method 2: ML + SHAP
-│   ├── raw_text_classifier.py     <- Step 3, Method 3: Raw-text fallback
-│   ├── final_sif_voter.py         <- Step 3: Disagreement engine
-│   ├── academic_crosscheck.py     <- Validation against published studies
-│   ├── voice_intake.py            <- Voice-to-text (Groq Whisper)
-│   ├── vision_intake.py           <- Handwritten OCR (Gemini 3.5 Flash)
-│   └── data_pipeline/             <- Step 1: Data download and cleaning
-├── data/
-│   └── processed/
-│       ├── hinglish_synthetic.csv      <- 50 Hinglish reports
-│       ├── extracted_features.json     <- LLM-extracted JSON
-│       ├── classified_reports.json     <- Rule engine output + weak labels
-│       ├── final_triaged_reports.csv   <- Final voted predictions
-│       ├── shap_summary_plot.png       <- SHAP explainability chart
-│       └── academic_validation.png     <- Validation chart
-└── .env                                <- API keys (not committed)
-
+  
+  ```
+  sih_2026/
+  ├── src/
+  │   ├── data_pipeline/                  ← Step 1: Data download, clean, combine
+  │   ├── extract_pipeline.py             ← Step 2: LLM JSON extraction (Groq)
+  │   ├── voice_intake.py                 ← Step 2: Voice-to-text (Groq Whisper)
+  │   ├── vision_intake.py                ← Step 2: Handwritten OCR (Gemini 3.5 Flash)
+  │   ├── rule_engine.py                  ← Step 3, Method 1: Deterministic rules
+  │   ├── train_random_forest.py          ← Step 3, Method 2: ML + SHAP
+  │   ├── raw_text_classifier.py          ← Step 3, Method 3: Raw-text fallback
+  │   ├── final_sif_voter.py              ← Step 3: Disagreement engine
+  │   └── academic_crosscheck.py          ← Validation against published studies
+  ├── data/
+  │   ├── raw/                            ← Downloaded ZIPs, CSVs, PDFs
+  │   │   └── oisd_pdfs/                  ← Manually downloaded OISD PDFs go here
+  │   └── processed/
+  │       ├── hinglish_synthetic.csv      ← 50 Hinglish synthetic reports
+  │       ├── extracted_features.json     ← LLM-extracted structured JSON
+  │       ├── classified_reports.json     ← Rule engine output + weak labels
+  │       ├── final_triaged_reports.csv   ← Final voted SIF predictions
+  │       ├── shap_summary_plot.png       ← SHAP explainability chart
+  │       └── academic_validation.png     ← Validation chart
+  ├── notebooks/                          ← EDA and experiments
+  ├── requirements.txt
+  └── .env                                ← API keys (not committed)
+  ```
 ## Quick Start
 
 ```bash
