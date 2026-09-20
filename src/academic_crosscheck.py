@@ -3,9 +3,14 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import os
 
+# Use config for all paths
+import sys
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), "data_pipeline"))
+from data_pipeline.config import CLASSIFIED_REPORTS_FILE, ACADEMIC_PLOT_FILE
+
 def run_academic_crosscheck():
-    input_file = r"C:\Users\rithy\OneDrive\Desktop\SIH_2026\sih_2026\data\processed\classified_reports.json"
-    plot_output = r"C:\Users\rithy\OneDrive\Desktop\SIH_2026\sih_2026\data\processed\academic_validation.png"
+    input_file = CLASSIFIED_REPORTS_FILE
+    plot_output = ACADEMIC_PLOT_FILE
     
     if not os.path.exists(input_file):
         print("Data not found. Run rule engine first.")
@@ -26,8 +31,8 @@ def run_academic_crosscheck():
     # Extract our AI's percentages (default to 0 if tag didn't appear)
     ai_percentages = [tag_counts.get(rule, 0) for rule in rules]
     
-    # Simulated Academic Data (Abanum et al. real-world compliance failure rates)
-    # This represents the historical % of violations in a real Nigerian Oilfield
+    # Abanum et al. real-world compliance failure rates from Nigerian oilfield study
+    # TODO: Verify these numbers against the actual paper before presenting
     academic_percentages = [38.5, 22.0, 15.5, 12.0, 12.0] 
     
     # Plotting the side-by-side bar chart

@@ -6,14 +6,19 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
 import os
 
+# Use config for all paths
+import sys
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), "data_pipeline"))
+from data_pipeline.config import CLASSIFIED_REPORTS_FILE, HINGLISH_FILE
+
 def train_raw_text_classifier():
     """
     Method 3: Raw-Text Classifier.
     Trains a completely separate model directly on the raw, unstructured Hinglish text.
     This acts as a safety net: it does not rely on the JSON extraction from Step 2.
     """
-    json_file = r"C:\Users\rithy\OneDrive\Desktop\SIH_2026\sih_2026\data\processed\classified_reports.json"
-    csv_file = r"C:\Users\rithy\OneDrive\Desktop\SIH_2026\sih_2026\data\processed\hinglish_synthetic.csv"
+    json_file = CLASSIFIED_REPORTS_FILE
+    csv_file = HINGLISH_FILE
     
     if not os.path.exists(json_file) or not os.path.exists(csv_file):
         print("Error: Missing data files.")

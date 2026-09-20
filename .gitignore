@@ -41,3 +41,6 @@ data/processed/msha_cleaned.csv
 !data/raw/.gitkeep
 !data/processed/.gitkeep
 !data/raw/oisd_pdfs/.gitkeep
+
+# Model artifacts
+models/
