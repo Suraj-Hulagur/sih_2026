@@ -2,7 +2,7 @@
 Parse OISD Safety Alert / Case Study PDFs into structured records.
 
 Source: https://oisd.gov.in -> Knowledge Resources -> Safety Alert / Case Studies
-PDFs are downloaded manually and placed in data/pdf/ (see config.OISD_PDF_SOURCE_DIR).
+PDFs are downloaded manually and placed in data/pdf/ (see config.OISD_PDF_DIR).
 
 These documents follow a consistent shape but an inconsistent vocabulary:
 
@@ -19,10 +19,17 @@ Header wording varies across disciplines ("INCIDENT" vs "BRIEF OF INCIDENT (S)",
 two documents use title case rather than upper case, so headers are matched with
 anchored, case-insensitive, whole-line patterns.
 
-Outputs:
+Outputs (in data/processed/):
   - oisd_structured.json : full sections, one record per document
   - oisd_cleaned.csv     : the unified 12-column schema, for combine_datasets.py
+
+Both are rewritten from every PDF in the directory on each run, so a re-scan
+replaces them. To scan a folder into its own pair of files instead:
+
+    python src/data_pipeline/process_oisd.py --pdf-dir data/pdf/new --name batch2
+    -> oisd_batch2_structured.json + oisd_batch2_cleaned.csv
 """
+import argparse
 import json
 import os
 import re
@@ -329,32 +336,32 @@ def to_unified_row(record: dict) -> dict:
     }
 
 
-def find_pdf_dir() -> str | None:
-    """Prefer data/pdf/, fall back to the older data/raw/oisd_pdfs/ location."""
-    for candidate in (config.OISD_PDF_SOURCE_DIR, config.OISD_PDF_DIR):
-        if os.path.isdir(candidate) and any(
-            f.lower().endswith(".pdf") for f in os.listdir(candidate)
-        ):
-            return candidate
+def find_pdf_dir(pdf_dir: str | None = None) -> str | None:
+    """Return the PDF directory, or None if it holds no PDFs yet."""
+    d = pdf_dir or config.OISD_PDF_DIR
+    if os.path.isdir(d) and any(f.lower().endswith(".pdf") for f in os.listdir(d)):
+        return d
     return None
 
 
-def main():
+def main(pdf_dir: str | None = None, name: str | None = None):
+    structured_file, cleaned_file = config.oisd_output_files(name)
+
     print("=" * 60)
     print("OISD Case Studies - PDF Parsing")
     print("=" * 60)
 
-    pdf_dir = find_pdf_dir()
+    pdf_dir = find_pdf_dir(pdf_dir)
     if pdf_dir is None:
         print()
         print("[OISD] No PDFs found. To use OISD data:")
         print("  1. Go to: https://oisd.gov.in")
         print("  2. Navigate: Knowledge Resources -> Safety Alert / Case Studies")
-        print(f"  3. Download PDFs to: {config.OISD_PDF_SOURCE_DIR}")
+        print(f"  3. Download PDFs to: {config.OISD_PDF_DIR}")
         print("  4. Re-run this script")
         empty = pd.DataFrame(columns=config.UNIFIED_COLUMNS)
-        empty.to_csv(config.OISD_CLEANED_FILE, index=False)
-        with open(config.OISD_STRUCTURED_FILE, "w", encoding="utf-8") as f:
+        empty.to_csv(cleaned_file, index=False)
+        with open(structured_file, "w", encoding="utf-8") as f:
             json.dump([], f)
         return empty
 
@@ -379,15 +386,15 @@ def main():
             f" brief={len(record['brief_of_incident']):<5} {flag}"
         )
 
-    with open(config.OISD_STRUCTURED_FILE, "w", encoding="utf-8") as f:
+    with open(structured_file, "w", encoding="utf-8") as f:
         json.dump(records, f, indent=2, ensure_ascii=False)
 
     df = pd.DataFrame([to_unified_row(r) for r in records], columns=config.UNIFIED_COLUMNS)
-    df.to_csv(config.OISD_CLEANED_FILE, index=False)
+    df.to_csv(cleaned_file, index=False)
 
     print()
-    print(f"[OISD] Saved structured : {config.OISD_STRUCTURED_FILE}")
-    print(f"[OISD] Saved unified    : {config.OISD_CLEANED_FILE}")
+    print(f"[OISD] Saved structured : {structured_file}")
+    print(f"[OISD] Saved unified    : {cleaned_file}")
     print(f"[OISD] Documents parsed : {len(records)}")
     print(f"\n[OISD] By severity:\n{df['severity_normalized'].value_counts().to_string()}")
     print(f"\n[OISD] By discipline:")
@@ -409,4 +416,16 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser(description="Parse OISD case-study PDFs into structured records.")
+    parser.add_argument(
+        "--pdf-dir", default=None,
+        help=f"Folder of PDFs to scan (default: {config.OISD_PDF_DIR})",
+    )
+    parser.add_argument(
+        "--name", default=None,
+        help="Tag for this scan's output files, e.g. --name batch2 writes "
+             "oisd_batch2_structured.json + oisd_batch2_cleaned.csv instead of "
+             "overwriting the default pair",
+    )
+    args = parser.parse_args()
+    main(args.pdf_dir, args.name)

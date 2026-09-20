@@ -42,8 +42,8 @@ handle Hinglish/Assamese text, voice memos, and photographs of handwritten logbo
 
 ## 2. Repository state
 
-- **Path:** `C:\Users\Suraj Hulagur\Desktop\sih2026\sih_2026`
-- **Branch:** `backend-pipeline` (main branch is `main`)
+- **Repository root:** `sih_2026/`
+- **Branch:** `oisd` (main branch is `main`)
 - **Commits (4 total):**
   - `cbba364` create data foundation
   - `f141f85` Add Steps 1-3: Extraction pipeline, triangulated classification engine, and academic validation

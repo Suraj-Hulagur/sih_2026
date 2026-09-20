@@ -91,7 +91,7 @@ def tag_iogp_rule(report):
 def run_rule_engine():
     input_file = EXTRACTED_FEATURES_FILE
     output_file = CLASSIFIED_REPORTS_FILE
-    
+
     if not os.path.exists(input_file):
         print(f"Error: Could not find {input_file}. Make sure Step 2 completed successfully.")
         return

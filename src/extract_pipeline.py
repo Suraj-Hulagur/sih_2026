@@ -45,7 +45,7 @@ def run_pipeline():
     # Save to JSON
     with open(output_file, 'w', encoding='utf-8') as f:
         json.dump(results, f, indent=2)
-    
+
     print(f"\nSuccessfully processed {len(results)} reports and saved to {output_file}")
 
 if __name__ == "__main__":

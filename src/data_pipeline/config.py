@@ -9,7 +9,8 @@ PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(_
 DATA_DIR = os.path.join(PROJECT_ROOT, "data")
 RAW_DIR = os.path.join(DATA_DIR, "raw")
 PROCESSED_DIR = os.path.join(DATA_DIR, "processed")
-OISD_PDF_DIR = os.path.join(RAW_DIR, "oisd_pdfs")
+# OISD case-study PDFs, downloaded manually from oisd.gov.in.
+OISD_PDF_DIR = os.path.join(DATA_DIR, "pdf")
 
 # Create directories if they don't exist
 for d in [RAW_DIR, PROCESSED_DIR, OISD_PDF_DIR]:
@@ -145,9 +146,7 @@ BARRIER_STATES = [
 ]
 
 # ─── Output file names ───────────────────────────────────────────────────────
-# OISD case-study PDFs live here (data/raw/oisd_pdfs/ is the older, empty location)
-OISD_PDF_SOURCE_DIR = os.path.join(DATA_DIR, "pdf")
-
+# Every stage writes with mode "w", so a re-run replaces its output wholesale.
 MSHA_CLEANED_FILE = os.path.join(PROCESSED_DIR, "msha_cleaned.csv")
 OSHA_CLEANED_FILE = os.path.join(PROCESSED_DIR, "osha_cleaned.csv")
 OISD_CLEANED_FILE = os.path.join(PROCESSED_DIR, "oisd_cleaned.csv")
@@ -166,6 +165,23 @@ ACADEMIC_PLOT_FILE = os.path.join(PROCESSED_DIR, "academic_validation.png")
 # ─── OISD case-study outputs ─────────────────────────────────────────────────
 OISD_STRUCTURED_FILE = os.path.join(PROCESSED_DIR, "oisd_structured.json")
 OISD_COVERAGE_REPORT = os.path.join(PROCESSED_DIR, "oisd_coverage_report.md")
+
+
+def oisd_output_files(name: str | None = None) -> tuple[str, str]:
+    """
+    (structured JSON, cleaned CSV) for a PDF scan.
+
+    No name -> the default pair above, which a re-run overwrites. A name gives the
+    scan its own pair, e.g. name="batch2" -> oisd_batch2_structured.json +
+    oisd_batch2_cleaned.csv, leaving earlier scans in place. The web app will run
+    per-upload instead of scanning a folder, so it will pass its own name here.
+    """
+    if not name:
+        return OISD_STRUCTURED_FILE, OISD_CLEANED_FILE
+    return (
+        os.path.join(PROCESSED_DIR, f"oisd_{name}_structured.json"),
+        os.path.join(PROCESSED_DIR, f"oisd_{name}_cleaned.csv"),
+    )
 
 # ─── Models directory ────────────────────────────────────────────────────────
 MODELS_DIR = os.path.join(PROJECT_ROOT, "models")
