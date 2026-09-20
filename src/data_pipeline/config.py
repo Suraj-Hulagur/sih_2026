@@ -145,9 +145,28 @@ BARRIER_STATES = [
 ]
 
 # ─── Output file names ───────────────────────────────────────────────────────
+# OISD case-study PDFs live here (data/raw/oisd_pdfs/ is the older, empty location)
+OISD_PDF_SOURCE_DIR = os.path.join(DATA_DIR, "pdf")
+
 MSHA_CLEANED_FILE = os.path.join(PROCESSED_DIR, "msha_cleaned.csv")
 OSHA_CLEANED_FILE = os.path.join(PROCESSED_DIR, "osha_cleaned.csv")
 OISD_CLEANED_FILE = os.path.join(PROCESSED_DIR, "oisd_cleaned.csv")
 SYNTHETIC_FILE = os.path.join(PROCESSED_DIR, "synthetic_reports.csv")
 COMBINED_FILE = os.path.join(PROCESSED_DIR, "combined_reports.csv")
 OIL_GAS_SUBSET_FILE = os.path.join(PROCESSED_DIR, "oil_gas_subset.csv")
+
+# ─── Pipeline files (Steps 2–3) ─────────────────────────────────────────────
+HINGLISH_FILE = os.path.join(PROCESSED_DIR, "hinglish_synthetic.csv")
+EXTRACTED_FEATURES_FILE = os.path.join(PROCESSED_DIR, "extracted_features.json")
+CLASSIFIED_REPORTS_FILE = os.path.join(PROCESSED_DIR, "classified_reports.json")
+FINAL_TRIAGED_FILE = os.path.join(PROCESSED_DIR, "final_triaged_reports.csv")
+SHAP_PLOT_FILE = os.path.join(PROCESSED_DIR, "shap_summary_plot.png")
+ACADEMIC_PLOT_FILE = os.path.join(PROCESSED_DIR, "academic_validation.png")
+
+# ─── OISD case-study outputs ─────────────────────────────────────────────────
+OISD_STRUCTURED_FILE = os.path.join(PROCESSED_DIR, "oisd_structured.json")
+OISD_COVERAGE_REPORT = os.path.join(PROCESSED_DIR, "oisd_coverage_report.md")
+
+# ─── Models directory ────────────────────────────────────────────────────────
+MODELS_DIR = os.path.join(PROJECT_ROOT, "models")
+os.makedirs(MODELS_DIR, exist_ok=True)

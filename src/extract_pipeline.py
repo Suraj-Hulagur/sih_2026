@@ -2,104 +2,43 @@ import os
 import json
 import time
 import pandas as pd
-from dotenv import load_dotenv
-from openai import OpenAI
 
-# Load environment variables
-load_dotenv()
+# Use config for all paths
+import sys
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), "data_pipeline"))
+from data_pipeline.config import HINGLISH_FILE, EXTRACTED_FEATURES_FILE
 
-# Setup Groq Client
-if not os.getenv("GROQ_API_KEY"):
-    raise ValueError("GROQ_API_KEY not found in .env file")
+# The client, the extraction prompt and the per-report call all live in llm_client
+# so that this pipeline and src/oisd_experiment.py cannot drift apart.
+from llm_client import LLM_BACKEND, get_llm_client, extract_features
 
-print("Using Groq API...")
-client = OpenAI(
-    api_key=os.getenv("GROQ_API_KEY"),
-    base_url="https://api.groq.com/openai/v1"
-)
-
-# You can change this to any model you prefer (e.g. openai/gpt-oss-120b if using a router)
-MODEL_NAME = "openai/gpt-oss-120b" 
-
-SYSTEM_PROMPT = """
-You are an expert HSE (Health, Safety, and Environment) inspector for an Indian Oil & Gas company.
-Your job is to read raw, unstructured safety reports (which may contain Hinglish or Assamese slang) 
-and extract specific structured fields for a deterministic rule engine.
-
-Return ONLY a valid JSON object matching this schema exactly.
-
-Schema:
-{
-  "energy_type": "gravity | electrical | pressure | kinetic | thermal | chemical | none",
-  "energy_magnitude": "high | low | unknown",
-  "barrier_expected": "String describing the safety control that should have been there",
-  "barrier_state": "working | missing | degraded | bypassed | unknown",
-  "activity": "String describing the work being done",
-  "location": "String describing where it happened",
-  "evidence_phrases": ["list", "of", "exact", "phrases", "from", "text"]
-}
-
---- FEW SHOT EXAMPLES ---
-Input: "scaffolding par kaam kar raha tha bina safety belt ke. height almost 10 meter tha, fall arrestor nahi lagaya."
-Output: {
-  "energy_type": "gravity",
-  "energy_magnitude": "high",
-  "barrier_expected": "safety belt / fall arrestor",
-  "barrier_state": "missing",
-  "activity": "working on scaffolding",
-  "location": "scaffolding (10 meter height)",
-  "evidence_phrases": ["bina safety belt ke", "fall arrestor nahi lagaya"]
-}
-
-Input: "crane lifting ke time exclusion zone me log khade the. rigger ne barricade cross kiya."
-Output: {
-  "energy_type": "kinetic",
-  "energy_magnitude": "high",
-  "barrier_expected": "barricade / exclusion zone",
-  "barrier_state": "bypassed",
-  "activity": "crane lifting",
-  "location": "exclusion zone",
-  "evidence_phrases": ["rigger ne barricade cross kiya"]
-}
---------------------------
-"""
-
-def extract_features(narrative: str):
-    response = client.chat.completions.create(
-        model=MODEL_NAME,
-        messages=[
-            {"role": "system", "content": SYSTEM_PROMPT},
-            {"role": "user", "content": f"Extract the structured data from this report:\n\n{narrative}"}
-        ],
-        response_format={"type": "json_object"},
-        temperature=0.0
-    )
-    return response.choices[0].message.content
 
 def run_pipeline():
-    input_file = r"C:\Users\rithy\OneDrive\Desktop\SIH_2026\sih_2026\data\processed\hinglish_synthetic.csv"
-    output_file = r"C:\Users\rithy\OneDrive\Desktop\SIH_2026\sih_2026\data\processed\extracted_features.json"
-    
-    print(f"Reading full dataset from {input_file}...")
+    input_file = HINGLISH_FILE
+    output_file = EXTRACTED_FEATURES_FILE
+
+    client, model_name = get_llm_client()
+    print(f"Backend: {LLM_BACKEND} | model: {model_name}")
+
+    print(f"Reading dataset from {input_file}...")
     df = pd.read_csv(input_file)
-    
+
     results = []
-    
-    # Process the entire dataframe (no .head() limit)
+
     for index, row in df.iterrows():
         print(f"[{index+1}/{len(df)}] Processing: {row['report_id']}")
-        
+
         try:
-            json_str = extract_features(row['narrative'])
-            extracted_data = json.loads(json_str)
-            
+            extracted_data = extract_features(row['narrative'], client, model_name)
+
             final_record = {"report_id": row['report_id']}
             final_record.update(extracted_data)
             results.append(final_record)
-            
-            # Small delay to prevent hitting Groq rate limits on large files
-            time.sleep(1)
-            
+
+            # Small delay to prevent rate limits (only needed for external APIs)
+            if LLM_BACKEND == "groq":
+                time.sleep(1)
+
         except Exception as e:
             print(f"Error processing {row['report_id']}: {e}")
 
