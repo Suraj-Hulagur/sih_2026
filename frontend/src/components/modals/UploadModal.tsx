@@ -1,0 +1,302 @@
+import React, { useState, useRef } from 'react';
+import { 
+  X, 
+  UploadCloud, 
+  FileSpreadsheet, 
+  FileText, 
+  CheckCircle2, 
+  AlertTriangle,
+  Loader2 
+} from 'lucide-react';
+import type { UploadedFileSummary } from '../../types';
+
+interface UploadModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+  onUploadSuccess: (summary: UploadedFileSummary) => void;
+}
+
+export const UploadModal: React.FC<UploadModalProps> = ({
+  isOpen,
+  onClose,
+  onUploadSuccess
+}) => {
+  const [dragActive, setDragActive] = useState(false);
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
+  const [isProcessing, setIsProcessing] = useState(false);
+  const [processingStage, setProcessingStage] = useState('');
+  const [progress, setProgress] = useState(0);
+  const [resultSummary, setResultSummary] = useState<UploadedFileSummary | null>(null);
+
+  const fileInputRef = useRef<HTMLInputElement>(null);
+
+  if (!isOpen) return null;
+
+  const handleDrag = (e: React.DragEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (e.type === 'dragenter' || e.type === 'dragover') {
+      setDragActive(true);
+    } else if (e.type === 'dragleave') {
+      setDragActive(false);
+    }
+  };
+
+  const handleDrop = (e: React.DragEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setDragActive(false);
+    if (e.dataTransfer.files && e.dataTransfer.files[0]) {
+      handleFile(e.dataTransfer.files[0]);
+    }
+  };
+
+  const handleFile = (file: File) => {
+    const ext = file.name.split('.').pop()?.toLowerCase();
+    if (!['csv', 'xlsx', 'xls', 'pdf'].includes(ext || '')) {
+      alert('Please upload only CSV, Excel (.xlsx/.xls), or PDF files.');
+      return;
+    }
+    setSelectedFile(file);
+    setResultSummary(null);
+  };
+
+  const handleStartProcessing = () => {
+    if (!selectedFile) return;
+
+    setIsProcessing(true);
+    setProgress(15);
+    setProcessingStage('Parsing file contents and extracting safety narratives...');
+
+    setTimeout(() => {
+      setProgress(45);
+      setProcessingStage('Executing EEI Safety Chain Logic (High Energy & Barrier State)...');
+    }, 700);
+
+    setTimeout(() => {
+      setProgress(80);
+      setProcessingStage('Tagging IOGP Life-Saving Rules & Out-of-Fold Triangulation...');
+    }, 1400);
+
+    setTimeout(() => {
+      setProgress(100);
+      setIsProcessing(false);
+      const ext = selectedFile.name.split('.').pop()?.toLowerCase();
+      const type = ext === 'pdf' ? 'pdf' : ext === 'csv' ? 'csv' : 'xlsx';
+      
+      const summary: UploadedFileSummary = {
+        name: selectedFile.name,
+        size: `${(selectedFile.size / 1024).toFixed(1)} KB`,
+        type,
+        recordCount: type === 'pdf' ? 12 : 64,
+        sifCount: type === 'pdf' ? 9 : 14,
+        status: 'completed'
+      };
+
+      setResultSummary(summary);
+      onUploadSuccess(summary);
+    }, 2100);
+  };
+
+  const handleReset = () => {
+    setSelectedFile(null);
+    setResultSummary(null);
+    setIsProcessing(false);
+    setProgress(0);
+  };
+
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/50 backdrop-blur-xs p-4">
+      <div className="bg-white rounded-xl shadow-2xl border border-slate-200 w-full max-w-lg overflow-hidden animate-in fade-in duration-200">
+        {/* Modal Header */}
+        <div className="px-5 py-4 border-b border-slate-100 flex items-center justify-between">
+          <div>
+            <h3 className="text-base font-bold text-slate-900">
+              Batch Ingestion & Analysis
+            </h3>
+            <p className="text-xs text-slate-500">
+              Upload field observation logs (CSV, Excel) or OISD incident summaries (PDF)
+            </p>
+          </div>
+          <button
+            onClick={onClose}
+            className="p-1 rounded-md text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition cursor-pointer"
+          >
+            <X size={18} />
+          </button>
+        </div>
+
+        {/* Modal Body */}
+        <div className="p-5">
+          {!resultSummary ? (
+            <div>
+              {/* Dropzone */}
+              <div
+                onDragEnter={handleDrag}
+                onDragLeave={handleDrag}
+                onDragOver={handleDrag}
+                onDrop={handleDrop}
+                onClick={() => fileInputRef.current?.click()}
+                className={`border-2 border-dashed rounded-lg p-6 text-center cursor-pointer transition ${
+                  dragActive
+                    ? 'border-blue-500 bg-blue-50/50'
+                    : 'border-slate-300 hover:border-slate-400 bg-slate-50/60'
+                }`}
+              >
+                <input
+                  ref={fileInputRef}
+                  type="file"
+                  accept=".csv,.xlsx,.xls,.pdf"
+                  onChange={(e) => e.target.files?.[0] && handleFile(e.target.files[0])}
+                  className="hidden"
+                />
+
+                <div className="w-12 h-12 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center mx-auto mb-3">
+                  <UploadCloud size={24} />
+                </div>
+
+                <div className="text-sm font-semibold text-slate-800 mb-1">
+                  Click to browse or drag and drop files
+                </div>
+                <div className="text-xs text-slate-500 max-w-xs mx-auto mb-3">
+                  Supports safety reports in <strong>.CSV</strong>, <strong>.XLSX/.XLS</strong> spreadsheets, or <strong>.PDF</strong> case studies
+                </div>
+
+                <div className="flex items-center justify-center gap-3 text-[11px] text-slate-400">
+                  <span className="flex items-center gap-1">
+                    <FileSpreadsheet size={13} className="text-emerald-600" /> Excel / CSV
+                  </span>
+                  <span>•</span>
+                  <span className="flex items-center gap-1">
+                    <FileText size={13} className="text-red-500" /> PDF Reports
+                  </span>
+                </div>
+              </div>
+
+              {/* Selected File Details */}
+              {selectedFile && (
+                <div className="mt-4 p-3 bg-slate-50 rounded-lg border border-slate-200 flex items-center justify-between">
+                  <div className="flex items-center gap-3">
+                    {selectedFile.name.endsWith('.pdf') ? (
+                      <FileText size={20} className="text-red-500" />
+                    ) : (
+                      <FileSpreadsheet size={20} className="text-emerald-600" />
+                    )}
+                    <div>
+                      <div className="text-xs font-semibold text-slate-800 line-clamp-1">
+                        {selectedFile.name}
+                      </div>
+                      <div className="text-[11px] text-slate-500">
+                        {(selectedFile.size / 1024).toFixed(1)} KB
+                      </div>
+                    </div>
+                  </div>
+
+                  {!isProcessing && (
+                    <button
+                      onClick={handleReset}
+                      className="text-xs text-slate-400 hover:text-slate-600 underline cursor-pointer"
+                    >
+                      Change
+                    </button>
+                  )}
+                </div>
+              )}
+
+              {/* Progress Indicator */}
+              {isProcessing && (
+                <div className="mt-4 space-y-2">
+                  <div className="flex items-center justify-between text-xs font-medium text-slate-700">
+                    <span className="flex items-center gap-1.5">
+                      <Loader2 size={13} className="animate-spin text-blue-600" />
+                      {processingStage}
+                    </span>
+                    <span>{progress}%</span>
+                  </div>
+                  <div className="w-full bg-slate-100 rounded-full h-2 overflow-hidden">
+                    <div
+                      className="bg-blue-600 h-full rounded-full transition-all duration-300"
+                      style={{ width: `${progress}%` }}
+                    />
+                  </div>
+                </div>
+              )}
+            </div>
+          ) : (
+            /* Results Confirmation Screen */
+            <div className="p-4 bg-emerald-50/70 border border-emerald-200 rounded-lg text-center space-y-3">
+              <div className="w-10 h-10 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto">
+                <CheckCircle2 size={24} />
+              </div>
+              <h4 className="text-sm font-bold text-slate-900">
+                Batch Ingestion Successful!
+              </h4>
+              <p className="text-xs text-slate-600">
+                Successfully parsed and applied SIF precursor logic to <strong>{selectedFile?.name}</strong>.
+              </p>
+
+              <div className="grid grid-cols-2 gap-2 pt-2">
+                <div className="p-2.5 bg-white rounded border border-emerald-100">
+                  <div className="text-[11px] text-slate-500 font-medium">Records Processed</div>
+                  <div className="text-lg font-extrabold text-slate-800">{resultSummary.recordCount}</div>
+                </div>
+                <div className="p-2.5 bg-white rounded border border-red-100">
+                  <div className="text-[11px] text-red-500 font-medium flex items-center justify-center gap-1">
+                    <AlertTriangle size={12} />
+                    SIF Precursors
+                  </div>
+                  <div className="text-lg font-extrabold text-[#ea384c]">{resultSummary.sifCount}</div>
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+
+        {/* Modal Footer */}
+        <div className="px-5 py-3.5 bg-slate-50 border-t border-slate-100 flex items-center justify-end gap-2.5">
+          {!resultSummary ? (
+            <>
+              <button
+                type="button"
+                onClick={onClose}
+                disabled={isProcessing}
+                className="px-3.5 py-1.5 text-xs font-semibold text-slate-600 hover:text-slate-800 hover:bg-slate-200/60 rounded-md transition cursor-pointer"
+              >
+                Cancel
+              </button>
+              <button
+                type="button"
+                onClick={handleStartProcessing}
+                disabled={!selectedFile || isProcessing}
+                className={`px-4 py-1.5 text-xs font-semibold rounded-md shadow-xs transition flex items-center gap-1.5 ${
+                  !selectedFile || isProcessing
+                    ? 'bg-slate-300 text-slate-500 cursor-not-allowed'
+                    : 'bg-blue-600 hover:bg-blue-700 text-white cursor-pointer'
+                }`}
+              >
+                {isProcessing ? (
+                  <>
+                    <Loader2 size={13} className="animate-spin" />
+                    <span>Processing...</span>
+                  </>
+                ) : (
+                  <span>Run SIF Analysis</span>
+                )}
+              </button>
+            </>
+          ) : (
+            <button
+              onClick={() => {
+                handleReset();
+                onClose();
+              }}
+              className="px-4 py-1.5 text-xs font-semibold bg-[#0d1a2d] hover:bg-slate-800 text-white rounded-md transition cursor-pointer"
+            >
+              Done & View Dashboard
+            </button>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+};
