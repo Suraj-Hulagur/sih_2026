@@ -25,7 +25,6 @@ venv/
 
 # Jupyter Notebook
 .ipynb_checkpoints
-cla/
 
 # Data (Ignore large datasets to avoid GitHub 100MB limits)
 data/raw/*.zip

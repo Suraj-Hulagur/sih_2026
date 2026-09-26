@@ -68,10 +68,11 @@ files and 3 untracked additions:
 | ?? | `src/llm_client.py` | new, unified LLM + multilingual embedding client |
 | ?? | `cla/` | two Jupyter notebooks — **the most rigorous work in the repo** (see §8) |
 
-A recurring theme across the modified files: the committed versions contained **absolute
-Windows paths belonging to a different machine and user** (`C:\Users\rithy\OneDrive\Desktop\
-SIH_2026\...`). The uncommitted work replaces those with constants from `config.py`. Two files
-still contain those stale paths: `src/voice_intake.py` and `src/vision_intake.py`.
+A recurring theme across the modified files: the committed versions hardcoded **absolute Windows
+paths under another teammate's home directory**, so no script could run on anyone else's machine.
+Those were replaced with constants from `config.py`. The last two holdouts were
+`src/voice_intake.py` and `src/vision_intake.py`; **both files have since been deleted**
+(see §5.3), so every path in `src/` now resolves through `config.py`.
 
 ---
 
@@ -95,10 +96,10 @@ sih_2026/
 │   ├── FatalitiesFY09..FY12.csv                 # loose, not wired to any script
 │   ├── fy13..fy17_federal-state_summaries.csv   # loose, not wired to any script
 │   ├── OSHA HSE DATA_ALL ABSTRACTS 15-17_FINAL.csv  # 3.4MB — used by the notebook
+│   ├── pdf/                      # 10 OISD case-study PDFs, all parsed
 │   ├── raw/
 │   │   ├── Accidents.zip         # 52 MB, MSHA
-│   │   ├── Accidents.txt         # 228 MB, extracted
-│   │   └── oisd_pdfs/            # EMPTY
+│   │   └── Accidents.txt         # 228 MB, extracted
 │   └── processed/
 │       ├── msha_cleaned.csv           # 274,725 rows
 │       ├── synthetic_reports.csv      # 150 rows
@@ -121,9 +122,7 @@ sih_2026/
     │   ├── generate_synthetic.py
     │   └── combine_datasets.py
     ├── extract_pipeline.py
-    ├── voice_intake.py
-    ├── vision_intake.py
-    ├── llm_client.py             # NEW, untracked, not yet used by anything
+    ├── llm_client.py             # shared LLM + embedding client
     ├── rule_engine.py
     ├── train_random_forest.py
     ├── raw_text_classifier.py
@@ -209,19 +208,49 @@ Defines, in one place:
   needed. (Separately, a loose OSHA abstracts CSV *is* present in `data/` and the notebooks use
   it — but through a completely different code path.)
 
-### 4.4 `process_oisd.py` — written, no input data
+### 4.4 `process_oisd.py` — working, on 10 real documents
 
-- Extracts text page-by-page from every PDF in `data/raw/oisd_pdfs/` using `pdfplumber`.
-- `parse_oisd_sections()` walks the lines and assigns them to one of three buckets
-  (`incident_brief`, `observations`, `lessons_learned`) whenever a short line matches a
-  section-header regex. Uses `incident_brief` as the narrative, falling back to full text.
-- Regex-scrapes a date from the first 500 characters.
-- Hardcodes `industry="oil_gas"`, `location="India"`, `naics_sic="211"`,
-  `severity_normalized="serious"`.
-- Writes an empty CSV (header only) if no PDFs are found, so `combine_datasets.py` doesn't break.
-- **`data/raw/oisd_pdfs/` is empty.** `oisd_cleaned.csv` is 1 line (header). The README says the
-  OISD server was down during development. **This is the single biggest data gap**: it is the
-  only planned source of real *Indian* oil & gas incident text.
+The PDFs arrived and the parser was rewritten around their actual structure. It reads every PDF in
+`data/pdf/` with `pdfplumber` and splits each into the five sections an OISD case study carries.
+
+- **Section splitting** via `SECTION_PATTERNS` — anchored, case-insensitive, whole-line regexes
+  mapping to `introduction`, `brief_of_incident`, `observations`, `root_cause`, `recommendations`.
+  Ordered most-specific first so `CONCLUSION / ROOT CAUSE` is not swallowed by a looser pattern.
+  Header wording genuinely varies across disciplines (`INCIDENT` vs `BRIEF OF INCIDENT (S)`, five
+  spellings of root cause) and two documents use title case. `_drop` patterns discard
+  `PHOTOGRAPHS` / `ANNEXURE` and everything after them.
+- **Page furniture** removed before splitting: `FOOTER_RE` kills the disclaimer that repeats on
+  every page, `PAGE_NUM_RE` kills annexure `Page 1 of 3` lines.
+- **Metadata** from `DOC_REF_RE` (`OISD/CS/2026-27/E&P/05` → year, discipline, number) and a date
+  searched only near that reference, not anywhere in the body.
+- **`parse_intro()`** reads `Title` / `Location` / `Loss-Outcome` including values wrapped onto the
+  following line, and handles the `Result/ outcome` spelling used by LPG/12 and MOLPG/22 — without
+  that second spelling the value bleeds into `Location`.
+- **`split_bullets()`** groups lines into bullets on glyphs or enumerators (`1.`, `1.1`, `a.`,
+  `iii.`, bare `1 ` followed by a capital), appends continuation lines, then drops lead-ins
+  (`the observations are as follows:`) and fragments under 40 characters.
+- **`normalise_severity()`** floors at `serious`, because OISD only publishes serious cases;
+  promotes to `fatality` on `fatal`; and guards against `Injury/ Fatality: Nil`, which means
+  property damage only.
+- **`to_unified_row()`** sets `narrative = brief_of_incident + observations`. That is a deliberate
+  choice, not an accident: the observations section is where barrier-failure language lives, which
+  is exactly what the rule engine needs. `src/oisd_experiment.py` exists to measure what it buys.
+
+**Actual output:**
+
+```
+10 documents parsed   4 fatality | 6 serious
+disciplines           P&E 4 | PL 2 | MOPOL 1 | LPG 1 | MOLPG 1 | E&P 1
+narrative length      mean 3,915 | min 1,699 | max 6,669 chars
+parse warnings        2 — oisd_2025-26_PL_15, oisd_2025-26_PL_16 (missing:root_cause)
+```
+
+Those two warnings are correct behaviour: neither PDF contains a root-cause section to find.
+
+The single canonical location is now `data/pdf/` (`config.OISD_PDF_DIR`). The older empty
+`data/raw/oisd_pdfs/` directory and the two-candidate fallback in `find_pdf_dir()` were both
+removed. **These 10 documents are the project's only real oil & gas incident text, and its only
+real Indian text.**
 
 ### 4.5 `generate_synthetic.py` — template-based, reproducible
 
@@ -280,7 +309,7 @@ dataset, and zero real Indian text.
 
 ---
 
-## 5. Step 2 — Intake channels and LLM extraction
+## 5. Step 2 — LLM extraction
 
 ### 5.1 `hinglish_synthetic.csv` — the file the pipeline actually runs on
 
@@ -368,32 +397,33 @@ against. It is currently written to the JSON but **not used downstream by any ru
 - `energy_type`: gravity 14, kinetic 10, chemical 9, pressure 6, thermal 5, electrical 4, none 2
 - `barrier_state`: missing 36, degraded 8, working 4, bypassed 2
 
-### 5.3 `voice_intake.py` — Groq Whisper
+### 5.3 `voice_intake.py` and `vision_intake.py` — REMOVED
 
-Sends an audio file to `whisper-large-v3` through Groq's OpenAI-compatible endpoint, with a
-domain-priming prompt: *"The following is a safety report from an Indian Oil and Gas worker. It
-may contain Hinglish and oilfield jargon like LOTO, scaffold, derrick, or kick."* Priming
-Whisper with jargon is the right technique — it measurably improves transcription of
-domain terms.
+Both alternative intake channels were deleted on 2026-09-27. They were ~40-line adapters that
+turned a non-text input into a narrative string — Groq `whisper-large-v3` for audio, Gemini for
+OCR of a handwritten logbook page — and contained no safety logic of any kind.
 
-**State:** functional in principle, but never wired into the pipeline. The `__main__` block
-points at `C:\Users\rithy\OneDrive\Desktop\SIH_2026\sih_2026\data\sample_voice_report.mp3` —
-a path on a different person's machine. It also raises at import time if `GROQ_API_KEY` is
-missing, so it cannot be imported in an Ollama-only setup. No sample audio exists in the repo.
+**Why they were removed rather than repaired:**
 
-### 5.4 `vision_intake.py` — Gemini OCR for handwritten logbooks
+1. **Neither had ever run.** No sample audio and no sample image exist in the repo, so both were
+   unverified claims rather than working features.
+2. **`vision_intake.py` could not even be imported.** It requested `'gemini-3.5-flash'`, which is
+   not a real model identifier, through the deprecated `google.generativeai` SDK, which was absent
+   from `requirements.txt` entirely.
+3. **Both contradicted the project's own privacy argument.** Extraction was deliberately defaulted
+   to local Ollama so that confidential report text stays on-premises; these two shipped report
+   audio to Groq and logbook photographs to Google.
+4. **Both hardcoded another teammate's home-directory test paths** and built their API client at
+   module scope, so importing either one raised when its key was absent.
+5. Nothing imported either module, so removal touched no call site.
 
-Uses `google.generativeai`, uploads an image, and asks for an exact transcription with no
-markdown or commentary, warning the model about messy cursive and Hinglish/Assamese field slang.
+**What replaces them:** the intake contract itself, which is the part that actually mattered.
+Everything downstream consumes a narrative string, and `extract_features()` in `src/llm_client.py`
+is the single entry point. Any future channel — speech-to-text, OCR, a web form — only has to
+produce that string. When a dashboard exists with a real upload path to test against, each adapter
+is roughly 15 lines, and per §11 it should be local (`faster-whisper`, PaddleOCR) rather than hosted.
 
-**Three concrete problems:**
-
-1. It requests model `'gemini-3.5-flash'` — **that model identifier does not exist.**
-2. `google-generativeai` is **not in `requirements.txt`**, so this file will `ImportError` on a
-   clean install.
-3. Same stale `rithy` hardcoded test path; no sample image in the repo.
-
-### 5.5 `llm_client.py` — new, untracked, not yet wired in
+### 5.4 `llm_client.py` — the shared client
 
 A unified client module that does two things:
 
@@ -408,8 +438,10 @@ Has a `__main__` self-test that encodes a Hinglish sentence, its English equival
 unrelated Hinglish sentence, then prints both similarities to demonstrate cross-lingual
 alignment.
 
-**This is the intended replacement for TF-IDF in Method 3, and the foundation for the precedent
-library — but nothing imports it yet.** It is pure dead code at the moment.
+**`extract_pipeline.py` and `oisd_experiment.py` both import it**, which is the point — the prompt
+and the client live in one place so those two cannot drift apart. The *embedding* half is still
+unused: it is the intended replacement for TF-IDF in Method 3 and the foundation for the precedent
+library, and nothing calls `embed_texts()` yet.
 
 ---
 
@@ -889,14 +921,14 @@ energy-pattern coverage itself has room to grow.
 | README says | Code / artifacts actually say |
 |---|---|
 | Extraction uses `openai/gpt-oss-120b` via Groq | Default backend is **Ollama `qwen2.5:7b-instruct`**; Groq fallback is `llama-3.1-8b-instant`. `gpt-oss-120b` appears nowhere in the code. |
-| Vision intake uses "Gemini 3.5 Flash" | `vision_intake.py` requests `'gemini-3.5-flash'` — **that model id does not exist**, and `google-generativeai` is not in `requirements.txt`. |
+| Voice and vision intake channels are built | **Both files were deleted** (§5.3). The README now lists them as not built and describes the intake contract instead. |
 | "42 out of 50 reports flagged" | Correct for the artifact — but that artifact came from the **old** rule engine. |
 | Method 2 accuracy 80% | True, on a **10-row test set**, against labels Method 1 generated. No CI. |
 | Method 3 accuracy 80% | Same caveat. |
 | "If even one method disagrees, the report is flagged NEEDS_HUMAN_REVIEW" | The shipped artifact has **0 reports needing review** — the old voter trained and predicted on the same rows, so disagreement was structurally impossible. Fixed in the working tree, not yet re-run. |
 | Academic percentages attributed to Abanum et al. | Hardcoded list; the committed code called them *"Simulated Academic Data"*; the current code carries a `TODO: Verify`. **Unverified.** |
 | Project structure shows `notebooks/` | Does not exist. The notebooks are in untracked `cla/`. |
-| Project structure shows `data/raw/oisd_pdfs/` with content | Directory exists and is **empty**. |
+| Project structure showed `data/raw/oisd_pdfs/` | Corrected to `data/pdf/`, which holds the 10 parsed PDFs. The empty directory was deleted. |
 | Three methods "cross-check each other" | Methods 2 and 3 are trained on Method 1's labels, and Method 2's features include a field Method 1 computed. They are not independent. |
 | Mermaid diagram shows an embedding model feeding Method 3 | Method 3 uses **TF-IDF**. The embedding client exists (`llm_client.py`) but is not wired in. |
 
@@ -909,59 +941,64 @@ energy-pattern coverage itself has room to grow.
 1. **Artifacts are stale** (§7). Every published number describes superseded code.
 2. **Methods 2 and 3 are not independent of Method 1** (§6.6). The triangulation claim does not
    hold as implemented.
-3. **`vision_intake.py` cannot run**: nonexistent model id + missing dependency.
-4. **`voice_intake.py` and `vision_intake.py` still hardcode another machine's paths**
-   (`C:\Users\rithy\...`) and raise at import if their key is absent.
-5. **Academic comparison numbers are unverified** and attributed to a named paper.
+3. **Academic comparison numbers are unverified** and attributed to a named paper.
+
+*(Two former entries here — `vision_intake.py` being unrunnable, and both intake files hardcoding
+another machine's paths — were resolved by deleting those files; see §5.3.)*
 
 **Methodological**
 
-6. Test sets of **10 rows**. Accuracy reported to two decimals with no interval; one row moves
+4. Test sets of **10 rows**. Accuracy reported to two decimals with no interval; one row moves
    the number by 10 points.
-7. **`stop_words='english'` on Hinglish text** — strips English function words but not Hindi
+5. **`stop_words='english'` on Hinglish text** — strips English function words but not Hindi
    ones, which partly manufactures the "Hindi negation dominates" result.
-8. TF-IDF cannot relate `"bina helmet"` to `"without helmet"`.
-9. `src/` has **no `INSUFFICIENT` state** — unlike the notebook, it forces a binary call on every
+6. TF-IDF cannot relate `"bina helmet"` to `"without helmet"`.
+7. `src/` has **no `INSUFFICIENT` state** — unlike the notebook, it forces a binary call on every
    report. `determine_sif` maps unknown energy to *high*, which is fail-safe but also means
    "we don't know" becomes "yes".
-10. The 84% SIF rate on `hinglish_synthetic.csv` reflects how the 50 rows were written (nearly
-    all explicitly name a missing barrier), not a realistic base rate. The problem statement
-    implies ~20–25%.
+8. The 84% SIF rate on `hinglish_synthetic.csv` reflects how the 50 rows were written (nearly
+   all explicitly name a missing barrier), not a realistic base rate. The problem statement
+   implies ~20–25%.
 
 **Data**
 
-11. **No real Indian data at all.** OISD is empty; the oil & gas subset is 100% synthetic.
-12. **No real oil & gas data at all.** 99.95% of the combined corpus is US mining.
-13. **OSHA ingest never completed** — yet a usable OSHA abstracts CSV is sitting in `data/`,
+9. **Real Indian data is thin, not absent.** 10 OISD case studies (§4.4) are the whole of it.
+   The rest of the oil & gas subset is synthetic.
+10. **Real oil & gas data is 10 documents.** 99.9% of the combined corpus is still US mining.
+11. **OSHA ingest never completed** — yet a usable OSHA abstracts CSV is sitting in `data/`,
     used only by the notebooks through a separate path.
-14. **`hinglish_synthetic.csv` has no generator script.** It is hand-written and unreproducible,
+12. **`hinglish_synthetic.csv` has no generator script.** It is hand-written and unreproducible,
     yet it is the sole input to Steps 2–3.
-15. `hinglish_synthetic.csv` uses `language="hi-en"`, which is **not in `VALID_LANGUAGES`**
+13. `hinglish_synthetic.csv` uses `language="hi-en"`, which is **not in `VALID_LANGUAGES`**
     (`hinglish` is). `combine_datasets.py` would not flag this because that file is never
     combined.
-16. Loose files in `data/` (Fatalities FY09–12, fy13–17 summaries, the xlsx) are wired to
+14. Loose files in `data/` (Fatalities FY09–12, fy13–17 summaries, the xlsx) are wired to
     nothing.
+15. `data/processed/oisd_batch2_cleaned.csv` and `oisd_batch2_structured.json` are not referenced
+    by `config.py` or any script.
 
 **Code hygiene**
 
-17. The two notebooks are **untracked** — the best work in the repo is one `git clean` from
+16. The two notebooks are **untracked** — the best work in the repo is one `git clean` from
     being lost.
-18. `llm_client.py` is dead code; nothing imports it.
-19. `EEI_SCL_PRECURSORS`, `BEHAVIORAL_FACTORS`, and `BARRIER_STATES` in `config.py` are defined
+17. `EEI_SCL_PRECURSORS`, `BEHAVIORAL_FACTORS`, and `BARRIER_STATES` in `config.py` are defined
     but unused; the rule engine hardcodes its own barrier strings instead.
-20. `evidence_phrases` — the audit trail the prompt works hard to produce — is stored and then
+18. `evidence_phrases` — the audit trail the prompt works hard to produce — is stored and then
     never used downstream.
-21. `IOGP_RULES` is imported into `rule_engine.py` but never referenced; the nine tag strings are
+19. `IOGP_RULES` is imported into `rule_engine.py` but never referenced; the nine tag strings are
     duplicated as literals, so the two can drift.
-22. `academic_crosscheck.py`, `train_random_forest.py` and `final_sif_voter.py` all read only the
+20. `academic_crosscheck.py`, `train_random_forest.py` and `final_sif_voter.py` all read only the
     primary `iogp_rule`, so the new multi-label output does not reach any consumer.
-23. `train_random_forest.py` calls `rf_model.predict([report_features])` with a pandas Series,
-      which triggers a sklearn feature-names warning.
-24. No `__init__.py` in `src/`; the `sys.path.insert` + `from data_pipeline.config import ...`
+21. `train_random_forest.py` calls `rf_model.predict([report_features])` with a pandas Series,
+    which triggers a sklearn feature-names warning.
+22. No `__init__.py` in `src/`; the `sys.path.insert` + `from data_pipeline.config import ...`
     pattern only works when scripts are launched as `python src/<name>.py` from the repo root.
-25. No tests of any kind. No CI.
-26. 228 MB `Accidents.txt` and 52 MB `Accidents.zip` sit in the working tree (gitignored, but
+23. No tests of any kind. No CI.
+24. 228 MB `Accidents.txt` and 52 MB `Accidents.zip` sit in the working tree (gitignored, but
     present).
+
+*(The former "`llm_client.py` is dead code" entry no longer holds — `extract_pipeline.py` and
+`oisd_experiment.py` both import it.)*
 
 ---
 
@@ -979,8 +1016,9 @@ energy-pattern coverage itself has room to grow.
 - **Model persistence.** `MODELS_DIR` was added to config and `joblib` to requirements, but
   nothing saves or loads a model. Every script retrains from scratch.
 - **End-to-end runner.** No script chains Steps 1→2→3.
-- **Local Whisper / local OCR.** The README commits to on-premises replacements for Groq Whisper
-  and Gemini; the Ollama switch is done, the other two are not.
+- **Voice and handwriting intake.** Both channels are unbuilt (§5.3). The on-premises commitment in
+  the README is met for text extraction (Ollama is the default); when these two channels are added
+  they should be local as well — `faster-whisper` for speech, PaddleOCR for handwriting.
 - **Embedding-based Method 3.** Client written, not wired in.
 - **Running the real corpus through the pipeline.** All 274,875 rows sit unused; only the 50
   hand-written Hinglish rows have been processed.
@@ -993,13 +1031,12 @@ energy-pattern coverage itself has room to grow.
 # 0. Environment
 python -m venv venv && venv\Scripts\activate       # Windows
 pip install -r requirements.txt
-# NOTE: add google-generativeai manually if you want vision_intake.py
-cp .env.example .env                                # then fill in keys if using Groq/Gemini
+cp .env.example .env                                # only needed if using LLM_BACKEND=groq
 
 # 1. Data foundation  (run from repo root)
 python src/data_pipeline/download_msha.py           # ~52MB download, ~1 min, then a slow parse
 python src/data_pipeline/download_osha.py           # WILL FAIL — needs a manual CSV in data/raw/
-python src/data_pipeline/process_oisd.py            # no-op — data/raw/oisd_pdfs/ is empty
+python src/data_pipeline/process_oisd.py            # parses the 10 PDFs in data/pdf/
 python src/data_pipeline/generate_synthetic.py      # 150 rows, deterministic (seed 42)
 python src/data_pipeline/combine_datasets.py        # → combined_reports.csv + oil_gas_subset.csv
 
@@ -1032,15 +1069,18 @@ deterministic 150-row synthetic generator covers Hinglish, Assamese and all 9 IO
 LLM extractor turns free text into a strict evidence-carrying JSON schema with a local-first
 backend, a hand-written rule engine applies the published high-energy × failed-barrier test and
 tags IOGP rules, a Random Forest with SHAP makes the decision inspectable, a TF-IDF model reads
-the raw text as a fallback, and a voting layer routes disagreement to a human. Two intake
-channels (voice, handwriting OCR) are sketched. Separately — and this is the stronger half of
+the raw text as a fallback, and a voting layer routes disagreement to a human. Ten real OISD case
+studies are parsed into the unified schema and folded into the corpus. Text is the only intake
+channel; the voice and handwriting-OCR sketches were deleted as unverified (§5.3), leaving a
+documented intake contract in their place. Separately — and this is the stronger half of
 the project — a pair of notebooks measures the same rule against 4,847 real OSHA narratives with
 Wilson intervals, discovers that barrier language appears in only 6.1% of post-injury text (so
 the rule correctly abstains 96% of the time, which is an argument *for* the architecture and
 *for* getting OIL's UA/UC data), demonstrates that fatality rate really does track extracted
 energy source on independent data (electrical 0.79 vs mechanical motion 0.31), and catches a
 text classifier scoring 97.3% purely by reading outcome words and year stamps — dropping to
-91.7% once masked. What is missing is real Indian and real oil & gas data, any labelled ground
+91.7% once masked. What is missing is real oil & gas data *at volume* — the 10 OISD documents are
+the only real Indian text there is — plus any labelled ground
 truth, Steps 4–7, any interface, and a regeneration of the published artifacts, which currently
 reflect superseded code. The single most damaging gap to fix before presenting is that Methods 2
 and 3 are trained on Method 1's own labels, so their agreement is not evidence of anything —

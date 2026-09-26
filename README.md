@@ -8,17 +8,18 @@ AI/NLP engine to detect Serious Injury & Fatality (SIF) precursors in safety rep
   sih_2026/
   ├── src/
   │   ├── data_pipeline/                  ← Step 1: Data download, clean, combine
-  │   ├── extract_pipeline.py             ← Step 2: LLM JSON extraction (Groq)
-  │   ├── voice_intake.py                 ← Step 2: Voice-to-text (Groq Whisper)
-  │   ├── vision_intake.py                ← Step 2: Handwritten OCR (Gemini 3.5 Flash)
+  │   ├── llm_client.py                   ← Shared LLM + embedding client (Ollama / Groq)
+  │   ├── extract_pipeline.py             ← Step 2: LLM JSON extraction (local Ollama)
   │   ├── rule_engine.py                  ← Step 3, Method 1: Deterministic rules
   │   ├── train_random_forest.py          ← Step 3, Method 2: ML + SHAP
   │   ├── raw_text_classifier.py          ← Step 3, Method 3: Raw-text fallback
   │   ├── final_sif_voter.py              ← Step 3: Disagreement engine
+  │   ├── oisd_experiment.py              ← Section-aware ingestion experiment
+  │   ├── stats.py                        ← Wilson intervals, shared with the notebooks
   │   └── academic_crosscheck.py          ← Validation against published studies
   ├── data/
-  │   ├── raw/                            ← Downloaded ZIPs, CSVs, PDFs
-  │   │   └── oisd_pdfs/                  ← Manually downloaded OISD PDFs go here
+  │   ├── pdf/                            ← Manually downloaded OISD case-study PDFs
+  │   ├── raw/                            ← Downloaded ZIPs and CSVs
   │   └── processed/
   │       ├── hinglish_synthetic.csv      ← 50 Hinglish synthetic reports
   │       ├── extracted_features.json     ← LLM-extracted structured JSON
@@ -26,7 +27,7 @@ AI/NLP engine to detect Serious Injury & Fatality (SIF) precursors in safety rep
   │       ├── final_triaged_reports.csv   ← Final voted SIF predictions
   │       ├── shap_summary_plot.png       ← SHAP explainability chart
   │       └── academic_validation.png     ← Validation chart
-  ├── notebooks/                          ← EDA and experiments
+  ├── cla/                                ← EDA and experiment notebooks
   ├── requirements.txt
   └── .env                                ← API keys (not committed)
   ```
@@ -39,7 +40,7 @@ pip install -r requirements.txt
 # Run the data pipeline (Step 1)
 python src/data_pipeline/download_msha.py      # Downloads ~50MB ZIP, takes ~1 min
 python src/data_pipeline/download_osha.py       # Needs manual CSV download first
-python src/data_pipeline/process_oisd.py        # Needs PDFs in data/raw/oisd_pdfs/
+python src/data_pipeline/process_oisd.py        # Parses the OISD PDFs in data/pdf/
 python src/data_pipeline/generate_synthetic.py  # Generates ~150 synthetic reports
 python src/data_pipeline/combine_datasets.py    # Merges everything into final CSV
 ```
@@ -50,7 +51,7 @@ python src/data_pipeline/combine_datasets.py    # Merges everything into final C
 |--------|-----|---------|----------------|
 | MSHA Accidents | arlweb.msha.gov | ~100k+ | Full (fatality → no injury) |
 | OSHA Severe Injury | osha.gov/severeinjury | ~30k+ | Serious only |
-| OISD Alerts | oisd.gov.in | ~50-100 | Mostly serious |
+| OISD Case Studies | oisd.gov.in | 10 parsed | Serious + fatality |
 | Synthetic | Generated | ~150 | Full |
 
 All real data is from **free, public US/Indian government sources**. No login required.
@@ -71,17 +72,31 @@ We collected safety data from US government databases (OSHA, MSHA) and generated
 **Example synthetic report:**
 > *"scaffolding par kaam kar raha tha bina safety belt ke. height almost 10 meter tha, fall arrestor nahi lagaya."*
 
-We also built two additional intake channels for field workers who can't type:
+**Intake is deliberately pluggable.** Everything downstream consumes one thing: a narrative
+string. `extract_features()` in `src/llm_client.py` is the single entry point, so any source that
+can produce text — a typed report, a transcribed voice memo, OCR of a handwritten logbook page —
+feeds the same pipeline without changing a line of the detection logic.
 
-| Intake Channel | Script | API Used |
-|---|---|---|
-| Text Reports | `extract_pipeline.py` | — |
-| Voice Memos | `src/voice_intake.py` | Groq Whisper Large v3 |
-| Handwritten Logbook Photos | `src/vision_intake.py` | Gemini 3.5 Flash |
+| Intake Channel | Status |
+|---|---|
+| Text reports | **Built** — `src/extract_pipeline.py` |
+| Voice memos | Not built. Needs a speech-to-text adapter returning a narrative string. |
+| Handwritten logbook photos | Not built. Needs an OCR adapter returning a narrative string. |
+
+Earlier sketches of the voice and vision adapters were removed rather than carried as untested
+code: neither had a sample file to run against, and both routed confidential report content to a
+hosted third-party API, which works against the on-premises stance described below. They are
+~15 lines each to add once there is a real upload path to test them through.
 
 **Output:** `data/processed/hinglish_synthetic.csv` (50 reports)
 
-> **Yet to do:** Gather real Indian safety alerts from OISD (Oil Industry Safety Directorate, `oisd.gov.in`). Their server was down during development. Once available, PDFs will be placed in `data/raw/oisd_pdfs/` and processed through the pipeline. We also need to run a sample of the existing OSHA/MSHA dataset through the full pipeline.
+**Real Indian data — now in.** 10 OISD (Oil Industry Safety Directorate) case-study PDFs are
+parsed from `data/pdf/` into `data/processed/oisd_cleaned.csv` — 4 fatality, 6 serious, across the
+P&E, PL, MOPOL, LPG, MOLPG and E&P disciplines — and folded into `combined_reports.csv`. These are
+the project's only real oil & gas incident narratives.
+
+> **Yet to do:** Run a sample of the much larger OSHA/MSHA corpus through the full pipeline; at
+> present only the 50 Hinglish rows are processed end to end.
 
 ---
 
@@ -89,8 +104,9 @@ We also built two additional intake channels for field workers who can't type:
 
 Each raw report is sent to an LLM with a carefully engineered **Few-Shot Prompt** that forces the output into a strict JSON schema based on the EEI Safety Chain Logic (SCL).
 
-**LLM Used:** `openai/gpt-oss-120b` via Groq API  
-**Script:** `src/extract_pipeline.py`
+**LLM Used:** `qwen2.5:7b-instruct` on **local Ollama** by default; set `LLM_BACKEND=groq` in `.env`
+to route through Groq (`llama-3.1-8b-instant`) instead.  
+**Script:** `src/extract_pipeline.py` (client and prompt live in `src/llm_client.py`)
 
 **What goes in:**
 > *"crane lifting ke time exclusion zone me log khade the. rigger ne barricade cross kiya."*
@@ -112,7 +128,11 @@ The LLM understood Hinglish slang and correctly identified that the barricade wa
 
 **Output:** `data/processed/extracted_features.json` (50 structured records)
 
-> **Improvements to be made:** The current pipeline relies on three external API calls — Groq for text extraction, Groq Whisper for voice transcription, and Gemini for handwritten OCR. For a production deployment handling confidential safety data, all three should be replaced with **locally hosted, on-premises models** (e.g., a local LLM like LLaMA, OpenAI Whisper running locally, and a local vision model like PaddleOCR) to ensure **zero data ever leaves the organization's network**.
+> **Why the default is local.** A production deployment handling confidential safety data should
+> let **zero report text leave the organization's network**. The extraction step now honours that by
+> default: Ollama runs the model on-premises, and Groq is opt-in only. The same constraint is why the
+> voice and OCR adapters were dropped rather than kept as hosted API calls — when those channels are
+> built, they should be local too (e.g. `faster-whisper` for speech, PaddleOCR for handwriting).
 
 ---
 
