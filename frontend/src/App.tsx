@@ -13,6 +13,14 @@ import { SIFTrendLine } from './components/charts/SIFTrendLine';
 import { UploadModal } from './components/modals/UploadModal';
 import { TestNarrativeModal } from './components/modals/TestNarrativeModal';
 
+// Dedicated Sub-Pages
+import { ReportsPage } from './pages/ReportsPage';
+import { SIFAnalysisPage } from './pages/SIFAnalysisPage';
+import { LifeSavingRulesPage } from './pages/LifeSavingRulesPage';
+import { SitesLocationsPage } from './pages/SitesLocationsPage';
+import { RecurringPatternsPage } from './pages/RecurringPatternsPage';
+import { ExportPage } from './pages/ExportPage';
+
 import {
   INITIAL_STATS,
   CLASSIFICATION_DATA,
@@ -72,6 +80,76 @@ export function App() {
     }
   };
 
+  // Render the appropriate view based on the active tab
+  const renderActiveTabContent = () => {
+    switch (activeTab) {
+      case 'reports':
+        return <ReportsPage />;
+      case 'sif-analysis':
+        return <SIFAnalysisPage />;
+      case 'life-saving-rules':
+        return <LifeSavingRulesPage />;
+      case 'sites-locations':
+        return <SitesLocationsPage />;
+      case 'recurring-patterns':
+        return <RecurringPatternsPage />;
+      case 'export':
+        return <ExportPage />;
+      case 'dashboard':
+      default:
+        return (
+          <main className="p-6 space-y-5">
+            {/* Row 1: Top 4 KPI Metric Cards */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              {stats.map((stat, idx) => (
+                <StatCard key={idx} stat={stat} />
+              ))}
+            </div>
+
+            {/* Row 2: Analytics Distributions (3 Charts) */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {/* Donut 1: Classification */}
+              <ClassificationDonut data={CLASSIFICATION_DATA} totalCountText="12,482" />
+
+              {/* Bar: Life-Saving Rules Breakdown */}
+              <LSRBarChart data={LSR_BAR_DATA} />
+
+              {/* Donut 2: Reports by Type */}
+              <ReportTypeDonut data={REPORT_TYPE_DATA} totalCountText="12,482" />
+            </div>
+
+            {/* Row 3: Operational Rankings (3 Tables) */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {/* Table 1: Top Sites */}
+              <TopSitesTable data={TOP_SITES_DATA} />
+
+              {/* Table 2: Top Activities */}
+              <TopActivitiesTable data={TOP_ACTIVITIES_DATA} />
+
+              {/* Table 3: Recurring Precursors */}
+              <RecurringPatternsTable data={RECURRING_PATTERNS_DATA} />
+            </div>
+
+            {/* Row 4: Recent Incident Feed & Monthly Trend */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
+              {/* Left: Recent SIF Reports Table (7 cols) */}
+              <div className="lg:col-span-7">
+                <RecentReportsTable 
+                  reports={recentReports} 
+                  onViewAll={() => setActiveTab('reports')}
+                />
+              </div>
+
+              {/* Right: SIF Precursor Timeline Trend (5 cols) */}
+              <div className="lg:col-span-5">
+                <SIFTrendLine data={TREND_DATA} />
+              </div>
+            </div>
+          </main>
+        );
+    }
+  };
+
   return (
     <div className="flex min-h-screen bg-[#f4f6fa] text-slate-800 font-sans">
       {/* 1. Left Sidebar Navigation */}
@@ -93,55 +171,8 @@ export function App() {
           onOpenTestReport={() => setIsTestReportOpen(true)}
         />
 
-        {/* Dashboard Grid Container */}
-        <main className="p-6 space-y-5">
-          {/* Row 1: Top 4 KPI Metric Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {stats.map((stat, idx) => (
-              <StatCard key={idx} stat={stat} />
-            ))}
-          </div>
-
-          {/* Row 2: Analytics Distributions (3 Charts) */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {/* Donut 1: Classification */}
-            <ClassificationDonut data={CLASSIFICATION_DATA} totalCountText="12,482" />
-
-            {/* Bar: Life-Saving Rules Breakdown */}
-            <LSRBarChart data={LSR_BAR_DATA} />
-
-            {/* Donut 2: Reports by Type */}
-            <ReportTypeDonut data={REPORT_TYPE_DATA} totalCountText="12,482" />
-          </div>
-
-          {/* Row 3: Operational Rankings (3 Tables) */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {/* Table 1: Top Sites */}
-            <TopSitesTable data={TOP_SITES_DATA} />
-
-            {/* Table 2: Top Activities */}
-            <TopActivitiesTable data={TOP_ACTIVITIES_DATA} />
-
-            {/* Table 3: Recurring Precursors */}
-            <RecurringPatternsTable data={RECURRING_PATTERNS_DATA} />
-          </div>
-
-          {/* Row 4: Recent Incident Feed & Monthly Trend */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
-            {/* Left: Recent SIF Reports Table (7 cols) */}
-            <div className="lg:col-span-7">
-              <RecentReportsTable 
-                reports={recentReports} 
-                onViewAll={() => setActiveTab('reports')}
-              />
-            </div>
-
-            {/* Right: SIF Precursor Timeline Trend (5 cols) */}
-            <div className="lg:col-span-5">
-              <SIFTrendLine data={TREND_DATA} />
-            </div>
-          </div>
-        </main>
+        {/* Dynamic Tab View */}
+        {renderActiveTabContent()}
       </div>
 
       {/* Upload Modal (CSV, Excel, PDF) */}
