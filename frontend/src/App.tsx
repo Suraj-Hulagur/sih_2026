@@ -38,6 +38,7 @@ export function App() {
   const [activeTab, setActiveTab] = useState('dashboard');
   const [selectedSite, setSelectedSite] = useState('All Sites');
   const [selectedType, setSelectedType] = useState('All Report Types');
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   
   const [isUploadOpen, setIsUploadOpen] = useState(false);
   const [isTestReportOpen, setIsTestReportOpen] = useState(false);
@@ -98,7 +99,7 @@ export function App() {
       case 'dashboard':
       default:
         return (
-          <main className="p-6 space-y-5">
+          <main className="p-4 sm:p-6 space-y-4 sm:space-y-5">
             {/* Row 1: Top 4 KPI Metric Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {stats.map((stat, idx) => (
@@ -151,12 +152,14 @@ export function App() {
   };
 
   return (
-    <div className="flex h-screen w-screen overflow-hidden bg-[#f4f6fa] text-slate-800 font-sans">
-      {/* 1. Left Sidebar Navigation (Static & Fixed) */}
+    <div className="flex h-screen w-screen overflow-hidden bg-[#f4f6fa] text-slate-800 font-sans relative">
+      {/* 1. Left Sidebar Navigation (Static on Desktop, Off-Canvas Drawer on Mobile) */}
       <Sidebar 
         activeTab={activeTab} 
         setActiveTab={setActiveTab} 
-        onOpenUpload={() => setIsUploadOpen(true)} 
+        onOpenUpload={() => setIsUploadOpen(true)}
+        isMobileOpen={isMobileMenuOpen}
+        onCloseMobile={() => setIsMobileMenuOpen(false)}
       />
 
       {/* 2. Main Content Canvas (Dynamic & Scrollable) */}
@@ -169,6 +172,7 @@ export function App() {
           setSelectedType={handleTypeChange}
           onOpenUpload={() => setIsUploadOpen(true)}
           onOpenTestReport={() => setIsTestReportOpen(true)}
+          onToggleMobileSidebar={() => setIsMobileMenuOpen(prev => !prev)}
         />
 
         {/* Dynamic Tab View */}
