@@ -25,6 +25,7 @@ venv/
 
 # Jupyter Notebook
 .ipynb_checkpoints
+cla/
 
 # Data (Ignore large datasets to avoid GitHub 100MB limits)
 data/raw/*.zip
@@ -40,4 +41,6 @@ data/processed/msha_cleaned.csv
 # Allow empty directories to be tracked
 !data/raw/.gitkeep
 !data/processed/.gitkeep
-!data/raw/oisd_pdfs/.gitkeep
+
+# Model artifacts
+models/

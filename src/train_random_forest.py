@@ -7,9 +7,13 @@ import shap
 import matplotlib.pyplot as plt
 import os
 
+# Use config for all paths
+import sys
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), "data_pipeline"))
+from data_pipeline.config import CLASSIFIED_REPORTS_FILE, SHAP_PLOT_FILE
+
 def train_and_explain():
-    input_file = r"C:\Users\rithy\OneDrive\Desktop\SIH_2026\sih_2026\data\processed\classified_reports.json"
-    plot_output_dir = r"C:\Users\rithy\OneDrive\Desktop\SIH_2026\sih_2026\data\processed"
+    input_file = CLASSIFIED_REPORTS_FILE
     
     if not os.path.exists(input_file):
         print(f"Error: {input_file} not found.")
@@ -61,21 +65,17 @@ def train_and_explain():
     plt.style.use('seaborn-v0_8-whitegrid')
     plt.figure(figsize=(10, 6))
     
-    # SHAP handles its own base styling, but we can overlay some professional touches
     shap.summary_plot(shap_values_sif, X_test, plot_type="bar", show=False, color='#0F4C81')
     
     plt.title("SHAP Explanation: What drives a 'Serious Injury (SIF)' Prediction?", fontsize=14, fontweight='bold', pad=15)
-    
-    # Add subtle background grid
     plt.grid(True, axis='x', linestyle='--', alpha=0.7, color='#B0B0B0')
     plt.gca().set_axisbelow(True)
     plt.tight_layout()
     
-    plot_path = os.path.join(plot_output_dir, "shap_summary_plot.png")
-    plt.savefig(plot_path)
-    print(f"SHAP Explainability chart saved to: {plot_path}")
+    plt.savefig(SHAP_PLOT_FILE)
+    print(f"SHAP Explainability chart saved to: {SHAP_PLOT_FILE}")
     
-    # Pick a single report to explain specifically (e.g., the first test instance)
+    # Pick a single report to explain specifically
     print("\n--- SHAP EXPLANATION FOR A SINGLE REPORT ---")
     instance_index = 0
     report_features = X_test.iloc[instance_index]
@@ -84,16 +84,13 @@ def train_and_explain():
     print(f"Model Predicted SIF: {bool(actual_pred)}")
     print("Top factors driving this specific decision:")
     
-    # Get the feature names and their corresponding SHAP values for this instance
     instance_shap = shap_values_sif[instance_index]
     feature_impacts = list(zip(X.columns, instance_shap))
-    
-    # Sort by absolute impact to find the most important features
     feature_impacts.sort(key=lambda x: abs(x[1]), reverse=True)
     
     for feature, impact in feature_impacts[:3]:
         direction = "INCREASED" if impact > 0 else "DECREASED"
-        if report_features[feature] == 1: # Only show features that were actually present
+        if report_features[feature] == 1:
             print(f"- {feature}: {direction} risk score by {abs(impact):.3f}")
 
 if __name__ == "__main__":
