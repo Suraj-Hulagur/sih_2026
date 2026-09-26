@@ -27,7 +27,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab }) => 
   ];
 
   return (
-    <aside className="w-[230px] bg-[#0d1a2d] text-slate-300 flex flex-col justify-between shrink-0 select-none min-h-screen">
+    <aside className="w-[230px] h-screen sticky top-0 left-0 bg-[#0d1a2d] text-slate-300 flex flex-col justify-between shrink-0 select-none z-30 overflow-hidden">
       {/* Top Brand Section */}
       <div>
         <div className="p-5 pb-6 border-b border-slate-800/60">

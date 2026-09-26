@@ -19,7 +19,7 @@ export const Header: React.FC<HeaderProps> = ({
   onOpenTestReport
 }) => {
   return (
-    <header className="px-6 pt-5 pb-4 bg-transparent border-b border-slate-200/80 flex flex-col gap-4">
+    <header className="px-6 pt-5 pb-4 bg-[#f4f6fa]/95 backdrop-blur-xs sticky top-0 z-20 border-b border-slate-200/80 flex flex-col gap-4">
       {/* Top row: Title and Corporate Slogan */}
       <div className="flex items-center justify-between">
         <div>

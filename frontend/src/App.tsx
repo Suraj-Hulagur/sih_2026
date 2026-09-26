@@ -151,16 +151,16 @@ export function App() {
   };
 
   return (
-    <div className="flex min-h-screen bg-[#f4f6fa] text-slate-800 font-sans">
-      {/* 1. Left Sidebar Navigation */}
+    <div className="flex h-screen w-screen overflow-hidden bg-[#f4f6fa] text-slate-800 font-sans">
+      {/* 1. Left Sidebar Navigation (Static & Fixed) */}
       <Sidebar 
         activeTab={activeTab} 
         setActiveTab={setActiveTab} 
         onOpenUpload={() => setIsUploadOpen(true)} 
       />
 
-      {/* 2. Main Content Canvas */}
-      <div className="flex-1 flex flex-col min-w-0 overflow-y-auto">
+      {/* 2. Main Content Canvas (Dynamic & Scrollable) */}
+      <div className="flex-1 h-screen flex flex-col min-w-0 overflow-y-auto">
         {/* Top Header & Global Filter Bar */}
         <Header
           selectedSite={selectedSite}
