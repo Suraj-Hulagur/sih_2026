@@ -19,7 +19,7 @@ export const SIFAnalysisPage: React.FC = () => {
   ];
 
   return (
-    <div className="p-6 space-y-5">
+    <div className="p-4 sm:p-6 space-y-4 sm:space-y-5">
       {/* Page Header */}
       <div className="bg-white p-4 rounded-lg border border-slate-200/90 shadow-2xs flex flex-col sm:flex-row sm:items-center justify-between gap-3">
         <div>
@@ -66,7 +66,7 @@ export const SIFAnalysisPage: React.FC = () => {
           </div>
 
           {/* Matrix Grid */}
-          <div className="grid grid-cols-2 gap-3 pt-2">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
             {/* Quadrant 1: SIF PRECURSOR */}
             <div className="p-4 rounded-lg bg-red-50/80 border-2 border-red-400 relative overflow-hidden">
               <div className="flex items-center justify-between mb-2">
