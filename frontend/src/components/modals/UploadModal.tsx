@@ -61,41 +61,57 @@ export const UploadModal: React.FC<UploadModalProps> = ({
     setResultSummary(null);
   };
 
-  const handleStartProcessing = () => {
+  const handleStartProcessing = async () => {
     if (!selectedFile) return;
 
     setIsProcessing(true);
     setProgress(15);
-    setProcessingStage('Parsing file contents and extracting safety narratives...');
+    setProcessingStage('Uploading file to backend...');
 
-    setTimeout(() => {
+    const formData = new FormData();
+    formData.append('file', selectedFile);
+
+    try {
+      // Small visual delay for better UX
+      await new Promise(resolve => setTimeout(resolve, 500));
       setProgress(45);
-      setProcessingStage('Executing EEI Safety Chain Logic (High Energy & Barrier State)...');
-    }, 700);
+      setProcessingStage('Processing narratives through LLM and EEI Rule Engine...');
 
-    setTimeout(() => {
-      setProgress(80);
-      setProcessingStage('Tagging IOGP Life-Saving Rules & Out-of-Fold Triangulation...');
-    }, 1400);
+      const response = await fetch('http://localhost:8000/api/ingest/upload', {
+        method: 'POST',
+        body: formData,
+      });
 
-    setTimeout(() => {
+      if (!response.ok) {
+        throw new Error('Upload failed');
+      }
+
+      setProgress(85);
+      setProcessingStage('Tagging IOGP Rules and triangulating...');
+
+      const data = await response.json();
+
       setProgress(100);
       setIsProcessing(false);
-      const ext = selectedFile.name.split('.').pop()?.toLowerCase();
-      const type = ext === 'pdf' ? 'pdf' : ext === 'csv' ? 'csv' : 'xlsx';
-      
+
       const summary: UploadedFileSummary = {
-        name: selectedFile.name,
+        name: data.file_name || selectedFile.name,
         size: `${(selectedFile.size / 1024).toFixed(1)} KB`,
-        type,
-        recordCount: type === 'pdf' ? 12 : 64,
-        sifCount: type === 'pdf' ? 9 : 14,
+        type: (data.file_type || selectedFile.name.split('.').pop()?.toLowerCase() || 'unknown'),
+        recordCount: data.records_processed,
+        sifCount: data.sif_precursors_flagged,
         status: 'completed'
       };
 
       setResultSummary(summary);
       onUploadSuccess(summary);
-    }, 2100);
+
+    } catch (err) {
+      console.error(err);
+      setIsProcessing(false);
+      setProgress(0);
+      alert('Error uploading file. Make sure the backend is running.');
+    }
   };
 
   const handleReset = () => {

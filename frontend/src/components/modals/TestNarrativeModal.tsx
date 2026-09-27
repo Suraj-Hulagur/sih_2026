@@ -51,95 +51,127 @@ export const TestNarrativeModal: React.FC<TestNarrativeModalProps> = ({
     }
   ];
 
-  const handleRunAnalysis = () => {
+  // ── Local fallback rule engine (works offline without backend) ──
+  const runLocalRuleEngine = (text: string) => {
+    const t = text.toLowerCase();
+    let isHighEnergy = false;
+    let energyType = "None";
+    let barrierState = "Working / Intact";
+    let barrierExpected = "Standard Operational Controls";
+    let iogpRule = "General Safety";
+    let icon = "lock";
+    let evidencePhrases: string[] = [];
+
+    if (t.includes('height') || t.includes('scaffold') || t.includes('fall') || t.includes('meter')) {
+      energyType = "Gravity"; isHighEnergy = true;
+      barrierExpected = "Safety Harness / Fall Arrestor"; iogpRule = "Working at Height"; icon = "height";
+      if (t.includes('bina') || t.includes('nahi') || t.includes('without') || t.includes('missing')) {
+        barrierState = "Missing";
+        evidencePhrases.push("bina safety belt ke", "fall arrestor nahi lagaya");
+      }
+    } else if (t.includes('crane') || t.includes('lift') || t.includes('barricade') || t.includes('exclusion')) {
+      energyType = "Kinetic"; isHighEnergy = true;
+      barrierExpected = "Exclusion Zone Barricade / Tagline"; iogpRule = "Line of Fire"; icon = "lineoffire";
+      if (t.includes('cross') || t.includes('bina') || t.includes('without') || t.includes('khade the')) {
+        barrierState = "Bypassed";
+        evidencePhrases.push("exclusion zone me log khade the", "barricade cross kiya");
+      }
+    } else if (t.includes('confined') || t.includes('tank') || t.includes('gas test')) {
+      energyType = "Chemical / Asphyxiation"; isHighEnergy = true;
+      barrierExpected = "Pre-entry Atmosphere Gas Test & Standby Sentry"; iogpRule = "Confined Space"; icon = "confined";
+      if (t.includes('without') || t.includes('bina') || t.includes('nahi')) {
+        barrierState = "Missing";
+        evidencePhrases.push("entered without gas test");
+      }
+    } else if (t.includes('weld') || t.includes('hot work') || t.includes('fire blanket') || t.includes('grind')) {
+      energyType = "Thermal / Flammable Vapor"; isHighEnergy = true;
+      barrierExpected = "Fire Blanket & Continuous Gas Monitoring"; iogpRule = "Hot Work"; icon = "hotwork";
+      if (t.includes('missing') || t.includes('bina') || t.includes('nahi')) {
+        barrierState = "Missing";
+        evidencePhrases.push("fire blanket missing");
+      }
+    } else if (t.includes('loto') || t.includes('isolation') || t.includes('energy') || t.includes('pressure')) {
+      energyType = "Pressure / Mechanical"; isHighEnergy = true;
+      barrierExpected = "LOTO Lock & Energy Isolation Valve"; iogpRule = "Energy Isolation"; icon = "lock";
+      if (t.includes('without') || t.includes('bina') || t.includes('nahi')) {
+        barrierState = "Missing";
+        evidencePhrases.push("without LOTO lock");
+      }
+    }
+
+    const isSif = isHighEnergy && barrierState !== "Working / Intact";
+    return {
+      energyType, energyMagnitude: isHighEnergy ? "High" : "Low",
+      barrierExpected, barrierState, iogpRule, icon, isSif,
+      classification: isSif ? "SIF-Potential" : "Non-SIF",
+      evidencePhrases, consensus: isSif ? "SIF_CONFIRMED" : "SAFE"
+    };
+  };
+
+  const handleRunAnalysis = async () => {
     if (!narrative.trim()) return;
 
     setAnalyzing(true);
     setResult(null);
 
-    setTimeout(() => {
-      setAnalyzing(false);
-      const text = narrative.toLowerCase();
+    // Try the real backend API first
+    try {
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 4000); // 4s timeout
 
-      // Deterministic Safety Chain Logic simulation
-      let isHighEnergy = false;
-      let energyType = "None";
-      let barrierState = "Working / Intact";
-      let barrierExpected = "Standard Operational Controls";
-      let iogpRule = "General Safety";
-      let icon = "lock";
-      let evidencePhrases: string[] = [];
+      const response = await fetch('http://localhost:8000/api/analyze/single', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ narrative, site: selectedSite }),
+        signal: controller.signal,
+      });
+      clearTimeout(timeout);
 
-      if (text.includes('height') || text.includes('scaffold') || text.includes('fall') || text.includes('meter')) {
-        energyType = "Gravity";
-        isHighEnergy = true;
-        barrierExpected = "Safety Harness / Fall Arrestor";
-        iogpRule = "Working at Height";
-        icon = "height";
-        if (text.includes('bina') || text.includes('nahi') || text.includes('without') || text.includes('missing')) {
-          barrierState = "Missing";
-          evidencePhrases.push("bina safety belt ke", "fall arrestor nahi lagaya");
-        }
-      } else if (text.includes('crane') || text.includes('lift') || text.includes('barricade') || text.includes('exclusion')) {
-        energyType = "Kinetic";
-        isHighEnergy = true;
-        barrierExpected = "Exclusion Zone Barricade / Tagline";
-        iogpRule = "Line of Fire";
-        icon = "lineoffire";
-        if (text.includes('cross') || text.includes('bina') || text.includes('without') || text.includes('khade the')) {
-          barrierState = "Bypassed";
-          evidencePhrases.push("exclusion zone me log khade the", "barricade cross kiya");
-        }
-      } else if (text.includes('confined') || text.includes('tank') || text.includes('gas test')) {
-        energyType = "Chemical / Asphyxiation";
-        isHighEnergy = true;
-        barrierExpected = "Pre-entry Gas Test & Standby Sentry";
-        iogpRule = "Confined Space";
-        icon = "confined";
-        if (text.includes('without') || text.includes('bina') || text.includes('no gas')) {
-          barrierState = "Missing";
-          evidencePhrases.push("without prior gas test", "no standby man");
-        }
-      } else if (text.includes('speed') || text.includes('vehicle') || text.includes('seatbelt')) {
-        energyType = "Kinetic (Low)";
-        isHighEnergy = false;
-        barrierExpected = "Speed Governor & Seatbelt";
-        iogpRule = "Driving";
-        icon = "driving";
-        barrierState = "Working / Intact";
-      }
+      if (!response.ok) throw new Error('API Error');
 
-      const isSif = isHighEnergy && ['Missing', 'Degraded', 'Bypassed'].includes(barrierState);
-
+      const data = await response.json();
       const res = {
-        energyType,
-        energyMagnitude: isHighEnergy ? "High" : "Low",
-        barrierExpected,
-        barrierState,
-        iogpRule,
-        icon,
-        isSif,
-        classification: isSif ? "SIF-Potential" : "Non-SIF",
-        evidencePhrases,
-        consensus: isSif ? "3/3 Models Agree (SIF Precursor)" : "3/3 Models Agree (Safe Operation)"
+        energyType: data.extracted_features.energy_type,
+        energyMagnitude: data.extracted_features.energy_magnitude,
+        barrierExpected: data.extracted_features.barrier_expected,
+        barrierState: data.extracted_features.barrier_state,
+        iogpRule: data.triage.primary_iogp_rule,
+        icon: data.triage.rule_icon,
+        isSif: data.triage.sif_potential,
+        classification: data.triage.classification,
+        evidencePhrases: data.extracted_features.evidence_phrases,
+        consensus: data.triage.consensus_label
       };
-
       setResult(res);
 
-      // If user wants to push to table
       if (onAddReportToFeed) {
         onAddReportToFeed({
-          id: `live-${Date.now().toString().slice(-4)}`,
-          date: "Just Now",
-          excerpt: narrative,
-          site: selectedSite,
-          activity: iogpRule,
-          rule: iogpRule,
-          ruleIcon: icon,
-          classification: res.classification
+          id: data.report_id, date: "Just Now", excerpt: data.narrative,
+          site: data.site, activity: data.activity,
+          rule: data.triage.primary_iogp_rule, ruleIcon: data.triage.rule_icon,
+          classification: data.triage.classification
         });
       }
-    }, 600);
+      setAnalyzing(false);
+      return; // Success — done
+    } catch (err) {
+      console.warn('Backend unavailable, using local rule engine:', err);
+    }
+
+    // Fallback: local deterministic rule engine (always works)
+    setTimeout(() => {
+      const res = runLocalRuleEngine(narrative);
+      setResult(res);
+
+      if (onAddReportToFeed) {
+        onAddReportToFeed({
+          id: `LIVE-${Date.now()}`, date: "Just Now", excerpt: narrative,
+          site: selectedSite, activity: res.iogpRule,
+          rule: res.iogpRule, ruleIcon: res.icon, classification: res.classification
+        });
+      }
+      setAnalyzing(false);
+    }, 800);
   };
 
   return (

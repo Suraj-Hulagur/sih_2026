@@ -13,8 +13,13 @@ PROCESSED_DIR = os.path.join(DATA_DIR, "processed")
 OISD_PDF_DIR = os.path.join(DATA_DIR, "pdf")
 
 # Create directories if they don't exist
-for d in [RAW_DIR, PROCESSED_DIR, OISD_PDF_DIR]:
+MODELS_DIR = os.path.join(DATA_DIR, "models")
+for d in [RAW_DIR, PROCESSED_DIR, OISD_PDF_DIR, MODELS_DIR]:
     os.makedirs(d, exist_ok=True)
+
+RF_MODEL_FILE = os.path.join(MODELS_DIR, "rf_model.joblib")
+RF_COLUMNS_FILE = os.path.join(MODELS_DIR, "rf_columns.json")
+LR_MODEL_FILE = os.path.join(MODELS_DIR, "lr_model.joblib")
 
 # ─── Download URLs ────────────────────────────────────────────────────────────
 MSHA_ACCIDENTS_ZIP_URL = "https://arlweb.msha.gov/OpenGovernmentData/DataSets/Accidents.zip"
