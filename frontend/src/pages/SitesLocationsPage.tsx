@@ -103,7 +103,7 @@ export const SitesLocationsPage: React.FC = () => {
   const [selectedSite, setSelectedSite] = useState<SiteInfo | null>(OIL_SITES[0]);
 
   return (
-    <div className="p-6 space-y-5">
+    <div className="p-4 sm:p-6 space-y-4 sm:space-y-5">
       {/* Header */}
       <div className="bg-white p-4 rounded-lg border border-slate-200/90 shadow-2xs flex flex-col sm:flex-row sm:items-center justify-between gap-3">
         <div>
@@ -205,12 +205,12 @@ export const SitesLocationsPage: React.FC = () => {
               <span className="text-xs text-slate-500">{selectedSite.type} — {selectedSite.district}</span>
             </div>
 
-            <div className="flex items-center gap-3">
-              <div className="text-right">
+            <div className="flex items-center gap-3 flex-wrap sm:flex-nowrap">
+              <div className="text-left sm:text-right">
                 <span className="text-[10px] text-slate-400 uppercase font-semibold block">Primary Precursor Hazard</span>
                 <span className="text-xs font-bold text-slate-800">{selectedSite.topHazard}</span>
               </div>
-              <div className="text-right pl-3 border-l border-slate-200">
+              <div className="text-left sm:text-right pl-0 sm:pl-3 border-l-0 sm:border-l border-slate-200">
                 <span className="text-[10px] text-slate-400 uppercase font-semibold block">Dominant IOGP Rule</span>
                 <span className="text-xs font-bold text-blue-700">{selectedSite.topRule}</span>
               </div>

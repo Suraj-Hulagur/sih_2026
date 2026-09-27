@@ -74,7 +74,7 @@ def get_llm_client():
         return OpenAI(
             api_key=os.getenv("GROQ_API_KEY"),
             base_url="https://api.groq.com/openai/v1"
-        ), os.getenv("GROQ_MODEL", "llama-3.1-8b-instant")
+        ), os.getenv("GROQ_MODEL", "qwen/qwen3.8-27b")
     else:
         ollama_url = os.getenv("OLLAMA_URL", "http://localhost:11434/v1")
         return OpenAI(

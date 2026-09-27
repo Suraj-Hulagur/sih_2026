@@ -26,27 +26,34 @@
       "Driving"
     ],
     "iogp_rule": "Driving",
-    "label_source": "Method_1_Deterministic"
+    "label_source": "Method_1_Deterministic",
+    "date": "",
+    "language": "en",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
   },
   {
     "report_id": "oisd_2025-26_LPG_12",
     "energy_type": "electrical",
     "energy_magnitude": "high",
-    "barrier_expected": "proper insulated cable, standard extension board, industrial\u2011type socket with ELCB/RCCB, LOTO procedure, electrical gloves and authorized power source",
+    "barrier_expected": "proper insulated cable, standard extension board, industrial‑type socket with ELCB/RCCB, LOTO procedure, electrical gloves and authorized power source",
     "barrier_state": "missing",
     "activity": "maintenance work on fixing the stand of a proximity sensor in the filling shed",
     "location": "filling shed near the purging unit (plant)",
     "evidence_phrases": [
       "suffered an apparent electrical shock from damaged electric cable",
       "temporary extension board",
-      "non\u2011standard extension box with damaged cable",
+      "non‑standard extension box with damaged cable",
       "cable was found damaged at multiple places",
       "Sockets were not of industrial type (metal clad) and did not have any human protection like ELCB, RCCB",
       "IP was probably not wearing Electrical gloves",
       "Work Permit System including LOTO ... was violated",
       "LOTO provision was not available for the PTDU panel",
       "taking power connection from unauthorised source",
-      "usage of non\u2011 standard extension board",
+      "usage of non‑ standard extension board",
       "usage of damaged cable",
       "handling cable without wearing electrical gloves"
     ],
@@ -55,13 +62,20 @@
       "Energy Isolation"
     ],
     "iogp_rule": "Energy Isolation",
-    "label_source": "Method_1_Deterministic"
+    "label_source": "Method_1_Deterministic",
+    "date": "",
+    "language": "en",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
   },
   {
     "report_id": "oisd_2025-26_MOLPG_22",
     "energy_type": "kinetic",
     "energy_magnitude": "high",
-    "barrier_expected": "Lockout\u2011Tagout (LOTO) and safe access guarding for the service water valve",
+    "barrier_expected": "Lockout‑Tagout (LOTO) and safe access guarding for the service water valve",
     "barrier_state": "missing",
     "activity": "pouring soap solution and topping up the soap tray on the chain conveyor",
     "location": "underneath the chain conveyor near the sprocket and soap tray",
@@ -69,7 +83,7 @@
       "operated the valve of service water line from beneath the conveyor on the other side of valve, without stopping the chain conveyor",
       "coverall sleeves to come into contact with the sprocket",
       "hand near elbow also got trapped in the sprocket",
-      "without implementation of Lockout\u2013Tagout (LOTO)",
+      "without implementation of Lockout–Tagout (LOTO)",
       "emergency shutdown system was not activated immediately after incident",
       "Non-adherence to approved SOP for soap pouring activity"
     ],
@@ -79,13 +93,20 @@
       "Line of Fire"
     ],
     "iogp_rule": "Energy Isolation",
-    "label_source": "Method_1_Deterministic"
+    "label_source": "Method_1_Deterministic",
+    "date": "",
+    "language": "en",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
   },
   {
     "report_id": "oisd_2025-26_PE_17",
     "energy_type": "chemical",
     "energy_magnitude": "high",
-    "barrier_expected": "Management of Change (MOC) and HIRA analysis, proper work permit process with site visit, crash barrier/barricading, periodic piping inspection, flame\u2011proof equipment and junction boxes, hydrocarbon detector in vapor cloud area",
+    "barrier_expected": "Management of Change (MOC) and HIRA analysis, proper work permit process with site visit, crash barrier/barricading, periodic piping inspection, flame‑proof equipment and junction boxes, hydrocarbon detector in vapor cloud area",
     "barrier_state": "missing",
     "activity": "modification/maintenance of 18\" gas interconnection pipeline and slug catcher area",
     "location": "18\" gas interconnection pipeline adjacent to slug catcher area",
@@ -94,7 +115,7 @@
       "major fire",
       "Lapses in the work permit process were observed such as permit renewal without site visit",
       "No crash barrier or barricading was observed on the periphery of the slug catcher area",
-      "non\u2011flame proof lighting was provided in nearby facilities",
+      "non‑flame proof lighting was provided in nearby facilities",
       "flame proof integrity was found compromised in one of the electrical junctions",
       "No Hydrocarbon detector was observed in the flame scanner cooling air fan suction area"
     ],
@@ -103,16 +124,23 @@
       "Work Authorisation"
     ],
     "iogp_rule": "Work Authorisation",
-    "label_source": "Method_1_Deterministic"
+    "label_source": "Method_1_Deterministic",
+    "date": "",
+    "language": "en",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
   },
   {
     "report_id": "oisd_2025-26_PL_15",
     "energy_type": "pressure",
     "energy_magnitude": "high",
-    "barrier_expected": "free\u2011span mitigation / pipeline burial / corrosion monitoring and pigging",
+    "barrier_expected": "free‑span mitigation / pipeline burial / corrosion monitoring and pigging",
     "barrier_state": "missing",
     "activity": "gas pipeline depressurisation and fire response",
-    "location": "Offshore subsea & sub\u2011river trunk pipeline, ~400\u202fm from landfall at river mouth",
+    "location": "Offshore subsea & sub‑river trunk pipeline, ~400 m from landfall at river mouth",
     "evidence_phrases": [
       "sudden pressure drop was observed in an Offshore (Sub-sea & Sub-river) trunk pipeline",
       "fire was also observed at a point located approximately 400 m from the landfall point in the adjoining river mouth",
@@ -127,16 +155,23 @@
       "Line of Fire"
     ],
     "iogp_rule": "Line of Fire",
-    "label_source": "Method_1_Deterministic"
+    "label_source": "Method_1_Deterministic",
+    "date": "",
+    "language": "en",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
   },
   {
     "report_id": "oisd_2025-26_PL_16",
     "energy_type": "kinetic",
     "energy_magnitude": "high",
-    "barrier_expected": "gabion wall, sandbags, Geo\u2011tubes, increased trench depth, higher pipe thickness/grade, proper HDD design, functional leak detection alarm",
+    "barrier_expected": "gabion wall, sandbags, Geo‑tubes, increased trench depth, higher pipe thickness/grade, proper HDD design, functional leak detection alarm",
     "barrier_state": "degraded",
-    "activity": "gas pipeline operation / transport across river crossing (HDD/open\u2011cut)",
-    "location": "river crossing \u2013 riverbank, riverbed and meandering site",
+    "activity": "gas pipeline operation / transport across river crossing (HDD/open‑cut)",
+    "location": "river crossing – riverbank, riverbed and meandering site",
     "evidence_phrases": [
       "heavy rainfall",
       "high-velocity river water flow",
@@ -152,7 +187,14 @@
       "Line of Fire"
     ],
     "iogp_rule": "Line of Fire",
-    "label_source": "Method_1_Deterministic"
+    "label_source": "Method_1_Deterministic",
+    "date": "",
+    "language": "en",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
   },
   {
     "report_id": "oisd_2026-27_EP_05",
@@ -174,13 +216,20 @@
       "Working at Height"
     ],
     "iogp_rule": "Working at Height",
-    "label_source": "Method_1_Deterministic"
+    "label_source": "Method_1_Deterministic",
+    "date": "",
+    "language": "en",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": false,
+    "consensus": "NEEDS_HUMAN_REVIEW",
+    "needs_review": true
   },
   {
     "report_id": "oisd_2026-27_PE_08",
     "energy_type": "thermal",
     "energy_magnitude": "high",
-    "barrier_expected": "properly sealed pressure gauge, functional high\u2011pressure alarm, power backup for fire monitors, correct valve isolation and gland packing",
+    "barrier_expected": "properly sealed pressure gauge, functional high‑pressure alarm, power backup for fire monitors, correct valve isolation and gland packing",
     "barrier_state": "degraded",
     "activity": "trial run, startup and stabilization of CDU/VDU followed by fire incident during flushing oil line rupture",
     "location": "crude versus vacuum residue preheat exchanger section of CDU at ground level and first platform of technical structure",
@@ -200,7 +249,14 @@
       "Hot Work"
     ],
     "iogp_rule": "Energy Isolation",
-    "label_source": "Method_1_Deterministic"
+    "label_source": "Method_1_Deterministic",
+    "date": "",
+    "language": "en",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
   },
   {
     "report_id": "oisd_2026-27_PE_11",
@@ -208,7 +264,7 @@
     "energy_magnitude": "high",
     "barrier_expected": "roadside protection/curb, marked travel route, warning signs, functional seat belt, traffic management measures and SOP compliance",
     "barrier_state": "missing",
-    "activity": "transporting wax\u2011filled jumbo bags by forklift from Wax Draining Station to Wax Storage Yard",
+    "activity": "transporting wax‑filled jumbo bags by forklift from Wax Draining Station to Wax Storage Yard",
     "location": "main road between Wax Draining Station and Wax Storage Yard (HDPE Unit), near an open trapezoidal dry drain",
     "evidence_phrases": [
       "forklift was found ... toppled inside an open trapezoidal dry drain",
@@ -216,7 +272,7 @@
       "inadequate traffic management",
       "wax deposits on the roadway",
       "seat belt of the affected forklift was found to be non-functional",
-      "operator was deployed for nine consecutive night\u2011shift forklift operations"
+      "operator was deployed for nine consecutive night‑shift forklift operations"
     ],
     "sif_potential": true,
     "iogp_rules": [
@@ -225,7 +281,14 @@
       "Working at Height"
     ],
     "iogp_rule": "Driving",
-    "label_source": "Method_1_Deterministic"
+    "label_source": "Method_1_Deterministic",
+    "date": "",
+    "language": "en",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
   },
   {
     "report_id": "msha_220050240032",
@@ -245,7 +308,14 @@
       "No specific LSR match"
     ],
     "iogp_rule": "No specific LSR match",
-    "label_source": "Method_1_Deterministic"
+    "label_source": "Method_1_Deterministic",
+    "date": "",
+    "language": "en",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
   },
   {
     "report_id": "msha_220022380017",
@@ -266,7 +336,14 @@
       "Working at Height"
     ],
     "iogp_rule": "Working at Height",
-    "label_source": "Method_1_Deterministic"
+    "label_source": "Method_1_Deterministic",
+    "date": "",
+    "language": "en",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
   },
   {
     "report_id": "msha_220200270030",
@@ -286,7 +363,14 @@
       "Line of Fire"
     ],
     "iogp_rule": "Line of Fire",
-    "label_source": "Method_1_Deterministic"
+    "label_source": "Method_1_Deterministic",
+    "date": "",
+    "language": "en",
+    "m1_rule_engine": false,
+    "m2_random_forest": false,
+    "m3_raw_text": true,
+    "consensus": "NEEDS_HUMAN_REVIEW",
+    "needs_review": true
   },
   {
     "report_id": "msha_220061800054",
@@ -307,7 +391,14 @@
       "Working at Height"
     ],
     "iogp_rule": "Working at Height",
-    "label_source": "Method_1_Deterministic"
+    "label_source": "Method_1_Deterministic",
+    "date": "",
+    "language": "en",
+    "m1_rule_engine": false,
+    "m2_random_forest": false,
+    "m3_raw_text": true,
+    "consensus": "NEEDS_HUMAN_REVIEW",
+    "needs_review": true
   },
   {
     "report_id": "msha_220112910047",
@@ -329,7 +420,14 @@
       "Line of Fire"
     ],
     "iogp_rule": "Energy Isolation",
-    "label_source": "Method_1_Deterministic"
+    "label_source": "Method_1_Deterministic",
+    "date": "",
+    "language": "en",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
   },
   {
     "report_id": "msha_220150770028",
@@ -349,7 +447,14 @@
       "Working at Height"
     ],
     "iogp_rule": "Working at Height",
-    "label_source": "Method_1_Deterministic"
+    "label_source": "Method_1_Deterministic",
+    "date": "",
+    "language": "en",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
   },
   {
     "report_id": "msha_220092300027",
@@ -369,7 +474,14 @@
       "Line of Fire"
     ],
     "iogp_rule": "Hot Work",
-    "label_source": "Method_1_Deterministic"
+    "label_source": "Method_1_Deterministic",
+    "date": "",
+    "language": "en",
+    "m1_rule_engine": false,
+    "m2_random_forest": false,
+    "m3_raw_text": false,
+    "consensus": "SAFE",
+    "needs_review": false
   },
   {
     "report_id": "msha_220032450154",
@@ -377,8 +489,8 @@
     "energy_magnitude": "low",
     "barrier_expected": "fall protection / safety belt",
     "barrier_state": "missing",
-    "activity": "cutting belt while standing on take\u2011up roller",
-    "location": "take\u2011up roller",
+    "activity": "cutting belt while standing on take‑up roller",
+    "location": "take‑up roller",
     "evidence_phrases": [
       "helping to cut out a peice of belt that was wrapped around the take up",
       "standing on the take-up roller",
@@ -389,7 +501,14 @@
       "Working at Height"
     ],
     "iogp_rule": "Working at Height",
-    "label_source": "Method_1_Deterministic"
+    "label_source": "Method_1_Deterministic",
+    "date": "",
+    "language": "en",
+    "m1_rule_engine": false,
+    "m2_random_forest": false,
+    "m3_raw_text": false,
+    "consensus": "SAFE",
+    "needs_review": false
   },
   {
     "report_id": "msha_220230960002",
@@ -397,7 +516,7 @@
     "energy_magnitude": "high",
     "barrier_expected": "proper lifting technique or mechanical aid (e.g., trolley) and training",
     "barrier_state": "missing",
-    "activity": "carrying a 33\u2011gallon garbage bag to the dumpster",
+    "activity": "carrying a 33‑gallon garbage bag to the dumpster",
     "location": "dumpster area",
     "evidence_phrases": [
       "carrying 33 gallon garbage bag",
@@ -409,7 +528,14 @@
       "Working at Height"
     ],
     "iogp_rule": "Safe Mechanical Lifting",
-    "label_source": "Method_1_Deterministic"
+    "label_source": "Method_1_Deterministic",
+    "date": "",
+    "language": "en",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
   },
   {
     "report_id": "msha_220141010028",
@@ -429,7 +555,14 @@
       "Line of Fire"
     ],
     "iogp_rule": "Energy Isolation",
-    "label_source": "Method_1_Deterministic"
+    "label_source": "Method_1_Deterministic",
+    "date": "",
+    "language": "en",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
   },
   {
     "report_id": "msha_220023390011",
@@ -450,13 +583,20 @@
       "Line of Fire"
     ],
     "iogp_rule": "Driving",
-    "label_source": "Method_1_Deterministic"
+    "label_source": "Method_1_Deterministic",
+    "date": "",
+    "language": "en",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": false,
+    "consensus": "NEEDS_HUMAN_REVIEW",
+    "needs_review": true
   },
   {
     "report_id": "msha_220031250107",
     "energy_type": "kinetic",
     "energy_magnitude": "low",
-    "barrier_expected": "safety guard or PPE (e.g., cut\u2011resistant gloves) for utility knife",
+    "barrier_expected": "safety guard or PPE (e.g., cut‑resistant gloves) for utility knife",
     "barrier_state": "missing",
     "activity": "cutting a piece of conveyor belt with a utility knife",
     "location": "conveyor belt area",
@@ -470,7 +610,14 @@
       "Line of Fire"
     ],
     "iogp_rule": "Line of Fire",
-    "label_source": "Method_1_Deterministic"
+    "label_source": "Method_1_Deterministic",
+    "date": "",
+    "language": "en",
+    "m1_rule_engine": false,
+    "m2_random_forest": false,
+    "m3_raw_text": false,
+    "consensus": "SAFE",
+    "needs_review": false
   },
   {
     "report_id": "msha_220212180014",
@@ -488,7 +635,14 @@
       "Hot Work"
     ],
     "iogp_rule": "Hot Work",
-    "label_source": "Method_1_Deterministic"
+    "label_source": "Method_1_Deterministic",
+    "date": "",
+    "language": "en",
+    "m1_rule_engine": false,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "NEEDS_HUMAN_REVIEW",
+    "needs_review": true
   },
   {
     "report_id": "msha_220133180003",
@@ -509,7 +663,14 @@
       "Working at Height"
     ],
     "iogp_rule": "Safe Mechanical Lifting",
-    "label_source": "Method_1_Deterministic"
+    "label_source": "Method_1_Deterministic",
+    "date": "",
+    "language": "en",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": false,
+    "consensus": "NEEDS_HUMAN_REVIEW",
+    "needs_review": true
   },
   {
     "report_id": "msha_220001510001",
@@ -531,7 +692,14 @@
       "Working at Height"
     ],
     "iogp_rule": "Safe Mechanical Lifting",
-    "label_source": "Method_1_Deterministic"
+    "label_source": "Method_1_Deterministic",
+    "date": "",
+    "language": "en",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
   },
   {
     "report_id": "msha_220131910030",
@@ -550,13 +718,20 @@
       "Line of Fire"
     ],
     "iogp_rule": "Line of Fire",
-    "label_source": "Method_1_Deterministic"
+    "label_source": "Method_1_Deterministic",
+    "date": "",
+    "language": "en",
+    "m1_rule_engine": false,
+    "m2_random_forest": false,
+    "m3_raw_text": true,
+    "consensus": "NEEDS_HUMAN_REVIEW",
+    "needs_review": true
   },
   {
     "report_id": "msha_220050560070",
     "energy_type": "gravity",
     "energy_magnitude": "high",
-    "barrier_expected": "handrails / anti\u2011slip measures for vehicle egress",
+    "barrier_expected": "handrails / anti‑slip measures for vehicle egress",
     "barrier_state": "missing",
     "activity": "exiting vehicle",
     "location": "vehicle egress area",
@@ -570,7 +745,14 @@
       "Working at Height"
     ],
     "iogp_rule": "Driving",
-    "label_source": "Method_1_Deterministic"
+    "label_source": "Method_1_Deterministic",
+    "date": "",
+    "language": "en",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
   },
   {
     "report_id": "msha_220103200009",
@@ -590,7 +772,14 @@
       "Working at Height"
     ],
     "iogp_rule": "Working at Height",
-    "label_source": "Method_1_Deterministic"
+    "label_source": "Method_1_Deterministic",
+    "date": "",
+    "language": "en",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
   },
   {
     "report_id": "msha_220120600040",
@@ -610,21 +799,28 @@
       "Working at Height"
     ],
     "iogp_rule": "Working at Height",
-    "label_source": "Method_1_Deterministic"
+    "label_source": "Method_1_Deterministic",
+    "date": "",
+    "language": "en",
+    "m1_rule_engine": false,
+    "m2_random_forest": false,
+    "m3_raw_text": false,
+    "consensus": "SAFE",
+    "needs_review": false
   },
   {
     "report_id": "msha_220063120030",
     "energy_type": "kinetic",
     "energy_magnitude": "high",
-    "barrier_expected": "guarding / lockout\u2011tagout / hand protection",
+    "barrier_expected": "guarding / lockout‑tagout / hand protection",
     "barrier_state": "missing",
     "activity": "demoing a screw conveyor",
     "location": "screw conveyor (top of the conveyor)",
     "evidence_phrases": [
       "hands placed on top of the conveyor",
       "conveyor freed",
-      "placed his rt hand on the torch\u2011cut end",
-      "conveyor thus swung towards the torch\u2011cut end",
+      "placed his rt hand on the torch‑cut end",
+      "conveyor thus swung towards the torch‑cut end",
       "smashing the IW's hand between it and some steel supports"
     ],
     "sif_potential": true,
@@ -633,7 +829,14 @@
       "Line of Fire"
     ],
     "iogp_rule": "Energy Isolation",
-    "label_source": "Method_1_Deterministic"
+    "label_source": "Method_1_Deterministic",
+    "date": "",
+    "language": "en",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
   },
   {
     "report_id": "msha_220131540033",
@@ -653,7 +856,14 @@
       "Working at Height"
     ],
     "iogp_rule": "Working at Height",
-    "label_source": "Method_1_Deterministic"
+    "label_source": "Method_1_Deterministic",
+    "date": "",
+    "language": "en",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
   },
   {
     "report_id": "msha_220022880187",
@@ -673,7 +883,14 @@
       "Working at Height"
     ],
     "iogp_rule": "Working at Height",
-    "label_source": "Method_1_Deterministic"
+    "label_source": "Method_1_Deterministic",
+    "date": "",
+    "language": "en",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
   },
   {
     "report_id": "msha_220071660047",
@@ -694,7 +911,14 @@
       "Working at Height"
     ],
     "iogp_rule": "Safe Mechanical Lifting",
-    "label_source": "Method_1_Deterministic"
+    "label_source": "Method_1_Deterministic",
+    "date": "",
+    "language": "en",
+    "m1_rule_engine": false,
+    "m2_random_forest": false,
+    "m3_raw_text": false,
+    "consensus": "SAFE",
+    "needs_review": false
   },
   {
     "report_id": "msha_220042750017",
@@ -713,7 +937,14 @@
       "Working at Height"
     ],
     "iogp_rule": "Working at Height",
-    "label_source": "Method_1_Deterministic"
+    "label_source": "Method_1_Deterministic",
+    "date": "",
+    "language": "en",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": false,
+    "consensus": "NEEDS_HUMAN_REVIEW",
+    "needs_review": true
   },
   {
     "report_id": "msha_220172300022",
@@ -732,7 +963,14 @@
       "No specific LSR match"
     ],
     "iogp_rule": "No specific LSR match",
-    "label_source": "Method_1_Deterministic"
+    "label_source": "Method_1_Deterministic",
+    "date": "",
+    "language": "en",
+    "m1_rule_engine": false,
+    "m2_random_forest": false,
+    "m3_raw_text": true,
+    "consensus": "NEEDS_HUMAN_REVIEW",
+    "needs_review": true
   },
   {
     "report_id": "msha_220112230027",
@@ -751,7 +989,14 @@
       "Line of Fire"
     ],
     "iogp_rule": "Line of Fire",
-    "label_source": "Method_1_Deterministic"
+    "label_source": "Method_1_Deterministic",
+    "date": "",
+    "language": "en",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
   },
   {
     "report_id": "msha_220053430030",
@@ -772,7 +1017,14 @@
       "Working at Height"
     ],
     "iogp_rule": "Working at Height",
-    "label_source": "Method_1_Deterministic"
+    "label_source": "Method_1_Deterministic",
+    "date": "",
+    "language": "en",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
   },
   {
     "report_id": "msha_220032610049",
@@ -792,7 +1044,14 @@
       "Working at Height"
     ],
     "iogp_rule": "Working at Height",
-    "label_source": "Method_1_Deterministic"
+    "label_source": "Method_1_Deterministic",
+    "date": "",
+    "language": "en",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
   },
   {
     "report_id": "msha_220073200055",
@@ -812,7 +1071,14 @@
       "Working at Height"
     ],
     "iogp_rule": "Working at Height",
-    "label_source": "Method_1_Deterministic"
+    "label_source": "Method_1_Deterministic",
+    "date": "",
+    "language": "en",
+    "m1_rule_engine": false,
+    "m2_random_forest": false,
+    "m3_raw_text": false,
+    "consensus": "SAFE",
+    "needs_review": false
   },
   {
     "report_id": "msha_220172080009",
@@ -833,7 +1099,14 @@
       "Working at Height"
     ],
     "iogp_rule": "Working at Height",
-    "label_source": "Method_1_Deterministic"
+    "label_source": "Method_1_Deterministic",
+    "date": "",
+    "language": "en",
+    "m1_rule_engine": false,
+    "m2_random_forest": false,
+    "m3_raw_text": true,
+    "consensus": "NEEDS_HUMAN_REVIEW",
+    "needs_review": true
   },
   {
     "report_id": "msha_220142870003",
@@ -854,13 +1127,20 @@
       "Working at Height"
     ],
     "iogp_rule": "Working at Height",
-    "label_source": "Method_1_Deterministic"
+    "label_source": "Method_1_Deterministic",
+    "date": "",
+    "language": "en",
+    "m1_rule_engine": false,
+    "m2_random_forest": false,
+    "m3_raw_text": true,
+    "consensus": "NEEDS_HUMAN_REVIEW",
+    "needs_review": true
   },
   {
     "report_id": "msha_220011310050",
     "energy_type": "gravity",
     "energy_magnitude": "low",
-    "barrier_expected": "anti\u2011slip mat / proper footwear / good housekeeping",
+    "barrier_expected": "anti‑slip mat / proper footwear / good housekeeping",
     "barrier_state": "missing",
     "activity": "picking up drill",
     "location": "work area",
@@ -873,7 +1153,14 @@
       "Working at Height"
     ],
     "iogp_rule": "Working at Height",
-    "label_source": "Method_1_Deterministic"
+    "label_source": "Method_1_Deterministic",
+    "date": "",
+    "language": "en",
+    "m1_rule_engine": false,
+    "m2_random_forest": false,
+    "m3_raw_text": false,
+    "consensus": "SAFE",
+    "needs_review": false
   },
   {
     "report_id": "msha_220052560021",
@@ -895,7 +1182,14 @@
       "Working at Height"
     ],
     "iogp_rule": "Working at Height",
-    "label_source": "Method_1_Deterministic"
+    "label_source": "Method_1_Deterministic",
+    "date": "",
+    "language": "en",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
   },
   {
     "report_id": "msha_220190880010",
@@ -916,7 +1210,14 @@
       "Line of Fire"
     ],
     "iogp_rule": "Line of Fire",
-    "label_source": "Method_1_Deterministic"
+    "label_source": "Method_1_Deterministic",
+    "date": "",
+    "language": "en",
+    "m1_rule_engine": false,
+    "m2_random_forest": false,
+    "m3_raw_text": false,
+    "consensus": "SAFE",
+    "needs_review": false
   },
   {
     "report_id": "msha_220102030018",
@@ -936,7 +1237,14 @@
       "Line of Fire"
     ],
     "iogp_rule": "Line of Fire",
-    "label_source": "Method_1_Deterministic"
+    "label_source": "Method_1_Deterministic",
+    "date": "",
+    "language": "en",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
   },
   {
     "report_id": "msha_220150120023",
@@ -944,8 +1252,8 @@
     "energy_magnitude": "low",
     "barrier_expected": "clearance zone or spotter to prevent collision with pipe",
     "barrier_state": "missing",
-    "activity": "operating Vermeer ride\u2011on Dingo for clean\u2011up",
-    "location": "near overflow pipe from TK\u20111400",
+    "activity": "operating Vermeer ride‑on Dingo for clean‑up",
+    "location": "near overflow pipe from TK‑1400",
     "evidence_phrases": [
       "operating a Vermeer ride-on Dingo",
       "backed into an overflow pipe",
@@ -956,7 +1264,14 @@
       "Line of Fire"
     ],
     "iogp_rule": "Line of Fire",
-    "label_source": "Method_1_Deterministic"
+    "label_source": "Method_1_Deterministic",
+    "date": "",
+    "language": "en",
+    "m1_rule_engine": false,
+    "m2_random_forest": false,
+    "m3_raw_text": true,
+    "consensus": "NEEDS_HUMAN_REVIEW",
+    "needs_review": true
   },
   {
     "report_id": "msha_220130160015",
@@ -979,7 +1294,14 @@
       "Safe Mechanical Lifting"
     ],
     "iogp_rule": "Energy Isolation",
-    "label_source": "Method_1_Deterministic"
+    "label_source": "Method_1_Deterministic",
+    "date": "",
+    "language": "en",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": false,
+    "consensus": "NEEDS_HUMAN_REVIEW",
+    "needs_review": true
   },
   {
     "report_id": "msha_220092930017",
@@ -999,7 +1321,14 @@
       "Line of Fire"
     ],
     "iogp_rule": "Line of Fire",
-    "label_source": "Method_1_Deterministic"
+    "label_source": "Method_1_Deterministic",
+    "date": "",
+    "language": "en",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
   },
   {
     "report_id": "msha_220072220046",
@@ -1022,7 +1351,14 @@
       "Line of Fire"
     ],
     "iogp_rule": "Line of Fire",
-    "label_source": "Method_1_Deterministic"
+    "label_source": "Method_1_Deterministic",
+    "date": "",
+    "language": "en",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": false,
+    "consensus": "NEEDS_HUMAN_REVIEW",
+    "needs_review": true
   },
   {
     "report_id": "msha_220042470072",
@@ -1043,13 +1379,20 @@
       "Line of Fire"
     ],
     "iogp_rule": "Energy Isolation",
-    "label_source": "Method_1_Deterministic"
+    "label_source": "Method_1_Deterministic",
+    "date": "",
+    "language": "en",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
   },
   {
     "report_id": "msha_220032230075",
     "energy_type": "gravity",
     "energy_magnitude": "high",
-    "barrier_expected": "slip\u2011resistant footwear / proper footing / rain work protocol",
+    "barrier_expected": "slip‑resistant footwear / proper footing / rain work protocol",
     "barrier_state": "missing",
     "activity": "fueling equipment",
     "location": "outdoor area, rain, mud",
@@ -1063,7 +1406,14 @@
       "Working at Height"
     ],
     "iogp_rule": "Working at Height",
-    "label_source": "Method_1_Deterministic"
+    "label_source": "Method_1_Deterministic",
+    "date": "",
+    "language": "en",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
   },
   {
     "report_id": "msha_220082620021",
@@ -1083,13 +1433,20 @@
       "Working at Height"
     ],
     "iogp_rule": "Safe Mechanical Lifting",
-    "label_source": "Method_1_Deterministic"
+    "label_source": "Method_1_Deterministic",
+    "date": "",
+    "language": "en",
+    "m1_rule_engine": false,
+    "m2_random_forest": false,
+    "m3_raw_text": true,
+    "consensus": "NEEDS_HUMAN_REVIEW",
+    "needs_review": true
   },
   {
     "report_id": "msha_220092860045",
     "energy_type": "gravity",
     "energy_magnitude": "low",
-    "barrier_expected": "handrail / anti\u2011slip surface",
+    "barrier_expected": "handrail / anti‑slip surface",
     "barrier_state": "missing",
     "activity": "walking down the steps",
     "location": "steps at the Prep Plant",
@@ -1103,7 +1460,14 @@
       "Working at Height"
     ],
     "iogp_rule": "Working at Height",
-    "label_source": "Method_1_Deterministic"
+    "label_source": "Method_1_Deterministic",
+    "date": "",
+    "language": "en",
+    "m1_rule_engine": false,
+    "m2_random_forest": false,
+    "m3_raw_text": false,
+    "consensus": "SAFE",
+    "needs_review": false
   },
   {
     "report_id": "msha_220040050030",
@@ -1122,13 +1486,20 @@
       "Line of Fire"
     ],
     "iogp_rule": "Line of Fire",
-    "label_source": "Method_1_Deterministic"
+    "label_source": "Method_1_Deterministic",
+    "date": "",
+    "language": "en",
+    "m1_rule_engine": false,
+    "m2_random_forest": false,
+    "m3_raw_text": false,
+    "consensus": "SAFE",
+    "needs_review": false
   },
   {
     "report_id": "msha_220011240047",
     "energy_type": "kinetic",
     "energy_magnitude": "low",
-    "barrier_expected": "proper tool handling / knife guard / cut\u2011resistant gloves",
+    "barrier_expected": "proper tool handling / knife guard / cut‑resistant gloves",
     "barrier_state": "missing",
     "activity": "cutting hole in conveyor belt with a utility knife",
     "location": "conveyor belt",
@@ -1142,7 +1513,14 @@
       "Line of Fire"
     ],
     "iogp_rule": "Line of Fire",
-    "label_source": "Method_1_Deterministic"
+    "label_source": "Method_1_Deterministic",
+    "date": "",
+    "language": "en",
+    "m1_rule_engine": false,
+    "m2_random_forest": false,
+    "m3_raw_text": false,
+    "consensus": "SAFE",
+    "needs_review": false
   },
   {
     "report_id": "msha_220072970008",
@@ -1164,7 +1542,14 @@
       "No specific LSR match"
     ],
     "iogp_rule": "No specific LSR match",
-    "label_source": "Method_1_Deterministic"
+    "label_source": "Method_1_Deterministic",
+    "date": "",
+    "language": "en",
+    "m1_rule_engine": false,
+    "m2_random_forest": false,
+    "m3_raw_text": false,
+    "consensus": "SAFE",
+    "needs_review": false
   },
   {
     "report_id": "msha_220060380049",
@@ -1186,7 +1571,14 @@
       "Line of Fire"
     ],
     "iogp_rule": "Driving",
-    "label_source": "Method_1_Deterministic"
+    "label_source": "Method_1_Deterministic",
+    "date": "",
+    "language": "en",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
   },
   {
     "report_id": "msha_220123180012",
@@ -1207,7 +1599,14 @@
       "Line of Fire"
     ],
     "iogp_rule": "Driving",
-    "label_source": "Method_1_Deterministic"
+    "label_source": "Method_1_Deterministic",
+    "date": "",
+    "language": "en",
+    "m1_rule_engine": false,
+    "m2_random_forest": false,
+    "m3_raw_text": true,
+    "consensus": "NEEDS_HUMAN_REVIEW",
+    "needs_review": true
   },
   {
     "report_id": "msha_220040410013",
@@ -1215,8 +1614,8 @@
     "energy_magnitude": "high",
     "barrier_expected": "engine compartment cover latch or guard",
     "barrier_state": "missing",
-    "activity": "repairing right rear turbocharger on CAT 789 off\u2011highway truck",
-    "location": "engine compartment of CAT 789 off\u2011highway truck",
+    "activity": "repairing right rear turbocharger on CAT 789 off‑highway truck",
+    "location": "engine compartment of CAT 789 off‑highway truck",
     "evidence_phrases": [
       "beginning repairs to the right rear turbocharger",
       "leaned on the engine compartment cover",
@@ -1228,6 +1627,1531 @@
       "Working at Height"
     ],
     "iogp_rule": "Driving",
-    "label_source": "Method_1_Deterministic"
+    "label_source": "Method_1_Deterministic",
+    "date": "",
+    "language": "en",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
+  },
+  {
+    "report_id": "upl_001_c205",
+    "date": "",
+    "narrative": "A worker died after being caught between two vehicles.",
+    "energy_type": "kinetic",
+    "energy_magnitude": "high",
+    "barrier_expected": "exclusion zone / spotters / communication protocol",
+    "barrier_state": "missing",
+    "activity": "working between two vehicles",
+    "location": "",
+    "evidence_phrases": [
+      "caught between two vehicles"
+    ],
+    "sif_potential": true,
+    "iogp_rules": [
+      "Driving",
+      "Line of Fire"
+    ],
+    "iogp_rule": "Driving",
+    "label_source": "API_Upload_Batch",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
+  },
+  {
+    "report_id": "upl_002_69dc",
+    "date": "",
+    "narrative": "Worker fatally injured in fall from roof.",
+    "energy_type": "gravity",
+    "energy_magnitude": "high",
+    "barrier_expected": "fall protection system (safety belt / harness / guardrail)",
+    "barrier_state": "missing",
+    "activity": "working on roof",
+    "location": "",
+    "evidence_phrases": [
+      "fall from roof"
+    ],
+    "sif_potential": true,
+    "iogp_rules": [
+      "Working at Height"
+    ],
+    "iogp_rule": "Working at Height",
+    "label_source": "API_Upload_Batch",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
+  },
+  {
+    "report_id": "upl_003_a6ae",
+    "date": "",
+    "narrative": "A worker died after falling from a 6 foot ladder.",
+    "energy_type": "gravity",
+    "energy_magnitude": "high",
+    "barrier_expected": "fall protection / safety harness",
+    "barrier_state": "missing",
+    "activity": "working on ladder",
+    "location": "",
+    "evidence_phrases": [
+      "worker died after falling from a 6 foot ladder"
+    ],
+    "sif_potential": true,
+    "iogp_rules": [
+      "Working at Height"
+    ],
+    "iogp_rule": "Working at Height",
+    "label_source": "API_Upload_Batch",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
+  },
+  {
+    "report_id": "upl_004_f7aa",
+    "date": "",
+    "narrative": "Worker struck and killed by log.",
+    "energy_type": "kinetic",
+    "energy_magnitude": "high",
+    "barrier_expected": "exclusion zone / barricade / PPE (hard hat)",
+    "barrier_state": "unknown",
+    "activity": "log handling / felling",
+    "location": "",
+    "evidence_phrases": [
+      "Worker struck and killed by log"
+    ],
+    "sif_potential": false,
+    "iogp_rules": [
+      "Line of Fire"
+    ],
+    "iogp_rule": "Line of Fire",
+    "label_source": "API_Upload_Batch",
+    "m1_rule_engine": false,
+    "m2_random_forest": false,
+    "m3_raw_text": false,
+    "consensus": "SAFE",
+    "needs_review": false
+  },
+  {
+    "report_id": "upl_005_9bd4",
+    "date": "",
+    "narrative": "Worker died after being struck by a front end loader.",
+    "energy_type": "kinetic",
+    "energy_magnitude": "high",
+    "barrier_expected": "exclusion zone / spotters / barricades",
+    "barrier_state": "missing",
+    "activity": "front end loader operation",
+    "location": "",
+    "evidence_phrases": [
+      "struck by a front end loader"
+    ],
+    "sif_potential": true,
+    "iogp_rules": [
+      "Line of Fire"
+    ],
+    "iogp_rule": "Line of Fire",
+    "label_source": "API_Upload_Batch",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
+  },
+  {
+    "report_id": "upl_006_0385",
+    "date": "",
+    "narrative": "Worker fatally injured in fall from roof.",
+    "energy_type": "gravity",
+    "energy_magnitude": "high",
+    "barrier_expected": "fall protection system (safety belt/harness or guardrails)",
+    "barrier_state": "missing",
+    "activity": "working on roof",
+    "location": "",
+    "evidence_phrases": [
+      "fall from roof"
+    ],
+    "sif_potential": true,
+    "iogp_rules": [
+      "Working at Height"
+    ],
+    "iogp_rule": "Working at Height",
+    "label_source": "API_Upload_Batch",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
+  },
+  {
+    "report_id": "upl_007_3537",
+    "date": "",
+    "narrative": "Worker fatally injured in fall when fuel truck exploded.",
+    "energy_type": "chemical",
+    "energy_magnitude": "high",
+    "barrier_expected": "explosion-proof equipment / safe distance / fire suppression system",
+    "barrier_state": "unknown",
+    "activity": "working near fuel truck",
+    "location": "",
+    "evidence_phrases": [
+      "fuel truck exploded",
+      "fatally injured in fall"
+    ],
+    "sif_potential": false,
+    "iogp_rules": [
+      "Driving"
+    ],
+    "iogp_rule": "Driving",
+    "label_source": "API_Upload_Batch",
+    "m1_rule_engine": false,
+    "m2_random_forest": false,
+    "m3_raw_text": false,
+    "consensus": "SAFE",
+    "needs_review": false
+  },
+  {
+    "report_id": "upl_008_369e",
+    "date": "",
+    "narrative": "One worker died and another hospitalized after being ejected from bucket.",
+    "energy_type": "kinetic",
+    "energy_magnitude": "high",
+    "barrier_expected": "bucket restraint / fall protection / secure attachment",
+    "barrier_state": "missing",
+    "activity": "working in bucket (aerial lift)",
+    "location": "",
+    "evidence_phrases": [
+      "ejected from bucket"
+    ],
+    "sif_potential": true,
+    "iogp_rules": [
+      "Line of Fire",
+      "Safe Mechanical Lifting",
+      "Working at Height"
+    ],
+    "iogp_rule": "Line of Fire",
+    "label_source": "API_Upload_Batch",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
+  },
+  {
+    "report_id": "upl_009_f166",
+    "date": "",
+    "narrative": "Worker died after being electrocuted.",
+    "energy_type": "electrical",
+    "energy_magnitude": "high",
+    "barrier_expected": "electrical isolation / LOTO / PPE",
+    "barrier_state": "missing",
+    "activity": "electrical work",
+    "location": "",
+    "evidence_phrases": [
+      "electrocuted"
+    ],
+    "sif_potential": true,
+    "iogp_rules": [
+      "Energy Isolation"
+    ],
+    "iogp_rule": "Energy Isolation",
+    "label_source": "API_Upload_Batch",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
+  },
+  {
+    "report_id": "upl_010_3f50",
+    "date": "",
+    "narrative": "Worker died after being electrocuted.",
+    "energy_type": "electrical",
+    "energy_magnitude": "high",
+    "barrier_expected": "electrical isolation / LOTO / PPE",
+    "barrier_state": "missing",
+    "activity": "electrical work",
+    "location": "",
+    "evidence_phrases": [
+      "electrocuted"
+    ],
+    "sif_potential": true,
+    "iogp_rules": [
+      "Energy Isolation"
+    ],
+    "iogp_rule": "Energy Isolation",
+    "label_source": "API_Upload_Batch",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
+  },
+  {
+    "report_id": "upl_011_0e35",
+    "date": "",
+    "narrative": "Worker fatally struck by vehicle.",
+    "energy_type": "kinetic",
+    "energy_magnitude": "high",
+    "barrier_expected": "vehicle exclusion zone / pedestrian segregation",
+    "barrier_state": "missing",
+    "activity": "working in vehicle movement area",
+    "location": "",
+    "evidence_phrases": [
+      "Worker fatally struck by vehicle"
+    ],
+    "sif_potential": true,
+    "iogp_rules": [
+      "Driving",
+      "Line of Fire"
+    ],
+    "iogp_rule": "Driving",
+    "label_source": "API_Upload_Batch",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
+  },
+  {
+    "report_id": "upl_012_01ed",
+    "date": "",
+    "narrative": "One worker fatally injured and another hospitalized in crane collapse.",
+    "energy_type": "kinetic",
+    "energy_magnitude": "high",
+    "barrier_expected": "crane structural integrity / load capacity limits",
+    "barrier_state": "degraded",
+    "activity": "crane operation",
+    "location": "",
+    "evidence_phrases": [
+      "crane collapse"
+    ],
+    "sif_potential": true,
+    "iogp_rules": [
+      "Line of Fire",
+      "Safe Mechanical Lifting"
+    ],
+    "iogp_rule": "Line of Fire",
+    "label_source": "API_Upload_Batch",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
+  },
+  {
+    "report_id": "upl_013_afa4",
+    "date": "",
+    "narrative": "Worker died after falling from ladder.",
+    "energy_type": "gravity",
+    "energy_magnitude": "high",
+    "barrier_expected": "fall protection / safety harness",
+    "barrier_state": "missing",
+    "activity": "working on ladder",
+    "location": "",
+    "evidence_phrases": [
+      "falling from ladder"
+    ],
+    "sif_potential": true,
+    "iogp_rules": [
+      "Working at Height"
+    ],
+    "iogp_rule": "Working at Height",
+    "label_source": "API_Upload_Batch",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
+  },
+  {
+    "report_id": "upl_014_a058",
+    "date": "",
+    "narrative": "Worker died after being electrocuted.",
+    "energy_type": "electrical",
+    "energy_magnitude": "high",
+    "barrier_expected": "electrical isolation / LOTO / PPE",
+    "barrier_state": "missing",
+    "activity": "electrical work",
+    "location": "",
+    "evidence_phrases": [
+      "electrocuted"
+    ],
+    "sif_potential": true,
+    "iogp_rules": [
+      "Energy Isolation"
+    ],
+    "iogp_rule": "Energy Isolation",
+    "label_source": "API_Upload_Batch",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
+  },
+  {
+    "report_id": "upl_015_89ec",
+    "date": "",
+    "narrative": "Worker drowned when cart fell into damn.",
+    "energy_type": "kinetic",
+    "energy_magnitude": "high",
+    "barrier_expected": "edge protection / guardrail / barricade",
+    "barrier_state": "missing",
+    "activity": "cart operation / transport",
+    "location": "",
+    "evidence_phrases": [
+      "cart fell into damn",
+      "Worker drowned"
+    ],
+    "sif_potential": true,
+    "iogp_rules": [
+      "Line of Fire"
+    ],
+    "iogp_rule": "Line of Fire",
+    "label_source": "API_Upload_Batch",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
+  },
+  {
+    "report_id": "upl_016_7030",
+    "date": "",
+    "narrative": "Worker died after falling on asphalt mixing conveyor and  stairway.",
+    "energy_type": "gravity",
+    "energy_magnitude": "high",
+    "barrier_expected": "guardrails / fall protection",
+    "barrier_state": "missing",
+    "activity": "working on asphalt mixing conveyor and stairway",
+    "location": "",
+    "evidence_phrases": [
+      "Worker died after falling",
+      "asphalt mixing conveyor and  stairway"
+    ],
+    "sif_potential": true,
+    "iogp_rules": [
+      "Working at Height"
+    ],
+    "iogp_rule": "Working at Height",
+    "label_source": "API_Upload_Batch",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
+  },
+  {
+    "report_id": "upl_017_d6de",
+    "date": "",
+    "narrative": "Worker fatally injured in fall from top of  grain silo.",
+    "energy_type": "gravity",
+    "energy_magnitude": "high",
+    "barrier_expected": "fall protection system (safety belt/harness) or guardrails",
+    "barrier_state": "missing",
+    "activity": "working on top of grain silo",
+    "location": "",
+    "evidence_phrases": [
+      "fall from top of grain silo"
+    ],
+    "sif_potential": true,
+    "iogp_rules": [
+      "Working at Height"
+    ],
+    "iogp_rule": "Working at Height",
+    "label_source": "API_Upload_Batch",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
+  },
+  {
+    "report_id": "upl_018_57d8",
+    "date": "",
+    "narrative": "Worker fatally injured after being thrown out of bucket truck.",
+    "energy_type": "kinetic",
+    "energy_magnitude": "high",
+    "barrier_expected": "bucket restraint / fall protection / seatbelt",
+    "barrier_state": "missing",
+    "activity": "working in bucket truck",
+    "location": "",
+    "evidence_phrases": [
+      "thrown out of bucket truck"
+    ],
+    "sif_potential": true,
+    "iogp_rules": [
+      "Driving",
+      "Line of Fire",
+      "Working at Height"
+    ],
+    "iogp_rule": "Driving",
+    "label_source": "API_Upload_Batch",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
+  },
+  {
+    "report_id": "upl_019_4192",
+    "date": "",
+    "narrative": "Worker fatally injured when wall collapsed.",
+    "energy_type": "gravity",
+    "energy_magnitude": "high",
+    "barrier_expected": "structural shoring / support system",
+    "barrier_state": "missing",
+    "activity": "working near wall",
+    "location": "",
+    "evidence_phrases": [
+      "wall collapsed",
+      "fatally injured"
+    ],
+    "sif_potential": true,
+    "iogp_rules": [
+      "Working at Height"
+    ],
+    "iogp_rule": "Working at Height",
+    "label_source": "API_Upload_Batch",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
+  },
+  {
+    "report_id": "upl_001_2219",
+    "date": "",
+    "narrative": "A worker died after being caught between two vehicles.",
+    "energy_type": "kinetic",
+    "energy_magnitude": "high",
+    "barrier_expected": "exclusion zone / spotters / communication protocol",
+    "barrier_state": "missing",
+    "activity": "working between two vehicles",
+    "location": "",
+    "evidence_phrases": [
+      "caught between two vehicles"
+    ],
+    "sif_potential": true,
+    "iogp_rules": [
+      "Driving",
+      "Line of Fire"
+    ],
+    "iogp_rule": "Driving",
+    "label_source": "API_Upload_Batch",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
+  },
+  {
+    "report_id": "upl_002_5943",
+    "date": "",
+    "narrative": "Worker fatally injured in fall from roof.",
+    "energy_type": "gravity",
+    "energy_magnitude": "high",
+    "barrier_expected": "fall protection system (safety belt/harness or guardrails)",
+    "barrier_state": "missing",
+    "activity": "working on roof",
+    "location": "",
+    "evidence_phrases": [
+      "fall from roof"
+    ],
+    "sif_potential": true,
+    "iogp_rules": [
+      "Working at Height"
+    ],
+    "iogp_rule": "Working at Height",
+    "label_source": "API_Upload_Batch",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
+  },
+  {
+    "report_id": "upl_003_4d6e",
+    "date": "",
+    "narrative": "A worker died after falling from a 6 foot ladder.",
+    "energy_type": "gravity",
+    "energy_magnitude": "high",
+    "barrier_expected": "fall protection / safety harness",
+    "barrier_state": "missing",
+    "activity": "working on ladder",
+    "location": "",
+    "evidence_phrases": [
+      "worker died after falling from a 6 foot ladder"
+    ],
+    "sif_potential": true,
+    "iogp_rules": [
+      "Working at Height"
+    ],
+    "iogp_rule": "Working at Height",
+    "label_source": "API_Upload_Batch",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
+  },
+  {
+    "report_id": "upl_004_b97d",
+    "date": "",
+    "narrative": "Worker struck and killed by log.",
+    "energy_type": "kinetic",
+    "energy_magnitude": "high",
+    "barrier_expected": "exclusion zone / barricade / PPE (hard hat)",
+    "barrier_state": "unknown",
+    "activity": "log handling / felling",
+    "location": "",
+    "evidence_phrases": [
+      "Worker struck and killed by log"
+    ],
+    "sif_potential": false,
+    "iogp_rules": [
+      "Line of Fire"
+    ],
+    "iogp_rule": "Line of Fire",
+    "label_source": "API_Upload_Batch",
+    "m1_rule_engine": false,
+    "m2_random_forest": false,
+    "m3_raw_text": false,
+    "consensus": "SAFE",
+    "needs_review": false
+  },
+  {
+    "report_id": "upl_005_9b24",
+    "date": "",
+    "narrative": "Worker died after being struck by a front end loader.",
+    "energy_type": "kinetic",
+    "energy_magnitude": "high",
+    "barrier_expected": "exclusion zone / spotters / barricades",
+    "barrier_state": "missing",
+    "activity": "front end loader operation",
+    "location": "",
+    "evidence_phrases": [
+      "struck by a front end loader"
+    ],
+    "sif_potential": true,
+    "iogp_rules": [
+      "Line of Fire"
+    ],
+    "iogp_rule": "Line of Fire",
+    "label_source": "API_Upload_Batch",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
+  },
+  {
+    "report_id": "upl_006_1a43",
+    "date": "",
+    "narrative": "Worker fatally injured in fall from roof.",
+    "energy_type": "gravity",
+    "energy_magnitude": "high",
+    "barrier_expected": "fall protection system (safety belt / harness / guardrail)",
+    "barrier_state": "missing",
+    "activity": "working on roof",
+    "location": "",
+    "evidence_phrases": [
+      "fall from roof"
+    ],
+    "sif_potential": true,
+    "iogp_rules": [
+      "Working at Height"
+    ],
+    "iogp_rule": "Working at Height",
+    "label_source": "API_Upload_Batch",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
+  },
+  {
+    "report_id": "upl_007_c7db",
+    "date": "",
+    "narrative": "Worker fatally injured in fall when fuel truck exploded.",
+    "energy_type": "chemical",
+    "energy_magnitude": "high",
+    "barrier_expected": "explosion-proof equipment / safe distance / fire suppression system",
+    "barrier_state": "unknown",
+    "activity": "working near fuel truck",
+    "location": "",
+    "evidence_phrases": [
+      "fuel truck exploded",
+      "fatally injured in fall"
+    ],
+    "sif_potential": false,
+    "iogp_rules": [
+      "Driving"
+    ],
+    "iogp_rule": "Driving",
+    "label_source": "API_Upload_Batch",
+    "m1_rule_engine": false,
+    "m2_random_forest": false,
+    "m3_raw_text": false,
+    "consensus": "SAFE",
+    "needs_review": false
+  },
+  {
+    "report_id": "upl_008_1243",
+    "date": "",
+    "narrative": "One worker died and another hospitalized after being ejected from bucket.",
+    "energy_type": "kinetic",
+    "energy_magnitude": "high",
+    "barrier_expected": "bucket restraint / fall protection / secure attachment",
+    "barrier_state": "missing",
+    "activity": "working in bucket (aerial lift)",
+    "location": "",
+    "evidence_phrases": [
+      "ejected from bucket"
+    ],
+    "sif_potential": true,
+    "iogp_rules": [
+      "Line of Fire",
+      "Safe Mechanical Lifting",
+      "Working at Height"
+    ],
+    "iogp_rule": "Line of Fire",
+    "label_source": "API_Upload_Batch",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
+  },
+  {
+    "report_id": "upl_009_46af",
+    "date": "",
+    "narrative": "Worker died after being electrocuted.",
+    "energy_type": "electrical",
+    "energy_magnitude": "high",
+    "barrier_expected": "electrical isolation / LOTO / PPE",
+    "barrier_state": "missing",
+    "activity": "electrical work",
+    "location": "",
+    "evidence_phrases": [
+      "electrocuted"
+    ],
+    "sif_potential": true,
+    "iogp_rules": [
+      "Energy Isolation"
+    ],
+    "iogp_rule": "Energy Isolation",
+    "label_source": "API_Upload_Batch",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
+  },
+  {
+    "report_id": "upl_010_7014",
+    "date": "",
+    "narrative": "Worker died after being electrocuted.",
+    "energy_type": "electrical",
+    "energy_magnitude": "high",
+    "barrier_expected": "electrical isolation / LOTO / PPE",
+    "barrier_state": "missing",
+    "activity": "electrical work",
+    "location": "",
+    "evidence_phrases": [
+      "electrocuted"
+    ],
+    "sif_potential": true,
+    "iogp_rules": [
+      "Energy Isolation"
+    ],
+    "iogp_rule": "Energy Isolation",
+    "label_source": "API_Upload_Batch",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
+  },
+  {
+    "report_id": "upl_011_1ae1",
+    "date": "",
+    "narrative": "Worker fatally struck by vehicle.",
+    "energy_type": "kinetic",
+    "energy_magnitude": "high",
+    "barrier_expected": "vehicle exclusion zone / pedestrian segregation",
+    "barrier_state": "missing",
+    "activity": "working in vehicle movement area",
+    "location": "",
+    "evidence_phrases": [
+      "Worker fatally struck by vehicle"
+    ],
+    "sif_potential": true,
+    "iogp_rules": [
+      "Driving",
+      "Line of Fire"
+    ],
+    "iogp_rule": "Driving",
+    "label_source": "API_Upload_Batch",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
+  },
+  {
+    "report_id": "upl_012_e0b6",
+    "date": "",
+    "narrative": "One worker fatally injured and another hospitalized in crane collapse.",
+    "energy_type": "kinetic",
+    "energy_magnitude": "high",
+    "barrier_expected": "crane structural integrity / load capacity limits",
+    "barrier_state": "degraded",
+    "activity": "crane operation",
+    "location": "",
+    "evidence_phrases": [
+      "crane collapse"
+    ],
+    "sif_potential": true,
+    "iogp_rules": [
+      "Line of Fire",
+      "Safe Mechanical Lifting"
+    ],
+    "iogp_rule": "Line of Fire",
+    "label_source": "API_Upload_Batch",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
+  },
+  {
+    "report_id": "upl_013_279b",
+    "date": "",
+    "narrative": "Worker died after falling from ladder.",
+    "energy_type": "gravity",
+    "energy_magnitude": "high",
+    "barrier_expected": "fall protection / safety harness",
+    "barrier_state": "missing",
+    "activity": "working on ladder",
+    "location": "",
+    "evidence_phrases": [
+      "falling from ladder"
+    ],
+    "sif_potential": true,
+    "iogp_rules": [
+      "Working at Height"
+    ],
+    "iogp_rule": "Working at Height",
+    "label_source": "API_Upload_Batch",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
+  },
+  {
+    "report_id": "upl_014_989e",
+    "date": "",
+    "narrative": "Worker died after being electrocuted.",
+    "energy_type": "electrical",
+    "energy_magnitude": "high",
+    "barrier_expected": "electrical isolation / LOTO / PPE",
+    "barrier_state": "missing",
+    "activity": "electrical work",
+    "location": "",
+    "evidence_phrases": [
+      "electrocuted"
+    ],
+    "sif_potential": true,
+    "iogp_rules": [
+      "Energy Isolation"
+    ],
+    "iogp_rule": "Energy Isolation",
+    "label_source": "API_Upload_Batch",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
+  },
+  {
+    "report_id": "upl_015_1072",
+    "date": "",
+    "narrative": "Worker drowned when cart fell into damn.",
+    "energy_type": "kinetic",
+    "energy_magnitude": "high",
+    "barrier_expected": "edge protection / guardrail / barricade",
+    "barrier_state": "missing",
+    "activity": "cart operation / transport",
+    "location": "",
+    "evidence_phrases": [
+      "cart fell into damn",
+      "Worker drowned"
+    ],
+    "sif_potential": true,
+    "iogp_rules": [
+      "Line of Fire"
+    ],
+    "iogp_rule": "Line of Fire",
+    "label_source": "API_Upload_Batch",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
+  },
+  {
+    "report_id": "upl_016_7f4f",
+    "date": "",
+    "narrative": "Worker died after falling on asphalt mixing conveyor and  stairway.",
+    "energy_type": "gravity",
+    "energy_magnitude": "high",
+    "barrier_expected": "guardrails / fall protection",
+    "barrier_state": "missing",
+    "activity": "working on asphalt mixing conveyor and stairway",
+    "location": "",
+    "evidence_phrases": [
+      "Worker died after falling",
+      "asphalt mixing conveyor and  stairway"
+    ],
+    "sif_potential": true,
+    "iogp_rules": [
+      "Working at Height"
+    ],
+    "iogp_rule": "Working at Height",
+    "label_source": "API_Upload_Batch",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
+  },
+  {
+    "report_id": "upl_017_9f08",
+    "date": "",
+    "narrative": "Worker fatally injured in fall from top of  grain silo.",
+    "energy_type": "gravity",
+    "energy_magnitude": "high",
+    "barrier_expected": "fall protection system (harness/lanyard) or guardrail",
+    "barrier_state": "missing",
+    "activity": "working on top of grain silo",
+    "location": "",
+    "evidence_phrases": [
+      "fall from top of grain silo"
+    ],
+    "sif_potential": true,
+    "iogp_rules": [
+      "Working at Height"
+    ],
+    "iogp_rule": "Working at Height",
+    "label_source": "API_Upload_Batch",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
+  },
+  {
+    "report_id": "upl_018_601a",
+    "date": "",
+    "narrative": "Worker fatally injured after being thrown out of bucket truck.",
+    "energy_type": "kinetic",
+    "energy_magnitude": "high",
+    "barrier_expected": "bucket restraint / fall protection / seatbelt",
+    "barrier_state": "missing",
+    "activity": "working in bucket truck",
+    "location": "",
+    "evidence_phrases": [
+      "thrown out of bucket truck"
+    ],
+    "sif_potential": true,
+    "iogp_rules": [
+      "Driving",
+      "Line of Fire",
+      "Working at Height"
+    ],
+    "iogp_rule": "Driving",
+    "label_source": "API_Upload_Batch",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
+  },
+  {
+    "report_id": "upl_019_083b",
+    "date": "",
+    "narrative": "Worker fatally injured when wall collapsed.",
+    "energy_type": "gravity",
+    "energy_magnitude": "high",
+    "barrier_expected": "structural shoring / support system",
+    "barrier_state": "missing",
+    "activity": "working near wall",
+    "location": "",
+    "evidence_phrases": [
+      "wall collapsed",
+      "fatally injured"
+    ],
+    "sif_potential": true,
+    "iogp_rules": [
+      "Working at Height"
+    ],
+    "iogp_rule": "Working at Height",
+    "label_source": "API_Upload_Batch",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
+  },
+  {
+    "report_id": "oisd_2025-26_LPG_12",
+    "date": "2025-11-03",
+    "narrative": "During maintenance activity at the plant, one contract worker (IP), helper to electrician, suffered an apparent electrical shock from damaged electric cable connected to motor push button station near purging unit in the filling shed. On Sunday afternoon (plant was not operating), one electrician provided temporary power connection from PTDU (Motor push button station near purging unit) to a temporary extension board for carrying out job of fixing the stand of proximity sensor in filling shed. In the evening, electrician left the plant to get the drill bit after switching on the supply to PTDU and instructed IP to go to the filling shed and wait till he comes back. However, during handling of cable, IP got electric shock and collapsed. First responder, upon hearing a hitting sound on the floor, rushed to the incident site and saw the victim shivering by holding a damaged flexible electric cable in his hand and hitting the floor with his feet. Immediately he pressed the emergency push button of the PTDU. He was promptly shifted to nearby hospital, where hospital emergency medical staff advised to take IP to multi-specialty hospital. IP was then shifted to multi-specialty hospital for further treatment; however, doctor declared him brought dead. Usage of Substandard Equipment and Unsafe Electrical Practices: The electrician used a non-standard extension box with damaged cable and connected it to an incorrect and unauthorized power source (PTDU: Motor push button station) inspite of having dedicated single-phase and three-phase connection sockets located at distance of The temporary extension box was not fit for use. It was a makeshift arrangement where two different cables were joined together using insulation tape, and the cable was found damaged at multiple places. Sockets were not of industrial type (metal clad) and did not have any human protection like ELCB, RCCB. Though plant was having industrial type of plug and junction box suitable for temporary power connection; however, it was not kept ready connected to an armoured cable. Non availability of this arrangement would have prompted electrician to use nonstandard extension board. IP was probably not wearing Electrical gloves. During last External Safety Audit, conducted by OISD, it was observed that electrician was not wearing LT/ HT gloves while checking electrical aspects. Usage of gloves does not seem to be regular practice. The Work Permit System including LOTO (Lock out/ Tag out) as per OISD-STD-105 was violated in this case. LOTO provision was not available for the PTDU panel. Furthermore, a review of the LOTO register showed that it was not being regularly updated. It appears that use of LOTO system is not in regular practice as per requirement of clause 6.3.2 of OISD-STD-105. Lack of Management control: As per the statements, Electrician has performed this job without the knowledge or approval of the Plant Officer. Lack of Qualified Personnel: On the day of incident, two class “B” certified electrician and two other persons were available in the plant. However, both the certified electricians, were not present in the plant between the hours when the incident occurred. Moreover, it is observed that one person was regularly deployed to work as a shift electrician even though he does not possess the class “B” or class “C” certification required as per Regulation 3 of Central Electricity Authority (Measures relating to Safety and Electric Supply) Regulations, 2023. Training: Training to electricians were provided on topic covering work permit system, electrical isolation procedure, importance of earthing and bonding, emergency procedure in case electrical shock etc. Despite the training, violation in implementation is observed. Absence of periodical mock drills (involving electrical incidents and medical emergencies) is observed. Reporting of unsafe condition and act: It is observed that during year 2024-2025, only 1 no. unsafe act and 3 no. unsafe condition is observed and FY 2025-26 (up to July 2025), no unsafe act and unsafe condition is reported. In this incident itself multiple unsafe act and condition is observed e.g. taking power connection from unauthorised source, usage of non- standard extension board, usage of damaged cable, handling cable without wearing electrical gloves. This indicates that reporting of unsafe act, unsafe condition is lacking in this plant. IP was taken to nearby Hospital (not listed in external emergency number in ERDMP), located 1.5 km from LPG bottling plant, where hospital emergency medical staff examined the IP inside the vehicle and detected with pulse. As this hospital was having only basic medical facilities, hospital team advised to shift the IP to multi-speciality hospital. Victim was then shifted to multi-specialty hospital (listed in the list of external emergency numbers in ERDMP) for further treatment. Also, as per ERDMP, mentioned nearest hospital is located at 0.3 Km where IP was not taken. Direct visit to multi-specialty hospital could have saved the time. IP was shifted in contractor’s vehicle. Emergency vehicle to transport the IP in supine position on stretcher was not available at the plant.",
+    "energy_type": "electrical",
+    "energy_magnitude": "high",
+    "barrier_expected": "LOTO (Lock out/Tag out), ELCB/RCCB protection, and insulated gloves",
+    "barrier_state": "missing",
+    "activity": "handling damaged electric cable connected to temporary extension board",
+    "location": "LPG Bottling Plant",
+    "evidence_phrases": [
+      "suffered an apparent electrical shock from damaged electric cable",
+      "holding a damaged flexible electric cable in his hand",
+      "non-standard extension box with damaged cable",
+      "did not have any human protection like ELCB, RCCB",
+      "IP was probably not wearing Electrical gloves",
+      "LOTO provision was not available for the PTDU panel"
+    ],
+    "sif_potential": true,
+    "iogp_rules": [
+      "Energy Isolation"
+    ],
+    "iogp_rule": "Energy Isolation",
+    "label_source": "API_Upload_PDF",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
+  },
+  {
+    "report_id": "oisd_2026-27_PE_08",
+    "date": "2026-06-01",
+    "narrative": "Following mechanical completion and pre-commissioning activities, the trial run of a Crude and Vacuum Distillation Unit (CDU/VDU) was carried out at approximately 50% of the design throughput capacity. Thereafter, the unit was kept under idle conditions, during which insulation, painting, and other associated activities were being carried out. The unit was restarted after nearly 2 months. The Crude Distillation Unit (CDU) operation was stabilised at around 57% capacity, with all product streams routed to designated storage. The Vacuum Distillation Unit (VDU) was under process parameter adjustment. During this phase, dense smoke followed by fire was observed at grade level in the crude versus vacuum residue preheat exchanger section of CDU. Emergency shutdown of the unit was undertaken, and firefighting operations were initiated using fire tenders, monitors, foam and dry chemical powder. The fire was contained within a small area and was brought under control within about one hour. It was completely extinguished after approximately 2 hours and 40 minutes of firefighting operations. No injury or fatality occurred. Dripping of VR (predominantly reduced crude oil - RCO) stream was observed from the flanges of the diaphragm-type pressure gauge installed on the vacuum residue (VR) shell- side inlet line of the crude versus vacuum residue exchanger (located on ground level). The flushing ring assembly of the pressure gauge was also found loose. The spiral wound gasket of the assembly was damaged and positioned off-center, indicating improper box-up and misalignment. Accordingly, the sealing integrity of the assembly seemed to be compromised. The compromised pressure gauge assembly was concluded as the source of the initial leakage of hot vacuum residue (predominantly reduced crude oil A fish-mouth rupture (around 6”) was observed in the 2-inch flushing oil (FLO) line located just below the first platform of the technical structure (TS), approximately 5–6 meters above the fire initiation area. The line was provided for flushing the tube side of the CRUDE/HVGO CR EXCHANGER located on the first platform of the TS. The pressure indicator of the FLO line showed a rise from 23.4 kg/cm2 to 68 kg/cm2 between the citing of smoke and sudden intensification of fire, approximately 4 minutes after the initial outbreak, as per the CCTV footage. Then the FLO pressure dropped down to 2.3 kg/cm2. This implied that the FLO line got pressurized due to heating up in a blocked condition in the flame emanating from the ground floor. It then ruptured, adding FLO into the fire. A flow indicator in the FLO line at battery limit indicated a continuous flow of around 56 m3/hr for about 45 minutes after the initiation of fire. The closing of the flow and dropping of pressure of the line to 0 kg/cm2 coincided with the shutting-off of the offsite pump and isolation of the battery limit valve of FLO. DCS alarm flooding preceding and during the incident was noted. It was also reported that the alarm audio had been kept muted; consequently, the high-high pressure alarm associated with the flushing oil line was not noticed prior to rupture of the line. Dripping and minor leakage of VR stream (predominantly RCO) was also noticed from the gland area of the vacuum residue (VR) inlet gate valve of the same crude versus vacuum residue exchanger. Displacement of the gland packing and gland follower assembly of the valve was identified. The eye-bolt nuts were found disengaged and outward thread deformation was noticed on the gland flange studs, indicating additional leakage through the gland opening during the incident. The vacuum residue (VR) inlet isolation gate valve was found maintained in a partially open condition without backseat engagement, resulting in continuous process pressure acting on the gland packing arrangement and making the gland more susceptible to leakage. Additional hydrocarbon leakages from exchanger flanges, valve glands, and associated piping above the fire affected area were also identified. The leakages were attributed to prolonged thermal exposure and thermal expansion effects. Complete power shutdown of the CDU/VDU was carried out immediately after the incident as per operational instructions, resulting in loss of power supply to emergency response equipment, namely remote-operated firewater monitors of the unit as well as the oily water sewage (OWS) and the closed blow down (CBD) pumps. One strategically located 2000 GPM high-volume long-range monitor (HLRM), which could have effectively supported firefighting operations in the affected area, exhibited misdirected flow as directional adjustment towards the fire could not be carried out due to power loss. The logging system through standard field and panel log sheets had not yet been fully implemented. Regular field parameter monitoring and abnormality recording systems were also not adequately established. Critical control valves and control loops required for smooth operation were reportedly maintained in manual mode during startup and stabilization activities.",
+    "energy_type": "thermal",
+    "energy_magnitude": "high",
+    "barrier_expected": "Intact pressure gauge sealing assembly (flushing ring/gasket) and functional alarm monitoring system",
+    "barrier_state": "degraded",
+    "activity": "CDU/VDU trial run and stabilization",
+    "location": "Refinery",
+    "evidence_phrases": [
+      "dense smoke followed by fire was observed at grade level",
+      "Dripping of VR (predominantly reduced crude oil - RCO) stream was observed from the flanges of the diaphragm-type pressure gauge",
+      "The flushing ring assembly of the pressure gauge was also found loose",
+      "The spiral wound gasket of the assembly was damaged and positioned off-center",
+      "alarm audio had been kept muted",
+      "high-high pressure alarm associated with the flushing oil line was not noticed"
+    ],
+    "sif_potential": true,
+    "iogp_rules": [
+      "Hot Work"
+    ],
+    "iogp_rule": "Hot Work",
+    "label_source": "API_Upload_PDF",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
+  },
+  {
+    "report_id": "upl_001_e172",
+    "date": "",
+    "narrative": "A worker died after being caught between two vehicles.",
+    "energy_type": "kinetic",
+    "energy_magnitude": "high",
+    "barrier_expected": "exclusion zone / spotters / communication protocol",
+    "barrier_state": "missing",
+    "activity": "working between two vehicles",
+    "location": "",
+    "evidence_phrases": [
+      "caught between two vehicles"
+    ],
+    "sif_potential": true,
+    "iogp_rules": [
+      "Driving",
+      "Line of Fire"
+    ],
+    "iogp_rule": "Driving",
+    "label_source": "API_Upload_Batch",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
+  },
+  {
+    "report_id": "upl_002_8f64",
+    "date": "",
+    "narrative": "Worker fatally injured in fall from roof.",
+    "energy_type": "gravity",
+    "energy_magnitude": "high",
+    "barrier_expected": "fall protection system (safety belt / harness / guardrail)",
+    "barrier_state": "missing",
+    "activity": "working on roof",
+    "location": "",
+    "evidence_phrases": [
+      "fall from roof"
+    ],
+    "sif_potential": true,
+    "iogp_rules": [
+      "Working at Height"
+    ],
+    "iogp_rule": "Working at Height",
+    "label_source": "API_Upload_Batch",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
+  },
+  {
+    "report_id": "upl_003_c02b",
+    "date": "",
+    "narrative": "A worker died after falling from a 6 foot ladder.",
+    "energy_type": "gravity",
+    "energy_magnitude": "high",
+    "barrier_expected": "fall protection / safety harness",
+    "barrier_state": "missing",
+    "activity": "working on ladder",
+    "location": "",
+    "evidence_phrases": [
+      "falling from a 6 foot ladder"
+    ],
+    "sif_potential": true,
+    "iogp_rules": [
+      "Working at Height"
+    ],
+    "iogp_rule": "Working at Height",
+    "label_source": "API_Upload_Batch",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
+  },
+  {
+    "report_id": "upl_004_8185",
+    "date": "",
+    "narrative": "Worker struck and killed by log.",
+    "energy_type": "kinetic",
+    "energy_magnitude": "high",
+    "barrier_expected": "exclusion zone / barricade / PPE (hard hat)",
+    "barrier_state": "missing",
+    "activity": "log handling / felling",
+    "location": "",
+    "evidence_phrases": [
+      "struck and killed by log"
+    ],
+    "sif_potential": true,
+    "iogp_rules": [
+      "Line of Fire"
+    ],
+    "iogp_rule": "Line of Fire",
+    "label_source": "API_Upload_Batch",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
+  },
+  {
+    "report_id": "upl_005_5f43",
+    "date": "",
+    "narrative": "Worker died after being struck by a front end loader.",
+    "energy_type": "kinetic",
+    "energy_magnitude": "high",
+    "barrier_expected": "exclusion zone / spotters / barricades",
+    "barrier_state": "missing",
+    "activity": "front end loader operation",
+    "location": "",
+    "evidence_phrases": [
+      "struck by a front end loader"
+    ],
+    "sif_potential": true,
+    "iogp_rules": [
+      "Line of Fire"
+    ],
+    "iogp_rule": "Line of Fire",
+    "label_source": "API_Upload_Batch",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
+  },
+  {
+    "report_id": "upl_006_7379",
+    "date": "",
+    "narrative": "Worker fatally injured in fall from roof.",
+    "energy_type": "gravity",
+    "energy_magnitude": "high",
+    "barrier_expected": "fall protection system (safety belt / harness / guardrail)",
+    "barrier_state": "missing",
+    "activity": "working on roof",
+    "location": "",
+    "evidence_phrases": [
+      "fall from roof"
+    ],
+    "sif_potential": true,
+    "iogp_rules": [
+      "Working at Height"
+    ],
+    "iogp_rule": "Working at Height",
+    "label_source": "API_Upload_Batch",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
+  },
+  {
+    "report_id": "upl_007_7d7b",
+    "date": "",
+    "narrative": "Worker fatally injured in fall when fuel truck exploded.",
+    "energy_type": "chemical",
+    "energy_magnitude": "high",
+    "barrier_expected": "explosion-proof equipment / safe distance / fire suppression system",
+    "barrier_state": "unknown",
+    "activity": "working near fuel truck",
+    "location": "",
+    "evidence_phrases": [
+      "fuel truck exploded",
+      "fatally injured in fall"
+    ],
+    "sif_potential": false,
+    "iogp_rules": [
+      "Driving"
+    ],
+    "iogp_rule": "Driving",
+    "label_source": "API_Upload_Batch",
+    "m1_rule_engine": false,
+    "m2_random_forest": false,
+    "m3_raw_text": false,
+    "consensus": "SAFE",
+    "needs_review": false
+  },
+  {
+    "report_id": "upl_008_7a2f",
+    "date": "",
+    "narrative": "One worker died and another hospitalized after being ejected from bucket.",
+    "energy_type": "kinetic",
+    "energy_magnitude": "high",
+    "barrier_expected": "bucket restraint / fall protection / secure attachment",
+    "barrier_state": "missing",
+    "activity": "working in bucket (aerial lift)",
+    "location": "",
+    "evidence_phrases": [
+      "ejected from bucket"
+    ],
+    "sif_potential": true,
+    "iogp_rules": [
+      "Line of Fire",
+      "Safe Mechanical Lifting",
+      "Working at Height"
+    ],
+    "iogp_rule": "Line of Fire",
+    "label_source": "API_Upload_Batch",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
+  },
+  {
+    "report_id": "upl_009_dd7b",
+    "date": "",
+    "narrative": "Worker died after being electrocuted.",
+    "energy_type": "electrical",
+    "energy_magnitude": "high",
+    "barrier_expected": "electrical isolation / LOTO / PPE",
+    "barrier_state": "missing",
+    "activity": "electrical work",
+    "location": "",
+    "evidence_phrases": [
+      "electrocuted"
+    ],
+    "sif_potential": true,
+    "iogp_rules": [
+      "Energy Isolation"
+    ],
+    "iogp_rule": "Energy Isolation",
+    "label_source": "API_Upload_Batch",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
+  },
+  {
+    "report_id": "upl_010_7f46",
+    "date": "",
+    "narrative": "Worker died after being electrocuted.",
+    "energy_type": "electrical",
+    "energy_magnitude": "high",
+    "barrier_expected": "electrical isolation / LOTO / PPE",
+    "barrier_state": "missing",
+    "activity": "electrical work",
+    "location": "",
+    "evidence_phrases": [
+      "electrocuted"
+    ],
+    "sif_potential": true,
+    "iogp_rules": [
+      "Energy Isolation"
+    ],
+    "iogp_rule": "Energy Isolation",
+    "label_source": "API_Upload_Batch",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
+  },
+  {
+    "report_id": "upl_011_55c7",
+    "date": "",
+    "narrative": "Worker fatally struck by vehicle.",
+    "energy_type": "kinetic",
+    "energy_magnitude": "high",
+    "barrier_expected": "vehicle exclusion zone / pedestrian segregation",
+    "barrier_state": "missing",
+    "activity": "working in vehicle movement area",
+    "location": "",
+    "evidence_phrases": [
+      "Worker fatally struck by vehicle"
+    ],
+    "sif_potential": true,
+    "iogp_rules": [
+      "Driving",
+      "Line of Fire"
+    ],
+    "iogp_rule": "Driving",
+    "label_source": "API_Upload_Batch",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
+  },
+  {
+    "report_id": "upl_012_dd46",
+    "date": "",
+    "narrative": "One worker fatally injured and another hospitalized in crane collapse.",
+    "energy_type": "kinetic",
+    "energy_magnitude": "high",
+    "barrier_expected": "crane structural integrity / load capacity limits",
+    "barrier_state": "degraded",
+    "activity": "crane operation",
+    "location": "",
+    "evidence_phrases": [
+      "crane collapse"
+    ],
+    "sif_potential": true,
+    "iogp_rules": [
+      "Line of Fire",
+      "Safe Mechanical Lifting"
+    ],
+    "iogp_rule": "Line of Fire",
+    "label_source": "API_Upload_Batch",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
+  },
+  {
+    "report_id": "upl_013_36b4",
+    "date": "",
+    "narrative": "Worker died after falling from ladder.",
+    "energy_type": "gravity",
+    "energy_magnitude": "high",
+    "barrier_expected": "fall protection / safety harness",
+    "barrier_state": "missing",
+    "activity": "working on ladder",
+    "location": "",
+    "evidence_phrases": [
+      "falling from ladder"
+    ],
+    "sif_potential": true,
+    "iogp_rules": [
+      "Working at Height"
+    ],
+    "iogp_rule": "Working at Height",
+    "label_source": "API_Upload_Batch",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
+  },
+  {
+    "report_id": "upl_014_c220",
+    "date": "",
+    "narrative": "Worker died after being electrocuted.",
+    "energy_type": "electrical",
+    "energy_magnitude": "high",
+    "barrier_expected": "electrical isolation / LOTO / PPE",
+    "barrier_state": "missing",
+    "activity": "electrical work",
+    "location": "",
+    "evidence_phrases": [
+      "electrocuted"
+    ],
+    "sif_potential": true,
+    "iogp_rules": [
+      "Energy Isolation"
+    ],
+    "iogp_rule": "Energy Isolation",
+    "label_source": "API_Upload_Batch",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
+  },
+  {
+    "report_id": "upl_015_ca1f",
+    "date": "",
+    "narrative": "Worker drowned when cart fell into damn.",
+    "energy_type": "kinetic",
+    "energy_magnitude": "high",
+    "barrier_expected": "edge protection / guardrail / barricade",
+    "barrier_state": "missing",
+    "activity": "cart operation / transport",
+    "location": "",
+    "evidence_phrases": [
+      "cart fell into damn",
+      "Worker drowned"
+    ],
+    "sif_potential": true,
+    "iogp_rules": [
+      "Line of Fire"
+    ],
+    "iogp_rule": "Line of Fire",
+    "label_source": "API_Upload_Batch",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
+  },
+  {
+    "report_id": "upl_016_18e1",
+    "date": "",
+    "narrative": "Worker died after falling on asphalt mixing conveyor and  stairway.",
+    "energy_type": "gravity",
+    "energy_magnitude": "high",
+    "barrier_expected": "guardrails / fall protection",
+    "barrier_state": "missing",
+    "activity": "working on asphalt mixing conveyor and stairway",
+    "location": "",
+    "evidence_phrases": [
+      "Worker died after falling",
+      "asphalt mixing conveyor and  stairway"
+    ],
+    "sif_potential": true,
+    "iogp_rules": [
+      "Working at Height"
+    ],
+    "iogp_rule": "Working at Height",
+    "label_source": "API_Upload_Batch",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
+  },
+  {
+    "report_id": "upl_017_7c42",
+    "date": "",
+    "narrative": "Worker fatally injured in fall from top of  grain silo.",
+    "energy_type": "gravity",
+    "energy_magnitude": "high",
+    "barrier_expected": "fall protection system (safety belt/harness) or guardrails",
+    "barrier_state": "missing",
+    "activity": "working on top of grain silo",
+    "location": "",
+    "evidence_phrases": [
+      "fall from top of grain silo"
+    ],
+    "sif_potential": true,
+    "iogp_rules": [
+      "Working at Height"
+    ],
+    "iogp_rule": "Working at Height",
+    "label_source": "API_Upload_Batch",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
+  },
+  {
+    "report_id": "upl_018_8b40",
+    "date": "",
+    "narrative": "Worker fatally injured after being thrown out of bucket truck.",
+    "energy_type": "kinetic",
+    "energy_magnitude": "high",
+    "barrier_expected": "bucket restraint / fall protection / seatbelt",
+    "barrier_state": "missing",
+    "activity": "working in bucket truck",
+    "location": "",
+    "evidence_phrases": [
+      "thrown out of bucket truck"
+    ],
+    "sif_potential": true,
+    "iogp_rules": [
+      "Driving",
+      "Line of Fire",
+      "Working at Height"
+    ],
+    "iogp_rule": "Driving",
+    "label_source": "API_Upload_Batch",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
+  },
+  {
+    "report_id": "upl_019_fe3b",
+    "date": "",
+    "narrative": "Worker fatally injured when wall collapsed.",
+    "energy_type": "kinetic",
+    "energy_magnitude": "high",
+    "barrier_expected": "structural shoring / support system",
+    "barrier_state": "missing",
+    "activity": "wall demolition or excavation",
+    "location": "",
+    "evidence_phrases": [
+      "wall collapsed",
+      "fatally injured"
+    ],
+    "sif_potential": true,
+    "iogp_rules": [
+      "Line of Fire"
+    ],
+    "iogp_rule": "Line of Fire",
+    "label_source": "API_Upload_Batch",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
   }
 ]
