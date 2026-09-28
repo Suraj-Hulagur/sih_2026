@@ -23,7 +23,7 @@ export const ExportPage: React.FC = () => {
   useEffect(() => {
     const fetchHistory = async () => {
       try {
-        const res = await fetch('http://localhost:8000/api/uploads');
+        const res = await fetch('https://sih-2026-o0pk.onrender.com/api/uploads');
         if (res.ok) {
           const data = await res.json();
           setUploadHistory(data.uploads || []);
@@ -40,7 +40,7 @@ export const ExportPage: React.FC = () => {
     setDownloadSuccess(false);
 
     try {
-      const response = await fetch('http://localhost:8000/api/export', {
+      const response = await fetch('https://sih-2026-o0pk.onrender.com/api/export', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

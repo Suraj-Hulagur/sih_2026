@@ -58,10 +58,10 @@ export function App() {
   const fetchDashboardData = async () => {
     try {
       const [statsRes, chartsRes, rankingsRes, reportsRes] = await Promise.all([
-        fetch('http://localhost:8000/api/dashboard/stats'),
-        fetch('http://localhost:8000/api/dashboard/charts'),
-        fetch('http://localhost:8000/api/dashboard/rankings'),
-        fetch('http://localhost:8000/api/reports?limit=5')
+        fetch('https://sih-2026-o0pk.onrender.com/api/dashboard/stats'),
+        fetch('https://sih-2026-o0pk.onrender.com/api/dashboard/charts'),
+        fetch('https://sih-2026-o0pk.onrender.com/api/dashboard/rankings'),
+        fetch('https://sih-2026-o0pk.onrender.com/api/reports?limit=5')
       ]);
         
         const statsData = await statsRes.json();

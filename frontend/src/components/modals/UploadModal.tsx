@@ -33,7 +33,7 @@ export const UploadModal: React.FC<UploadModalProps> = ({
 
   React.useEffect(() => {
     if (isOpen) {
-      fetch('http://localhost:8000/api/uploads')
+      fetch('https://sih-2026-o0pk.onrender.com/api/uploads')
         .then(res => res.json())
         .then(data => setUploadHistory(data.uploads || []))
         .catch(err => console.error("Failed to fetch upload history", err));
@@ -87,7 +87,7 @@ export const UploadModal: React.FC<UploadModalProps> = ({
       setProgress(45);
       setProcessingStage('Processing narratives through LLM and EEI Rule Engine...');
 
-      const response = await fetch('http://localhost:8000/api/ingest/upload', {
+      const response = await fetch('https://sih-2026-o0pk.onrender.com/api/ingest/upload', {
         method: 'POST',
         body: formData,
       });

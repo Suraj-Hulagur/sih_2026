@@ -231,7 +231,7 @@ export const ReportsPage: React.FC = () => {
   React.useEffect(() => {
     const fetchReports = async () => {
       try {
-        const res = await fetch('http://localhost:8000/api/reports?limit=200');
+        const res = await fetch('https://sih-2026-o0pk.onrender.com/api/reports?limit=200');
         if (!res.ok) throw new Error('API error');
         const data = await res.json();
         if (data.reports && data.reports.length > 0) {
