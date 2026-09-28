@@ -119,7 +119,7 @@ export const TestNarrativeModal: React.FC<TestNarrativeModalProps> = ({
       const controller = new AbortController();
       const timeout = setTimeout(() => controller.abort(), 4000); // 4s timeout
 
-      const response = await fetch('http://localhost:8000/api/analyze/single', {
+      const response = await fetch('https://sih-2026-o0pk.onrender.com/api/analyze/single', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ narrative, site: selectedSite }),
