@@ -1660,7 +1660,8 @@
     "m2_random_forest": true,
     "m3_raw_text": true,
     "consensus": "SIF_CONFIRMED",
-    "needs_review": false
+    "needs_review": false,
+    "language": "en"
   },
   {
     "report_id": "upl_002_69dc",
@@ -1685,7 +1686,8 @@
     "m2_random_forest": true,
     "m3_raw_text": true,
     "consensus": "SIF_CONFIRMED",
-    "needs_review": false
+    "needs_review": false,
+    "language": "en"
   },
   {
     "report_id": "upl_003_a6ae",
@@ -1710,7 +1712,8 @@
     "m2_random_forest": true,
     "m3_raw_text": true,
     "consensus": "SIF_CONFIRMED",
-    "needs_review": false
+    "needs_review": false,
+    "language": "en"
   },
   {
     "report_id": "upl_004_f7aa",
@@ -1735,7 +1738,8 @@
     "m2_random_forest": false,
     "m3_raw_text": false,
     "consensus": "SAFE",
-    "needs_review": false
+    "needs_review": false,
+    "language": "en"
   },
   {
     "report_id": "upl_005_9bd4",
@@ -1760,7 +1764,8 @@
     "m2_random_forest": true,
     "m3_raw_text": true,
     "consensus": "SIF_CONFIRMED",
-    "needs_review": false
+    "needs_review": false,
+    "language": "en"
   },
   {
     "report_id": "upl_006_0385",
@@ -1785,7 +1790,8 @@
     "m2_random_forest": true,
     "m3_raw_text": true,
     "consensus": "SIF_CONFIRMED",
-    "needs_review": false
+    "needs_review": false,
+    "language": "en"
   },
   {
     "report_id": "upl_007_3537",
@@ -1811,7 +1817,8 @@
     "m2_random_forest": false,
     "m3_raw_text": false,
     "consensus": "SAFE",
-    "needs_review": false
+    "needs_review": false,
+    "language": "en"
   },
   {
     "report_id": "upl_008_369e",
@@ -1838,7 +1845,8 @@
     "m2_random_forest": true,
     "m3_raw_text": true,
     "consensus": "SIF_CONFIRMED",
-    "needs_review": false
+    "needs_review": false,
+    "language": "en"
   },
   {
     "report_id": "upl_009_f166",
@@ -1863,7 +1871,8 @@
     "m2_random_forest": true,
     "m3_raw_text": true,
     "consensus": "SIF_CONFIRMED",
-    "needs_review": false
+    "needs_review": false,
+    "language": "en"
   },
   {
     "report_id": "upl_010_3f50",
@@ -1888,7 +1897,8 @@
     "m2_random_forest": true,
     "m3_raw_text": true,
     "consensus": "SIF_CONFIRMED",
-    "needs_review": false
+    "needs_review": false,
+    "language": "en"
   },
   {
     "report_id": "upl_011_0e35",
@@ -1914,7 +1924,8 @@
     "m2_random_forest": true,
     "m3_raw_text": true,
     "consensus": "SIF_CONFIRMED",
-    "needs_review": false
+    "needs_review": false,
+    "language": "en"
   },
   {
     "report_id": "upl_012_01ed",
@@ -1940,7 +1951,8 @@
     "m2_random_forest": true,
     "m3_raw_text": true,
     "consensus": "SIF_CONFIRMED",
-    "needs_review": false
+    "needs_review": false,
+    "language": "en"
   },
   {
     "report_id": "upl_013_afa4",
@@ -1965,7 +1977,8 @@
     "m2_random_forest": true,
     "m3_raw_text": true,
     "consensus": "SIF_CONFIRMED",
-    "needs_review": false
+    "needs_review": false,
+    "language": "en"
   },
   {
     "report_id": "upl_014_a058",
@@ -1990,7 +2003,8 @@
     "m2_random_forest": true,
     "m3_raw_text": true,
     "consensus": "SIF_CONFIRMED",
-    "needs_review": false
+    "needs_review": false,
+    "language": "en"
   },
   {
     "report_id": "upl_015_89ec",
@@ -2016,7 +2030,8 @@
     "m2_random_forest": true,
     "m3_raw_text": true,
     "consensus": "SIF_CONFIRMED",
-    "needs_review": false
+    "needs_review": false,
+    "language": "en"
   },
   {
     "report_id": "upl_016_7030",
@@ -2042,7 +2057,8 @@
     "m2_random_forest": true,
     "m3_raw_text": true,
     "consensus": "SIF_CONFIRMED",
-    "needs_review": false
+    "needs_review": false,
+    "language": "en"
   },
   {
     "report_id": "upl_017_d6de",
@@ -2067,7 +2083,8 @@
     "m2_random_forest": true,
     "m3_raw_text": true,
     "consensus": "SIF_CONFIRMED",
-    "needs_review": false
+    "needs_review": false,
+    "language": "en"
   },
   {
     "report_id": "upl_018_57d8",
@@ -2094,7 +2111,8 @@
     "m2_random_forest": true,
     "m3_raw_text": true,
     "consensus": "SIF_CONFIRMED",
-    "needs_review": false
+    "needs_review": false,
+    "language": "en"
   },
   {
     "report_id": "upl_019_4192",
@@ -2120,7 +2138,8 @@
     "m2_random_forest": true,
     "m3_raw_text": true,
     "consensus": "SIF_CONFIRMED",
-    "needs_review": false
+    "needs_review": false,
+    "language": "en"
   },
   {
     "report_id": "upl_001_2219",
@@ -2146,7 +2165,8 @@
     "m2_random_forest": true,
     "m3_raw_text": true,
     "consensus": "SIF_CONFIRMED",
-    "needs_review": false
+    "needs_review": false,
+    "language": "en"
   },
   {
     "report_id": "upl_002_5943",
@@ -2171,7 +2191,8 @@
     "m2_random_forest": true,
     "m3_raw_text": true,
     "consensus": "SIF_CONFIRMED",
-    "needs_review": false
+    "needs_review": false,
+    "language": "en"
   },
   {
     "report_id": "upl_003_4d6e",
@@ -2196,7 +2217,8 @@
     "m2_random_forest": true,
     "m3_raw_text": true,
     "consensus": "SIF_CONFIRMED",
-    "needs_review": false
+    "needs_review": false,
+    "language": "en"
   },
   {
     "report_id": "upl_004_b97d",
@@ -2221,7 +2243,8 @@
     "m2_random_forest": false,
     "m3_raw_text": false,
     "consensus": "SAFE",
-    "needs_review": false
+    "needs_review": false,
+    "language": "en"
   },
   {
     "report_id": "upl_005_9b24",
@@ -2246,7 +2269,8 @@
     "m2_random_forest": true,
     "m3_raw_text": true,
     "consensus": "SIF_CONFIRMED",
-    "needs_review": false
+    "needs_review": false,
+    "language": "en"
   },
   {
     "report_id": "upl_006_1a43",
@@ -2271,7 +2295,8 @@
     "m2_random_forest": true,
     "m3_raw_text": true,
     "consensus": "SIF_CONFIRMED",
-    "needs_review": false
+    "needs_review": false,
+    "language": "en"
   },
   {
     "report_id": "upl_007_c7db",
@@ -2297,7 +2322,8 @@
     "m2_random_forest": false,
     "m3_raw_text": false,
     "consensus": "SAFE",
-    "needs_review": false
+    "needs_review": false,
+    "language": "en"
   },
   {
     "report_id": "upl_008_1243",
@@ -2324,7 +2350,8 @@
     "m2_random_forest": true,
     "m3_raw_text": true,
     "consensus": "SIF_CONFIRMED",
-    "needs_review": false
+    "needs_review": false,
+    "language": "en"
   },
   {
     "report_id": "upl_009_46af",
@@ -2349,7 +2376,8 @@
     "m2_random_forest": true,
     "m3_raw_text": true,
     "consensus": "SIF_CONFIRMED",
-    "needs_review": false
+    "needs_review": false,
+    "language": "en"
   },
   {
     "report_id": "upl_010_7014",
@@ -2374,7 +2402,8 @@
     "m2_random_forest": true,
     "m3_raw_text": true,
     "consensus": "SIF_CONFIRMED",
-    "needs_review": false
+    "needs_review": false,
+    "language": "en"
   },
   {
     "report_id": "upl_011_1ae1",
@@ -2400,7 +2429,8 @@
     "m2_random_forest": true,
     "m3_raw_text": true,
     "consensus": "SIF_CONFIRMED",
-    "needs_review": false
+    "needs_review": false,
+    "language": "en"
   },
   {
     "report_id": "upl_012_e0b6",
@@ -2426,7 +2456,8 @@
     "m2_random_forest": true,
     "m3_raw_text": true,
     "consensus": "SIF_CONFIRMED",
-    "needs_review": false
+    "needs_review": false,
+    "language": "en"
   },
   {
     "report_id": "upl_013_279b",
@@ -2451,7 +2482,8 @@
     "m2_random_forest": true,
     "m3_raw_text": true,
     "consensus": "SIF_CONFIRMED",
-    "needs_review": false
+    "needs_review": false,
+    "language": "en"
   },
   {
     "report_id": "upl_014_989e",
@@ -2476,7 +2508,8 @@
     "m2_random_forest": true,
     "m3_raw_text": true,
     "consensus": "SIF_CONFIRMED",
-    "needs_review": false
+    "needs_review": false,
+    "language": "en"
   },
   {
     "report_id": "upl_015_1072",
@@ -2502,7 +2535,8 @@
     "m2_random_forest": true,
     "m3_raw_text": true,
     "consensus": "SIF_CONFIRMED",
-    "needs_review": false
+    "needs_review": false,
+    "language": "en"
   },
   {
     "report_id": "upl_016_7f4f",
@@ -2528,7 +2562,8 @@
     "m2_random_forest": true,
     "m3_raw_text": true,
     "consensus": "SIF_CONFIRMED",
-    "needs_review": false
+    "needs_review": false,
+    "language": "en"
   },
   {
     "report_id": "upl_017_9f08",
@@ -2553,7 +2588,8 @@
     "m2_random_forest": true,
     "m3_raw_text": true,
     "consensus": "SIF_CONFIRMED",
-    "needs_review": false
+    "needs_review": false,
+    "language": "en"
   },
   {
     "report_id": "upl_018_601a",
@@ -2580,7 +2616,8 @@
     "m2_random_forest": true,
     "m3_raw_text": true,
     "consensus": "SIF_CONFIRMED",
-    "needs_review": false
+    "needs_review": false,
+    "language": "en"
   },
   {
     "report_id": "upl_019_083b",
@@ -2606,7 +2643,8 @@
     "m2_random_forest": true,
     "m3_raw_text": true,
     "consensus": "SIF_CONFIRMED",
-    "needs_review": false
+    "needs_review": false,
+    "language": "en"
   },
   {
     "report_id": "oisd_2025-26_LPG_12",
@@ -2636,7 +2674,8 @@
     "m2_random_forest": true,
     "m3_raw_text": true,
     "consensus": "SIF_CONFIRMED",
-    "needs_review": false
+    "needs_review": false,
+    "language": "en"
   },
   {
     "report_id": "oisd_2026-27_PE_08",
@@ -2666,7 +2705,8 @@
     "m2_random_forest": true,
     "m3_raw_text": true,
     "consensus": "SIF_CONFIRMED",
-    "needs_review": false
+    "needs_review": false,
+    "language": "en"
   },
   {
     "report_id": "upl_001_e172",
@@ -2692,7 +2732,8 @@
     "m2_random_forest": true,
     "m3_raw_text": true,
     "consensus": "SIF_CONFIRMED",
-    "needs_review": false
+    "needs_review": false,
+    "language": "en"
   },
   {
     "report_id": "upl_002_8f64",
@@ -2717,7 +2758,8 @@
     "m2_random_forest": true,
     "m3_raw_text": true,
     "consensus": "SIF_CONFIRMED",
-    "needs_review": false
+    "needs_review": false,
+    "language": "en"
   },
   {
     "report_id": "upl_003_c02b",
@@ -2742,7 +2784,8 @@
     "m2_random_forest": true,
     "m3_raw_text": true,
     "consensus": "SIF_CONFIRMED",
-    "needs_review": false
+    "needs_review": false,
+    "language": "en"
   },
   {
     "report_id": "upl_004_8185",
@@ -2767,7 +2810,8 @@
     "m2_random_forest": true,
     "m3_raw_text": true,
     "consensus": "SIF_CONFIRMED",
-    "needs_review": false
+    "needs_review": false,
+    "language": "en"
   },
   {
     "report_id": "upl_005_5f43",
@@ -2792,7 +2836,8 @@
     "m2_random_forest": true,
     "m3_raw_text": true,
     "consensus": "SIF_CONFIRMED",
-    "needs_review": false
+    "needs_review": false,
+    "language": "en"
   },
   {
     "report_id": "upl_006_7379",
@@ -2817,7 +2862,8 @@
     "m2_random_forest": true,
     "m3_raw_text": true,
     "consensus": "SIF_CONFIRMED",
-    "needs_review": false
+    "needs_review": false,
+    "language": "en"
   },
   {
     "report_id": "upl_007_7d7b",
@@ -2843,7 +2889,8 @@
     "m2_random_forest": false,
     "m3_raw_text": false,
     "consensus": "SAFE",
-    "needs_review": false
+    "needs_review": false,
+    "language": "en"
   },
   {
     "report_id": "upl_008_7a2f",
@@ -2870,7 +2917,8 @@
     "m2_random_forest": true,
     "m3_raw_text": true,
     "consensus": "SIF_CONFIRMED",
-    "needs_review": false
+    "needs_review": false,
+    "language": "en"
   },
   {
     "report_id": "upl_009_dd7b",
@@ -2895,7 +2943,8 @@
     "m2_random_forest": true,
     "m3_raw_text": true,
     "consensus": "SIF_CONFIRMED",
-    "needs_review": false
+    "needs_review": false,
+    "language": "en"
   },
   {
     "report_id": "upl_010_7f46",
@@ -2920,7 +2969,8 @@
     "m2_random_forest": true,
     "m3_raw_text": true,
     "consensus": "SIF_CONFIRMED",
-    "needs_review": false
+    "needs_review": false,
+    "language": "en"
   },
   {
     "report_id": "upl_011_55c7",
@@ -2946,7 +2996,8 @@
     "m2_random_forest": true,
     "m3_raw_text": true,
     "consensus": "SIF_CONFIRMED",
-    "needs_review": false
+    "needs_review": false,
+    "language": "en"
   },
   {
     "report_id": "upl_012_dd46",
@@ -2972,7 +3023,8 @@
     "m2_random_forest": true,
     "m3_raw_text": true,
     "consensus": "SIF_CONFIRMED",
-    "needs_review": false
+    "needs_review": false,
+    "language": "en"
   },
   {
     "report_id": "upl_013_36b4",
@@ -2997,7 +3049,8 @@
     "m2_random_forest": true,
     "m3_raw_text": true,
     "consensus": "SIF_CONFIRMED",
-    "needs_review": false
+    "needs_review": false,
+    "language": "en"
   },
   {
     "report_id": "upl_014_c220",
@@ -3022,7 +3075,8 @@
     "m2_random_forest": true,
     "m3_raw_text": true,
     "consensus": "SIF_CONFIRMED",
-    "needs_review": false
+    "needs_review": false,
+    "language": "en"
   },
   {
     "report_id": "upl_015_ca1f",
@@ -3048,7 +3102,8 @@
     "m2_random_forest": true,
     "m3_raw_text": true,
     "consensus": "SIF_CONFIRMED",
-    "needs_review": false
+    "needs_review": false,
+    "language": "en"
   },
   {
     "report_id": "upl_016_18e1",
@@ -3074,7 +3129,8 @@
     "m2_random_forest": true,
     "m3_raw_text": true,
     "consensus": "SIF_CONFIRMED",
-    "needs_review": false
+    "needs_review": false,
+    "language": "en"
   },
   {
     "report_id": "upl_017_7c42",
@@ -3099,7 +3155,8 @@
     "m2_random_forest": true,
     "m3_raw_text": true,
     "consensus": "SIF_CONFIRMED",
-    "needs_review": false
+    "needs_review": false,
+    "language": "en"
   },
   {
     "report_id": "upl_018_8b40",
@@ -3126,7 +3183,8 @@
     "m2_random_forest": true,
     "m3_raw_text": true,
     "consensus": "SIF_CONFIRMED",
-    "needs_review": false
+    "needs_review": false,
+    "language": "en"
   },
   {
     "report_id": "upl_019_fe3b",
@@ -3147,6 +3205,717 @@
       "Line of Fire"
     ],
     "iogp_rule": "Line of Fire",
+    "label_source": "API_Upload_Batch",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false,
+    "language": "en"
+  },
+  {
+    "report_id": "oisd_2025-26_PE_17",
+    "date": "2025-11-07",
+    "narrative": "A hydrocarbon leakage occurred from elbow in a 2” drain line in a 18’’ gas interconnection pipeline adjacent to slug catcher area followed by a major fire. Firefighting operations were immediately initiated. The affected pipeline was isolated and adjoining sections were shutdown. Depressurisation and cooling measures were undertaken simultaneously. The fire was contained locally within 30 minutes and extinguished in around 2 hrs 40 mins. No casualties were reported in connection with the incident. Normal operations at the GPP were restored on the next day. 18” interconnection line was commissioned more than 25 year ago. The pipeline was installed to facilitate pigging operations and maintenance activities of the slug catcher & pressure reducing skid system. The modification was carried out without any Management of Change (MOC)/ HIRA analysis. The pipe was of XS schedule whereas the elbow was of schedule 40, implying inconsistency in design likely on account of non-preparation of general arrangement drawing (GAD)/ piping material specifications which are a part of MOC process. This Case Study is based on the Investigation report done by OISD and published for information purpose only. This information should be evaluated to determine if it is applicable in your operations, to avoid recurrence of such incidents. Lapses in the work permit process were observed such as permit renewal without site visit, inadequate hazard identification/ toolbox talk, job safety analysis, etc. The list of authorized work permit signatories was not available. No crash barrier or barricading was observed on the periphery of the slug catcher area. Periodic comprehensive inspection of piping was not evident. Only thickness survey was carried out around 2 years ago. Further, there was no practice of small-bore piping inspection. It was observed that non-flame proof lighting was provided in nearby facilities/ area towards which the vapor cloud had moved. Further, the flame proof integrity was found compromised in one of the electrical junctions located in the nearby facility (boiler flame scanner cooling air fan). Records for junction box and motor flame proof integrity check was not evident (as stipulated in OISD-STD- 137). No Hydrocarbon detector was observed in the flame scanner cooling air fan suction area. The slug catchers were taken in line next day of the incident without carrying out damage analysis of the piping. Vegetation growth in the slug catcher area was not escalated in any of the safety committee meetings and the same was not reported as unsafe condition. The same issue had been highlighted in the recent ESA.",
+    "energy_type": "chemical",
+    "energy_magnitude": "high",
+    "barrier_expected": "Management of Change (MOC) / HIRA analysis and consistent piping design (XS vs Sch 40)",
+    "barrier_state": "missing",
+    "activity": "Hydrocarbon leakage from 2\" drain line elbow in 18\" gas interconnection pipeline",
+    "location": "Slug Catcher Area in Gas Processing Plant.",
+    "evidence_phrases": [
+      "hydrocarbon leakage occurred from elbow in a 2” drain line",
+      "major fire",
+      "modification was carried out without any Management of Change (MOC)/ HIRA analysis",
+      "pipe was of XS schedule whereas the elbow was of schedule 40"
+    ],
+    "sif_potential": true,
+    "iogp_rules": [
+      "No specific LSR match"
+    ],
+    "iogp_rule": "No specific LSR match",
+    "label_source": "API_Upload_PDF",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false,
+    "language": "en"
+  },
+  {
+    "report_id": "oisd_2025-26_PE_17",
+    "date": "2025-11-07",
+    "narrative": "A hydrocarbon leakage occurred from elbow in a 2” drain line in a 18’’ gas interconnection pipeline adjacent to slug catcher area followed by a major fire. Firefighting operations were immediately initiated. The affected pipeline was isolated and adjoining sections were shutdown. Depressurisation and cooling measures were undertaken simultaneously. The fire was contained locally within 30 minutes and extinguished in around 2 hrs 40 mins. No casualties were reported in connection with the incident. Normal operations at the GPP were restored on the next day. 18” interconnection line was commissioned more than 25 year ago. The pipeline was installed to facilitate pigging operations and maintenance activities of the slug catcher & pressure reducing skid system. The modification was carried out without any Management of Change (MOC)/ HIRA analysis. The pipe was of XS schedule whereas the elbow was of schedule 40, implying inconsistency in design likely on account of non-preparation of general arrangement drawing (GAD)/ piping material specifications which are a part of MOC process. This Case Study is based on the Investigation report done by OISD and published for information purpose only. This information should be evaluated to determine if it is applicable in your operations, to avoid recurrence of such incidents. Lapses in the work permit process were observed such as permit renewal without site visit, inadequate hazard identification/ toolbox talk, job safety analysis, etc. The list of authorized work permit signatories was not available. No crash barrier or barricading was observed on the periphery of the slug catcher area. Periodic comprehensive inspection of piping was not evident. Only thickness survey was carried out around 2 years ago. Further, there was no practice of small-bore piping inspection. It was observed that non-flame proof lighting was provided in nearby facilities/ area towards which the vapor cloud had moved. Further, the flame proof integrity was found compromised in one of the electrical junctions located in the nearby facility (boiler flame scanner cooling air fan). Records for junction box and motor flame proof integrity check was not evident (as stipulated in OISD-STD- 137). No Hydrocarbon detector was observed in the flame scanner cooling air fan suction area. The slug catchers were taken in line next day of the incident without carrying out damage analysis of the piping. Vegetation growth in the slug catcher area was not escalated in any of the safety committee meetings and the same was not reported as unsafe condition. The same issue had been highlighted in the recent ESA.",
+    "energy_type": "chemical",
+    "energy_magnitude": "high",
+    "barrier_expected": "Management of Change (MOC) / HIRA analysis and consistent piping design (XS vs Sch 40)",
+    "barrier_state": "missing",
+    "activity": "Hydrocarbon leakage from 2\" drain line elbow in 18\" gas interconnection pipeline",
+    "location": "Slug Catcher Area in Gas Processing Plant.",
+    "evidence_phrases": [
+      "hydrocarbon leakage occurred from elbow in a 2” drain line",
+      "major fire",
+      "modification was carried out without any Management of Change (MOC)/ HIRA analysis",
+      "pipe was of XS schedule whereas the elbow was of schedule 40"
+    ],
+    "sif_potential": true,
+    "iogp_rules": [
+      "No specific LSR match"
+    ],
+    "iogp_rule": "No specific LSR match",
+    "label_source": "API_Upload_PDF",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false,
+    "language": "en"
+  },
+  {
+    "report_id": "oisd_2025-26_PL_16",
+    "date": "2025-11-06",
+    "narrative": "Five incidents of pipeline failure happened in oil and gas pipelines as under: Incident-1: Natural gas pipeline snapped resulting in gas leakage. Pipeline failure was attributed to Right of Way (ROW) washout due to heavy rain resulting in flooding and change in river course. Incident-2: Natural gas pipeline snapped inside a major river resulting in gas leakage. The incident has been triggered by heavy rainfall and flash-flood-like conditions, resulting in significant rise of water level in the river. As a result, HDD punch-in portion of the pipeline in river crossing became fully exposed and came under direct contact with high-velocity river water flow. The strong hydraulic forces and continuous scouring action created significant mechanical stress on the pipeline, leading to its rupture. Incident-3: A multiproduct pipeline failed on the riverbank of a major river. Due to heavy downpour in the hilly region, erosion of soil on the bank led to exposing the pipeline at riverbank. As a result, HDD punch-in portion of the pipeline in river crossing became fully exposed and came under direct contact with high-velocity river water flow. The strong hydraulic forces and continuous scouring action created significant mechanical stress on the pipeline, leading to its rupture. Incident-4: A multiproduct pipeline failed inside the riverbed. The incident has been triggered by heavy rainfall, resulting in significant rise of water level in the river. This has resulted in riverbed erosion and subsequent pipeline rupture inside riverbed due to high stress. Incident-5: Natural gas pipeline snapped inside a major river resulting in gas leakage. The incident was triggered by heavy rainfall, cloud burst and flash floods resulting in riverbed erosion and subsequent pipeline rupture inside riverbed due to high stress. Basis site visit, internal reports, interaction with officials and checking of documents, committee observations are as under: Due to heavy rainfall/cloudbursts in the hilly region, heavy gush of water was observed in the main river. At river meandering site (close to the pipeline failure location) river changed its course toward the minor stream (i.e. Nala) converting it to mainstream. This sudden increase in water flow in the Nala stream caused heavy erosion of the riverbank & riverbed, which in turn caused the heavy washout and exposed pipeline laid parallel to the nala. The combined effect of pipeline exposure, and hydrodynamic stress caused the crack and rupture of the gas pipeline. Washout incident was also reported at the nala/river crossing in past (upstream of the failure location), which was mitigated by carrying out a new HDD crossing. During HDD design & execution, parallel section of the pipeline was considered safe from washout point of view. A Leak alarm in the Leak Detection System was logged, however the alarm was missed due to various other alarms. Due to heavy rainfall/cloudbursts there was significant rise of the water level in the river. This caused heavy erosion of the riverbank & riverbed at the meandering site (just upstream of the pipeline crossing) which in turn caused the heavy washout in HDD punch-in portion & exposed the pipeline. The combined effect of pipeline exposure, and hydrodynamic stress caused the crack and rupture of the gas pipeline, leading to gas leakage and failure of the pipeline. Washout at same location was also observed in past. Accordingly, a gabion wall was constructed to protect the pipeline as per the design of a consultant. Longer length HDD was planned at the same location as a permanent solution and action for the same was in progress (Geo Technical survey was completed). However, longer length HDD work to protect the pipeline could not be completed before this incident. Due to heavy rainfall/cloudbursts there was significant rise of the water level in the river. This caused heavy erosion of the riverbank & riverbed at the meandering site (just upstream of the pipeline crossing) which in turn caused the heavy washout in HDD punch-out portion & exposed the pipeline. The combined effect of pipeline exposure and hydrodynamic stress caused the crack and rupture of the pipeline. Previously reduced soil cover was reported on this side of the riverbank, and it was noted that river’s mainstream has shifted towards this side of the bank. Based on topographical survey, proposal for realigning the pipeline through fresh HDD was initiated and same was under administrative approval. Few months back about 18-22m of pipeline was exposed on this side of the riverbank. Immediate actions like placement of bamboo and sandbags, installation of Geo tubes etc. were undertaken for prevention of pipelines from washout. Multiproduct pipeline has crossed the seasonal river through open cut method. The region witnessed heavy rain and floods and meandering of the river location had caused its scouring. This has resulted in erosion of soil cover at riverbed. The combined effect of pipeline exposure, and hydrodynamic stress caused the crack and rupture of the pipeline. Natural gas pipeline has crossed the seasonal river through open cut method. Due to heavy rainfall/cloudbursts in the hilly region, heavy gush of water was observed in the river. This sudden gush of water caused scouring in river which led to pipeline exposure and subsequent failure due to stresses from heavy river currents. The pipeline was laid via open cut method across the river crossing. It was informed during the investigation that the pipeline was laid via open cut method after unsuccessful attempts of HDD due to presence of gravel, boulders etc. inside riverbed. Root Causes Based on investigation, team has identified the following root causes of incident: a) It can be concluded that all the above incidents were triggered by high river flow/ flash floods due to heavy rainfall/ cloud bursts, which in turn caused the river path meandering/ course change and riverbank erosion/ riverbed scouring. b) Heavy erosion at riverbanks/ riverbed resulted in exposure of pipeline, which in turn created the hydrodynamic stress on pipe causing crack/ rupture of the gas pipelines. c) In some of the incidents, although reiver bank erosion was noticed and fresh HDD of longer length/realignment were planned, delay in execution had resulted in failure of pipeline during operation. d) In one of the incidents, river crossing was carried out by open-cut method since HDD was not possible due to presence of gravel/boulders on riverbed. Additional precautions like increase in trench depth, higher thickness/grade of pipe might have been taken during design stage to avoid such incident.",
+    "energy_type": "pressure",
+    "energy_magnitude": "high",
+    "barrier_expected": "HDD casing / Gabion wall / Increased trench depth / Soil cover protection",
+    "barrier_state": "degraded",
+    "activity": "Pipeline operation and river crossing maintenance",
+    "location": "Inside/ nearby river/ waterbody crossings of hydrocarbon pipelines.",
+    "evidence_phrases": [
+      "Natural gas pipeline snapped resulting in gas leakage",
+      "ROW washout due to heavy rain",
+      "HDD punch-in portion of the pipeline in river crossing became fully exposed",
+      "strong hydraulic forces and continuous scouring action created significant mechanical stress",
+      "gabion wall was constructed to protect the pipeline",
+      "longer length HDD work to protect the pipeline could not be completed",
+      "pipeline was laid via open cut method",
+      "Additional precautions like increase in trench depth, higher thickness/grade of pipe might have been taken"
+    ],
+    "sif_potential": true,
+    "iogp_rules": [
+      "Line of Fire"
+    ],
+    "iogp_rule": "Line of Fire",
+    "label_source": "API_Upload_PDF",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false,
+    "language": "en"
+  },
+  {
+    "report_id": "oisd_2026-27_PE_11",
+    "date": "2026-09-03",
+    "narrative": "A fatal incident occurred during transportation of a wax-filled jumbo bag by forklift from the Wax Draining Station to the Wax Storage Yard in the HDPE Unit of a petrochemical Complex. The Wax Storage Yard was located approximately 140 m from the Wax Draining Station. The filled jumbo bags, weighing approximately 500 kg each, were routinely transported through the main road (11 m wide). On the date of incident, the forklift operator, was engaged in shifting the filled wax bags in night shift. After successfully transporting the first bag of the batch, the operator proceeded with the second bag. This Case Study is based on the Investigation report done by OISD and published for information purpose only. This information should be evaluated to determine if it is applicable in your operations, to avoid recurrence of such incidents. When the forklift did not return within the normal travel time of approximately 4–5 minutes, the Production Junior Executive Assistant and contractor helper proceeded towards the Wax Storage Yard to ascertain his whereabouts. The forklift was found by them toppled inside an open trapezoidal dry drain approximately 1.0 m deep and 2.4 m wide, opposite the Wax Storage Yard on the other side of the lane in which the forklift was supposed to normally traverse. The operator was found unconscious beside the toppled forklift. He was then shifted to the First Aid Centre and next to nearby Civil Hospital, where he was declared brought dead. The investigation identified several deficiencies relating to forklift load movement over an extended route, absence of roadside protection, inadequate traffic management, wax deposits on the roadway, operator fatigue/alertness, and the overall philosophy of repeated transportation of wax-filled bags by forklift. The Wax Storage Yard was not envisaged at the original design stage of the HDPE Unit and was subsequently constructed outside the HDPE Unit boundary. The storage yard was located approximately 140 m from the Wax Draining Station. Filled HDPE wax jumbo bags were being repeatedly transported by forklift from the Wax Draining Station to the Wax Storage Yard over the extended route. Approximately three batches per shift, involving around 12 jumbo bags, were transported. Each one-way forklift trip took approximately 4–5 minutes, The traversing road was observed to have considerable wax deposits on its surface, apparently resulting from spillage from the wax-filled jumbo bags. The roadway had an open trapezoidal storm-water channel approximately 1 m deep along its side, without adequate roadside protection/curb arrangement to prevent unintended vehicle movement into the drain. No designated forklift travel route, road markings, warning signs or other adequate traffic management measures were evident along the main road despite regular forklift movement. Although the work permit required compliance with the forklift SOP and marked route, neither the SOP nor the marked route was evident. The affected forklift was owned by Organisation and had been procured in June 2021. However, the forklift was reportedly not registered with the concerned RTO as it was for internal use only. A Certificate of Inspection for the lifting equipment was available. The Daily Running Service Sheet for forklifts did not include verification of the condition and functionality of the seat belt. During site inspection, the seat belt of the affected forklift was found to be non-functional. The seat belt of another forklift examined during the investigation was also found to be non-functional. This implies that IP was not wearing seat belt at the time of accident. Two Toolbox Talk records, done approximately one and a half months apart, relating to wax draining and wax bag shifting operations were available; however, the involved forklift operator was not a participant as per the attendance records. The operator was deployed for nine (09) consecutive night-shift forklift operations. The existing arrangement involved transportation of semi-liquid wax slurry in jumbo bags directly on the forks of the forklift without wooden pallets. The practice was reportedly confirmed as acceptable by the jumbo-bag manufacturer. The existing philosophy of transporting wax-filled jumbo bags by forklift, including the extended transportation route and storage arrangement, had not been adequately reviewed considering the This Case Study is based on the Investigation report done by OISD and published for information purpose only. This information should be evaluated to determine if it is applicable in your operations, to avoid recurrence of such incidents. load characteristics, frequency of transportation, road conditions, wax spillage and associated vehicle stability risks.",
+    "energy_type": "kinetic",
+    "energy_magnitude": "high",
+    "barrier_expected": "roadside protection/curb arrangement and functional seat belt",
+    "barrier_state": "missing",
+    "activity": "transportation of wax-filled jumbo bags by forklift",
+    "location": "Road between the Wax Draining Station and Wax Storage Yard (approx. 140 mtrs), HDPE Unit of a Petrochemical Complex",
+    "evidence_phrases": [
+      "toppled inside an open trapezoidal dry drain",
+      "without adequate roadside protection/curb arrangement",
+      "seat belt of the affected forklift was found to be non-functional",
+      "IP was not wearing seat belt at the time of accident"
+    ],
+    "sif_potential": true,
+    "iogp_rules": [
+      "Driving",
+      "Line of Fire",
+      "Safe Mechanical Lifting"
+    ],
+    "iogp_rule": "Driving",
+    "label_source": "API_Upload_PDF",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false,
+    "language": "en"
+  },
+  {
+    "report_id": "oisd_2025-26_PL_15",
+    "date": "2025-11-06",
+    "narrative": "A sudden pressure drop was observed in an Offshore (Sub-sea & Sub-river) trunk pipeline which is used for transferring Gas along with condensate from an offshore Process Platform Complex to Onshore Gas Terminal. Immediately after pressure drop was observed, communication was established between process platform and Onshore gas terminal to ascertain the reason for pressure drop. Suspecting probable leakage in trunk line, gas flow to pipeline was stopped from process platform and depressurisation of the pipeline was started from both process platform and Onshore gas terminal ends. During depressurisation of the gas pipeline, a fire was also observed at a point located approximately 400 m from the landfall point in the adjoining river mouth. This indicated a probable leak in the pipeline followed by ignition of released hydrocarbons. After reduction of pressure, purging operations were commenced from Onshore gas terminal end using inert gas to displace any residual hydrocarbons within the pipeline. Fire was subsequently extinguished, after the complete isolation and cutting off gas supply from the source. No injuries, fatalities or third-party property damage were reported because of the incident. Processed gas along with condensate was being transported upon dehydration. After commissioning, pigging of the pipeline could not be carried out due to the unavailability of adequate motive flow at the process platform complex. As gas condensate was being transported through the same line, the absence of pigging operations likely resulted in the condensate not being effectively removed. Last As-Built survey of pipeline was carried out in 2023. As-Built Survey indicated 3 Nos. of Free Span in the sea section of the Pipeline. Free span survey could not be carried out in river section at that time due to nonavailability of required draft for movement of vessel. Previously also, there was a leak incident in the pipeline in river section which was recorded as Near Miss incident. The clamp was provided at leak location. Free spans were observed in the river section near repair location, though no further actions were taken to address free span. However, it was recommended to get the complete free span survey done for the river section and take further necessary actions for safeguarding the pipeline. As per design documents of pipeline, pipeline was laid buried in trench at a depth of 1.3 to 5 m in river section. Also, river scour depth was considered only 0.2 to 0.3 m which is not correct in current scenario as the pipeline is now getting exposed in river section. Corrosion assessment of pipeline using techniques like Electronic/ Intelligent pigging or Internal Corrosion Direct Assessment in case Intelligent pigging was not possible was not carried out. Corrosion coupon was installed on offshore platform side; however, its inspection was not being done to assess corrosion rate. Root Causes Based on the observations above, it can be concluded that due to free span of pipeline in river section, high river flow currents during monsoon caused stress over pipeline, resulting in pipe failure. As per design document, pipeline was laid in trench and was not designed for free span in river section. Hence, operating pipeline without taking corrective actions for free spans and pipeline exposure inside river section led to pipe failure.",
+    "energy_type": "pressure",
+    "energy_magnitude": "high",
+    "barrier_expected": "pipeline burial depth / free span mitigation / corrosion monitoring",
+    "barrier_state": "degraded",
+    "activity": "gas and condensate transportation in offshore trunk pipeline",
+    "location": "Offshore section (near river mouth) of Trunk Pipeline.",
+    "evidence_phrases": [
+      "sudden pressure drop was observed",
+      "fire was also observed at a point located approximately 400 m from the landfall point",
+      "free span of pipeline in river section",
+      "pipeline is now getting exposed in river section",
+      "Corrosion assessment... was not carried out"
+    ],
+    "sif_potential": true,
+    "iogp_rules": [
+      "Line of Fire"
+    ],
+    "iogp_rule": "Line of Fire",
+    "label_source": "API_Upload_PDF",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
+  },
+  {
+    "report_id": "oisd_2026-27_PE_12",
+    "date": "2026-09-08",
+    "narrative": "Dismantled scaffolding pipes were being manually lowered using a rope-and-pulley mechanism from the top of the scaffold (~70 m high) made for maintenance of stack (120 m high). The rope carrying the load was passed over a pulley installed at the top and then the rope was looped around a horizontal pipe on ground (for friction) before being controlled by two workers. One worker was standing in front and 2nd worker (injured person) standing behind him, while free end of the rope was laid haphazardly beside them. During lowering the load, the front worker encountered a knot in rope, restricting the movement of rope looped around the horizontal pipe. While trying to release the knot, the looped roped came off the pipe and slipped from the hands of the workers leading to a free fall of the suspended load. The right leg of injured person somehow got entangled in the moving rope and he got lifted & pulled away towards the stack up to approx. 30 m height. Injured worker was rescued and shifted to nearby hospital where he succumbed to the injuries. Following graphics representation shows the sequence of events. Two workers were handling the rope Rope for lowering the load slipped off Free end of the rope got entangled in for lowering the scaffolding pipes and the horizontal lying pipe leading to right leg of Injured Person and he got two workers were holding guide rope freefall of the load lifted The scaffolding pipes being lowered (allegedly 3 to 4 bundled each time) were 40 NB MS tubes, medium class 6 m in length, each weighing around 21.4 Kg. Total weight of the load including pipe and clamps was roughly 85-90 Kg. However, it could not be authenticated that not more than 4 pipes were lowered each time. The rope used for lowering the dismantled scaffolding pipes, was passed over a pulley at top of scaffolding. On the ground a makeshift arrangement was used. The rope was looped around a 3” pipe inserted in 6” pipe and secured with wooden packings. The arrangement didn’t have any standardised safety equipment like winch, free-fall arrester, stopper/ locking arrangement to prevent the rope from slipping off, etc. Contractor’s safety supervisor was authorized to receive work permit on behalf of industry’s engineer in charge but was not given formal training on work permit as would have been to company employees issuing/receiving the work permit. Issued work permit mentioned 20 work men were to be deployed for the job. But, as the actual number of workers was more, the same was modified to 20+20 by the contractor’s safety supervisor without informing the same to permit issuer or requestor (engineer in charge of the job). Because of additional work force requirements, contractor’s site in charge called for 3 more workers working at another site without informing or taking permission from engineer-in-charge; Injured Person was one of them. All workers were given training on Standard Maintenance Procedure (SMP) for scaffolding work, but the additional workers called for (including injured person), were not given similar training or explained with the hazards involved and required safety precautions. The Job Safety Analysis (JSA) did not specify any upper limit on weight or number of pipes that shall be lowered at a time. Also, it did not envisage the possibility of free fall of material while lifting/ lowering and consequently did not provide control measures like fall arrestor or mechanical braking system to avoid free fall, requirement for an approved rigging plan, method of communication etc. The JSA was primarily based on the widely practiced qualitative judgment and individual perception which had gaps compared to quantitative methods of assessment. Multiple unsafe conditions including one high potential near-miss involving fall of 75 Kg wet mixed mortar from a height of 100 meter were observed by engineer in charge of the job, but the same were not reported in safety portal and root cause analysis was not done. Discrepancies in the attendance signatures of Toolbox Talk (TBT) records were observed raising concerns regarding the authenticity of TBT records.",
+    "energy_type": "kinetic",
+    "energy_magnitude": "high",
+    "barrier_expected": "mechanical braking system / winch / free-fall arrester / stopper-locking arrangement",
+    "barrier_state": "missing",
+    "activity": "manually lowering dismantled scaffolding pipes using rope-and-pulley",
+    "location": "Power Plant stack of a refinery",
+    "evidence_phrases": [
+      "arrangement didn’t have any standardised safety equipment like winch, free-fall arrester, stopper/ locking arrangement to prevent the rope from slipping off",
+      "did not provide control measures like fall arrestor or mechanical braking system to avoid free fall",
+      "looped roped came off the pipe and slipped from the hands of the workers leading to a free fall of the suspended load"
+    ],
+    "sif_potential": true,
+    "iogp_rules": [
+      "Line of Fire",
+      "Working at Height"
+    ],
+    "iogp_rule": "Line of Fire",
+    "label_source": "API_Upload_PDF",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
+  },
+  {
+    "report_id": "upl_000_f7a7",
+    "date": "",
+    "narrative": "Worker was backing a forklift up an incline.  Forklift fell backwards off loading dock onto operator who was not wearing seatbelt.  He died of a broken neck.",
+    "energy_type": "kinetic",
+    "energy_magnitude": "high",
+    "barrier_expected": "seatbelt",
+    "barrier_state": "missing",
+    "activity": "backing forklift up an incline",
+    "location": "",
+    "evidence_phrases": [
+      "operator who was not wearing seatbelt",
+      "Forklift fell backwards off loading dock onto operator"
+    ],
+    "sif_potential": true,
+    "iogp_rules": [
+      "Driving",
+      "Line of Fire",
+      "Safe Mechanical Lifting"
+    ],
+    "iogp_rule": "Driving",
+    "label_source": "API_Upload_Batch",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
+  },
+  {
+    "report_id": "upl_001_28cf",
+    "date": "",
+    "narrative": "Worker was removing sheet metal air conditioning ductwork that cut into a 240-volt electrical line and was electrocuted.",
+    "energy_type": "electrical",
+    "energy_magnitude": "high",
+    "barrier_expected": "utility isolation / lockout-tagout (LOTO) / de-energization",
+    "barrier_state": "missing",
+    "activity": "removing sheet metal air conditioning ductwork",
+    "location": "",
+    "evidence_phrases": [
+      "cut into a 240-volt electrical line",
+      "was electrocuted"
+    ],
+    "sif_potential": true,
+    "iogp_rules": [
+      "Energy Isolation"
+    ],
+    "iogp_rule": "Energy Isolation",
+    "label_source": "API_Upload_Batch",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
+  },
+  {
+    "report_id": "upl_002_606b",
+    "date": "",
+    "narrative": "Worker was found unresponsive at the base of a 20-foot ladder. The probable cause of death was noted as a cervical neck fracture due to a fall.",
+    "energy_type": "gravity",
+    "energy_magnitude": "high",
+    "barrier_expected": "fall protection / safety harness",
+    "barrier_state": "missing",
+    "activity": "working on ladder",
+    "location": "",
+    "evidence_phrases": [
+      "unresponsive at the base of a 20-foot ladder",
+      "cervical neck fracture due to a fall"
+    ],
+    "sif_potential": true,
+    "iogp_rules": [
+      "Working at Height"
+    ],
+    "iogp_rule": "Working at Height",
+    "label_source": "API_Upload_Batch",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
+  },
+  {
+    "report_id": "upl_003_71ca",
+    "date": "",
+    "narrative": "Worker (security guard) was struck by tractor trailer and dragged, resulting in fatal injuries.",
+    "energy_type": "kinetic",
+    "energy_magnitude": "high",
+    "barrier_expected": "physical segregation / pedestrian exclusion zone / vehicle speed control",
+    "barrier_state": "missing",
+    "activity": "security guard on duty / walking in vehicle movement area",
+    "location": "",
+    "evidence_phrases": [
+      "struck by tractor trailer",
+      "dragged",
+      "fatal injuries"
+    ],
+    "sif_potential": true,
+    "iogp_rules": [
+      "Driving",
+      "Line of Fire"
+    ],
+    "iogp_rule": "Driving",
+    "label_source": "API_Upload_Batch",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
+  },
+  {
+    "report_id": "upl_004_f58b",
+    "date": "",
+    "narrative": "Worker was working underneath a house in the process of being moved and was crushed after the house collapsed.",
+    "energy_type": "kinetic",
+    "energy_magnitude": "high",
+    "barrier_expected": "structural shoring / exclusion zone / collapse prevention measures",
+    "barrier_state": "missing",
+    "activity": "working underneath a house in the process of being moved",
+    "location": "",
+    "evidence_phrases": [
+      "working underneath a house",
+      "house collapsed",
+      "crushed"
+    ],
+    "sif_potential": true,
+    "iogp_rules": [
+      "Line of Fire"
+    ],
+    "iogp_rule": "Line of Fire",
+    "label_source": "API_Upload_Batch",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
+  },
+  {
+    "report_id": "upl_005_8d58",
+    "date": "",
+    "narrative": "Worker fell 6 to 8 feet from height.",
+    "energy_type": "gravity",
+    "energy_magnitude": "high",
+    "barrier_expected": "fall protection / safety harness",
+    "barrier_state": "missing",
+    "activity": "working at height",
+    "location": "",
+    "evidence_phrases": [
+      "Worker fell 6 to 8 feet from height"
+    ],
+    "sif_potential": true,
+    "iogp_rules": [
+      "Working at Height"
+    ],
+    "iogp_rule": "Working at Height",
+    "label_source": "API_Upload_Batch",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
+  },
+  {
+    "report_id": "upl_006_8477",
+    "date": "",
+    "narrative": "Worker was operating a powered industrial truck when the counterweight of an excavator caused the truck to rollover, crushing the worker's head.",
+    "energy_type": "kinetic",
+    "energy_magnitude": "high",
+    "barrier_expected": "exclusion zone / physical barrier / spotters",
+    "barrier_state": "missing",
+    "activity": "operating a powered industrial truck",
+    "location": "",
+    "evidence_phrases": [
+      "counterweight of an excavator caused the truck to rollover",
+      "crushing the worker's head"
+    ],
+    "sif_potential": true,
+    "iogp_rules": [
+      "Driving",
+      "Line of Fire"
+    ],
+    "iogp_rule": "Driving",
+    "label_source": "API_Upload_Batch",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
+  },
+  {
+    "report_id": "upl_007_072e",
+    "date": "",
+    "narrative": "Worker mounting exhaust blower motor fell 16 feet from ladder on a roof to the ground.",
+    "energy_type": "gravity",
+    "energy_magnitude": "high",
+    "barrier_expected": "fall protection / safety harness",
+    "barrier_state": "missing",
+    "activity": "mounting exhaust blower motor",
+    "location": "",
+    "evidence_phrases": [
+      "fell 16 feet from ladder on a roof to the ground"
+    ],
+    "sif_potential": true,
+    "iogp_rules": [
+      "Working at Height"
+    ],
+    "iogp_rule": "Working at Height",
+    "label_source": "API_Upload_Batch",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
+  },
+  {
+    "report_id": "upl_008_7a99",
+    "date": "",
+    "narrative": "Worker suffered fatal injuries after being crushed under an elevated harvesting machine.  The support block had been removed after the repairs and the worker was crushed when he went to retrieve hand tools left underneath the machine.",
+    "energy_type": "gravity",
+    "energy_magnitude": "high",
+    "barrier_expected": "support block / mechanical lockout",
+    "barrier_state": "missing",
+    "activity": "retrieving hand tools from under elevated harvesting machine",
+    "location": "",
+    "evidence_phrases": [
+      "crushed under an elevated harvesting machine",
+      "support block had been removed",
+      "crushed when he went to retrieve hand tools left underneath"
+    ],
+    "sif_potential": true,
+    "iogp_rules": [
+      "Energy Isolation",
+      "Working at Height"
+    ],
+    "iogp_rule": "Energy Isolation",
+    "label_source": "API_Upload_Batch",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
+  },
+  {
+    "report_id": "upl_009_b810",
+    "date": "",
+    "narrative": "Worker was crushed between golf cart and parked trailer.",
+    "energy_type": "kinetic",
+    "energy_magnitude": "high",
+    "barrier_expected": "exclusion zone / spotters / vehicle separation",
+    "barrier_state": "missing",
+    "activity": "golf cart operation near parked trailer",
+    "location": "",
+    "evidence_phrases": [
+      "crushed between golf cart and parked trailer"
+    ],
+    "sif_potential": true,
+    "iogp_rules": [
+      "Driving",
+      "Line of Fire"
+    ],
+    "iogp_rule": "Driving",
+    "label_source": "API_Upload_Batch",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
+  },
+  {
+    "report_id": "upl_010_634c",
+    "date": "",
+    "narrative": "Worker was pouring concrete, fell forward and was caught by another worker. Hypertension and environmental heat stroke possible.",
+    "energy_type": "none",
+    "energy_magnitude": "unknown",
+    "barrier_expected": "medical surveillance / heat stress management protocol",
+    "barrier_state": "unknown",
+    "activity": "pouring concrete",
+    "location": "",
+    "evidence_phrases": [
+      "Worker was pouring concrete",
+      "fell forward",
+      "Hypertension and environmental heat stroke possible"
+    ],
+    "sif_potential": false,
+    "iogp_rules": [
+      "No specific LSR match"
+    ],
+    "iogp_rule": "No specific LSR match",
+    "label_source": "API_Upload_Batch",
+    "m1_rule_engine": false,
+    "m2_random_forest": false,
+    "m3_raw_text": false,
+    "consensus": "SAFE",
+    "needs_review": false
+  },
+  {
+    "report_id": "upl_011_9118",
+    "date": "",
+    "narrative": "Worker was struck by a two-ton object.",
+    "energy_type": "kinetic",
+    "energy_magnitude": "high",
+    "barrier_expected": "exclusion zone / barricade / drop prevention",
+    "barrier_state": "missing",
+    "activity": "working in area with suspended/falling objects",
+    "location": "",
+    "evidence_phrases": [
+      "struck by a two-ton object"
+    ],
+    "sif_potential": true,
+    "iogp_rules": [
+      "Line of Fire",
+      "Working at Height"
+    ],
+    "iogp_rule": "Line of Fire",
+    "label_source": "API_Upload_Batch",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
+  },
+  {
+    "report_id": "upl_012_5b82",
+    "date": "",
+    "narrative": "Worker was struck by a tree.",
+    "energy_type": "kinetic",
+    "energy_magnitude": "high",
+    "barrier_expected": "exclusion zone / barricade / fall protection",
+    "barrier_state": "missing",
+    "activity": "working near tree",
+    "location": "",
+    "evidence_phrases": [
+      "struck by a tree"
+    ],
+    "sif_potential": true,
+    "iogp_rules": [
+      "Line of Fire",
+      "Working at Height"
+    ],
+    "iogp_rule": "Line of Fire",
+    "label_source": "API_Upload_Batch",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
+  },
+  {
+    "report_id": "upl_013_2266",
+    "date": "",
+    "narrative": "Worker at state fairgrounds was pushing trash with leg, fell and hit head on cement floor.",
+    "energy_type": "kinetic",
+    "energy_magnitude": "low",
+    "barrier_expected": "proper lifting technique / PPE (hard hat)",
+    "barrier_state": "missing",
+    "activity": "pushing trash with leg",
+    "location": "",
+    "evidence_phrases": [
+      "pushing trash with leg",
+      "fell and hit head on cement floor"
+    ],
+    "sif_potential": false,
+    "iogp_rules": [
+      "Line of Fire",
+      "Safe Mechanical Lifting"
+    ],
+    "iogp_rule": "Line of Fire",
+    "label_source": "API_Upload_Batch",
+    "m1_rule_engine": false,
+    "m2_random_forest": false,
+    "m3_raw_text": false,
+    "consensus": "SAFE",
+    "needs_review": false
+  },
+  {
+    "report_id": "upl_014_3a28",
+    "date": "",
+    "narrative": "Worker was in the process of installing a thermostat line and was electrocuted.",
+    "energy_type": "electrical",
+    "energy_magnitude": "high",
+    "barrier_expected": "lockout/tagout (LOTO) / de-energization of circuit",
+    "barrier_state": "missing",
+    "activity": "installing a thermostat line",
+    "location": "",
+    "evidence_phrases": [
+      "installing a thermostat line",
+      "electrocuted"
+    ],
+    "sif_potential": true,
+    "iogp_rules": [
+      "Energy Isolation"
+    ],
+    "iogp_rule": "Energy Isolation",
+    "label_source": "API_Upload_Batch",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
+  },
+  {
+    "report_id": "upl_015_4105",
+    "date": "",
+    "narrative": "Worker had finished construction of a parking lot and said he was not feeling well.  He was found sitting in the truck and was taken to the hospital, possible heart attack.",
+    "energy_type": "none",
+    "energy_magnitude": "unknown",
+    "barrier_expected": "medical monitoring / pre-task health check",
+    "barrier_state": "missing",
+    "activity": "post-construction rest / medical emergency",
+    "location": "",
+    "evidence_phrases": [
+      "not feeling well",
+      "found sitting in the truck",
+      "possible heart attack"
+    ],
+    "sif_potential": true,
+    "iogp_rules": [
+      "No specific LSR match"
+    ],
+    "iogp_rule": "No specific LSR match",
+    "label_source": "API_Upload_Batch",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
+  },
+  {
+    "report_id": "upl_016_9cb9",
+    "date": "",
+    "narrative": "Worker suffered fatal injuries after getting pinned up under conveyor while doing maintenance work.",
+    "energy_type": "kinetic",
+    "energy_magnitude": "high",
+    "barrier_expected": "Lockout/Tagout (LOTO) and machine guarding",
+    "barrier_state": "missing",
+    "activity": "maintenance work on conveyor",
+    "location": "",
+    "evidence_phrases": [
+      "pinned up under conveyor",
+      "doing maintenance work"
+    ],
+    "sif_potential": true,
+    "iogp_rules": [
+      "Energy Isolation",
+      "Line of Fire"
+    ],
+    "iogp_rule": "Energy Isolation",
+    "label_source": "API_Upload_Batch",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
+  },
+  {
+    "report_id": "upl_017_c91c",
+    "date": "",
+    "narrative": "Worker was working from a suspension scaffold, using a 7-foot aluminum extension pole on a paint roller. Worker was electrocuted after contacting an overhead power line.",
+    "energy_type": "electrical",
+    "energy_magnitude": "high",
+    "barrier_expected": "maintain safe distance from overhead power lines / de-energize lines",
+    "barrier_state": "missing",
+    "activity": "painting using suspension scaffold and extension pole",
+    "location": "",
+    "evidence_phrases": [
+      "using a 7-foot aluminum extension pole",
+      "contacting an overhead power line",
+      "Worker was electrocuted"
+    ],
+    "sif_potential": true,
+    "iogp_rules": [
+      "Working at Height"
+    ],
+    "iogp_rule": "Working at Height",
+    "label_source": "API_Upload_Batch",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
+  },
+  {
+    "report_id": "upl_018_c368",
+    "date": "",
+    "narrative": "State Police Trooper doing paperwork in his vehicle during a traffic stop was struck from behind by another vehicle traveling at a high rate of speed.",
+    "energy_type": "kinetic",
+    "energy_magnitude": "high",
+    "barrier_expected": "vehicle structural integrity / crash protection",
+    "barrier_state": "degraded",
+    "activity": "doing paperwork in vehicle during traffic stop",
+    "location": "",
+    "evidence_phrases": [
+      "struck from behind",
+      "traveling at a high rate of speed"
+    ],
+    "sif_potential": true,
+    "iogp_rules": [
+      "Driving",
+      "Line of Fire"
+    ],
+    "iogp_rule": "Driving",
+    "label_source": "API_Upload_Batch",
+    "m1_rule_engine": true,
+    "m2_random_forest": true,
+    "m3_raw_text": true,
+    "consensus": "SIF_CONFIRMED",
+    "needs_review": false
+  },
+  {
+    "report_id": "upl_019_a420",
+    "date": "",
+    "narrative": "Worker was cutting a tree limb from roof of 3-story apartment building when the limb broke, knocking the worker 29 feet to the lower level.",
+    "energy_type": "gravity",
+    "energy_magnitude": "high",
+    "barrier_expected": "fall protection system (harness/lanyard)",
+    "barrier_state": "missing",
+    "activity": "cutting a tree limb",
+    "location": "",
+    "evidence_phrases": [
+      "knocking the worker 29 feet to the lower level"
+    ],
+    "sif_potential": true,
+    "iogp_rules": [
+      "Working at Height"
+    ],
+    "iogp_rule": "Working at Height",
     "label_source": "API_Upload_Batch",
     "m1_rule_engine": true,
     "m2_random_forest": true,

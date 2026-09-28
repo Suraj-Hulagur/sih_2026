@@ -12,6 +12,7 @@ import os
 import csv
 from typing import Optional
 from collections import Counter, defaultdict
+from datetime import datetime
 import threading
 
 # ─── Paths ────────────────────────────────────────────────────────────────────
@@ -28,6 +29,7 @@ _lock = threading.Lock()
 # ─── In-Memory Store ──────────────────────────────────────────────────────────
 _reports: list[dict] = []
 _triaged_map: dict[str, dict] = {}
+_upload_history: list[dict] = []  # Tracks all uploaded files
 
 
 def _load_triaged() -> dict[str, dict]:
@@ -113,6 +115,27 @@ def add_reports(new_reports: list[dict]):
     with _lock:
         _reports.extend(new_reports)
         _persist()
+
+
+def add_upload_record(filename: str, file_type: str, records_processed: int,
+                      sif_count: int, non_sif_count: int):
+    """Record a file upload in the upload history."""
+    with _lock:
+        _upload_history.append({
+            "id": f"UPL-{len(_upload_history) + 1:03d}",
+            "filename": filename,
+            "file_type": file_type,
+            "records_processed": records_processed,
+            "sif_count": sif_count,
+            "non_sif_count": non_sif_count,
+            "uploaded_at": datetime.now().strftime("%d %b %Y, %I:%M %p"),
+        })
+
+
+def get_upload_history() -> list[dict]:
+    """Return all uploaded files."""
+    with _lock:
+        return list(_upload_history)
 
 
 def search_reports(

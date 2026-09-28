@@ -27,8 +27,18 @@ export const UploadModal: React.FC<UploadModalProps> = ({
   const [processingStage, setProcessingStage] = useState('');
   const [progress, setProgress] = useState(0);
   const [resultSummary, setResultSummary] = useState<UploadedFileSummary | null>(null);
+  const [uploadHistory, setUploadHistory] = useState<any[]>([]);
 
   const fileInputRef = useRef<HTMLInputElement>(null);
+
+  React.useEffect(() => {
+    if (isOpen) {
+      fetch('http://localhost:8000/api/uploads')
+        .then(res => res.json())
+        .then(data => setUploadHistory(data.uploads || []))
+        .catch(err => console.error("Failed to fetch upload history", err));
+    }
+  }, [isOpen]);
 
   if (!isOpen) return null;
 
@@ -216,6 +226,39 @@ export const UploadModal: React.FC<UploadModalProps> = ({
                       Change
                     </button>
                   )}
+                </div>
+              )}
+
+              {/* Upload History */}
+              {!selectedFile && uploadHistory.length > 0 && (
+                <div className="mt-6 border-t border-slate-100 pt-4">
+                  <h4 className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-3">
+                    Previous Uploads
+                  </h4>
+                  <div className="space-y-2 max-h-40 overflow-y-auto pr-1">
+                    {uploadHistory.slice().reverse().map((upload) => (
+                      <div key={upload.id} className="flex items-center justify-between p-2.5 bg-slate-50 hover:bg-slate-100 rounded-md border border-slate-100 transition">
+                        <div className="flex items-center gap-3">
+                          {upload.file_type === 'pdf' ? (
+                            <FileText size={16} className="text-red-500" />
+                          ) : (
+                            <FileSpreadsheet size={16} className="text-emerald-600" />
+                          )}
+                          <div>
+                            <div className="text-xs font-semibold text-slate-700 line-clamp-1" title={upload.filename}>
+                              {upload.filename}
+                            </div>
+                            <div className="text-[10px] text-slate-400">
+                              {upload.uploaded_at} • {upload.records_processed} records
+                            </div>
+                          </div>
+                        </div>
+                        <div className="text-[10px] font-semibold text-red-600 bg-red-50 px-2 py-0.5 rounded-full border border-red-100">
+                          {upload.sif_count} SIF
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               )}
 

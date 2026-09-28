@@ -273,6 +273,12 @@ async def ingest_upload(
             }
 
             data_store.add_reports([new_report])
+            data_store.add_upload_record(
+                filename=filename, file_type="pdf",
+                records_processed=1,
+                sif_count=1 if is_sif else 0,
+                non_sif_count=0 if is_sif else 1
+            )
 
             return {
                 "status": "success",
@@ -299,7 +305,10 @@ async def ingest_upload(
     # ── CSV / XLSX Processing ─────────────────────────────────────────────────
     try:
         if ext == ".csv":
-            df = pd.read_csv(io.BytesIO(content))
+            try:
+                df = pd.read_csv(io.BytesIO(content), encoding="utf-8")
+            except UnicodeDecodeError:
+                df = pd.read_csv(io.BytesIO(content), encoding="latin1")
         else:
             df = pd.read_excel(io.BytesIO(content), engine="openpyxl")
     except Exception as e:
@@ -379,6 +388,12 @@ async def ingest_upload(
 
     if new_reports:
         data_store.add_reports(new_reports)
+        data_store.add_upload_record(
+            filename=filename, file_type=ext.replace(".", ""),
+            records_processed=len(new_reports),
+            sif_count=sif_count,
+            non_sif_count=len(new_reports) - sif_count
+        )
 
     return {
         "status": "success",
@@ -389,6 +404,16 @@ async def ingest_upload(
         "non_sif_count": len(new_reports) - sif_count,
         "sample_records": sample_records,
     }
+
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# ENDPOINT: GET /api/uploads  — Upload history
+# ═══════════════════════════════════════════════════════════════════════════════
+
+@app.get("/api/uploads")
+def get_uploads():
+    """Return the list of all uploaded files with their processing results."""
+    return {"uploads": data_store.get_upload_history()}
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
@@ -712,8 +737,97 @@ def export_data(req: ExportRequest):
             },
         )
 
+    # ── PDF ───────────────────────────────────────────────────────────────────
+    if req.format == "pdf":
+        try:
+            from reportlab.lib.pagesizes import letter, landscape
+            from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle, PageBreak
+            from reportlab.lib.styles import getSampleStyleSheet
+            from reportlab.lib import colors
+        except ImportError:
+            raise HTTPException(status_code=500, detail="reportlab library is not installed. PDF generation failed.")
+
+        buffer = io.BytesIO()
+        doc = SimpleDocTemplate(buffer, pagesize=landscape(letter))
+        elements = []
+        styles = getSampleStyleSheet()
+        
+        # Dossier Header
+        elements.append(Paragraph("Data Export & Regulatory Dossier", styles['Heading1']))
+        elements.append(Spacer(1, 12))
+        elements.append(Paragraph(f"Organization: Oil India Limited", styles['Normal']))
+        elements.append(Paragraph(f"Export Date: {datetime.now().strftime('%Y-%m-%d %H:%M')}", styles['Normal']))
+        elements.append(Spacer(1, 12))
+
+        # Upload History Section
+        elements.append(Paragraph("History of Uploaded Files", styles['Heading2']))
+        elements.append(Spacer(1, 6))
+        history = data_store.get_upload_history()
+        if history:
+            hist_data = [["Filename", "Type", "Date", "Records", "SIF Flagged"]]
+            for h in history[:10]: # latest 10
+                hist_data.append([
+                    str(h.get("filename", ""))[:25],
+                    str(h.get("file_type", "")),
+                    str(h.get("upload_date", "")).split("T")[0],
+                    str(h.get("records_processed", 0)),
+                    str(h.get("sif_count", 0)),
+                ])
+            t = Table(hist_data, colWidths=[200, 80, 100, 80, 80])
+            t.setStyle(TableStyle([
+                ('BACKGROUND', (0, 0), (-1, 0), colors.grey),
+                ('TEXTCOLOR', (0, 0), (-1, 0), colors.whitesmoke),
+                ('ALIGN', (0, 0), (-1, -1), 'LEFT'),
+                ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
+                ('BOTTOMPADDING', (0, 0), (-1, 0), 8),
+                ('GRID', (0, 0), (-1, -1), 0.5, colors.black),
+            ]))
+            elements.append(t)
+        else:
+            elements.append(Paragraph("No upload history found.", styles['Normal']))
+
+        elements.append(PageBreak())
+        
+        # Reports Table
+        elements.append(Paragraph(f"Exported SIF Records ({len(rows)})", styles['Heading2']))
+        elements.append(Spacer(1, 12))
+        
+        table_data = [["Report ID", "Date", "Site", "IOGP Rule", "Energy Type", "Barrier State"]]
+        for r in rows:
+            table_data.append([
+                str(r["Report ID"])[:15],
+                str(r["Date"])[:10],
+                str(r["Site"])[:15],
+                str(r["IOGP Rule"])[:20],
+                str(r["Energy Type"])[:15],
+                str(r["Barrier State"])[:15]
+            ])
+            
+        t2 = Table(table_data, repeatRows=1)
+        t2.setStyle(TableStyle([
+            ('BACKGROUND', (0, 0), (-1, 0), colors.darkblue),
+            ('TEXTCOLOR', (0, 0), (-1, 0), colors.whitesmoke),
+            ('ALIGN', (0, 0), (-1, -1), 'LEFT'),
+            ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
+            ('BOTTOMPADDING', (0, 0), (-1, 0), 8),
+            ('GRID', (0, 0), (-1, -1), 0.5, colors.black),
+            ('FONTSIZE', (0, 0), (-1, -1), 8),
+        ]))
+        elements.append(t2)
+        
+        doc.build(elements)
+        buffer.seek(0)
+        
+        return StreamingResponse(
+            buffer,
+            media_type="application/pdf",
+            headers={
+                "Content-Disposition": "attachment; filename=oil_india_hsse_sif_report.pdf"
+            },
+        )
+
     # ── Fallback ──────────────────────────────────────────────────────────────
     raise HTTPException(
         status_code=400,
-        detail=f"Unsupported export format: {req.format}. Use: json, csv, xlsx"
+        detail=f"Unsupported export format: {req.format}. Use: json, csv, xlsx, pdf"
     )

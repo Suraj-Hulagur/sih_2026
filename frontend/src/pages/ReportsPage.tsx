@@ -219,13 +219,55 @@ const ALL_REPORTS: ReportDetail[] = [
 ];
 
 export const ReportsPage: React.FC = () => {
+  const [reports, setReports] = useState<ReportDetail[]>(ALL_REPORTS);
+  const [isLoading, setIsLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
   const [statusFilter, setStatusFilter] = useState('ALL');
   const [siteFilter, setSiteFilter] = useState('ALL');
   const [ruleFilter, setRuleFilter] = useState('ALL');
   const [selectedReport, setSelectedReport] = useState<ReportDetail | null>(null);
 
-  const filteredReports = ALL_REPORTS.filter((rep) => {
+  // Fetch live reports from backend; fall back to hardcoded sample data
+  React.useEffect(() => {
+    const fetchReports = async () => {
+      try {
+        const res = await fetch('http://localhost:8000/api/reports?limit=200');
+        if (!res.ok) throw new Error('API error');
+        const data = await res.json();
+        if (data.reports && data.reports.length > 0) {
+          const mapped: ReportDetail[] = data.reports.map((r: any, idx: number) => ({
+            id: r.id || `RPT-${idx}`,
+            date: r.date || 'Recent',
+            excerpt: r.excerpt || r.activity || 'No description available',
+            site: r.site || 'Unknown',
+            activity: r.activity || '',
+            language: r.language || 'EN',
+            rule: r.rule || 'General Safety',
+            ruleIcon: r.rule_icon || 'lock',
+            classification: r.classification || 'Non-SIF',
+            energyType: r.energy_type || 'Unknown',
+            energyMagnitude: r.energy_magnitude || 'Unknown',
+            barrierExpected: r.barrier_expected || '',
+            barrierState: r.barrier_state || 'Unknown',
+            evidencePhrases: r.evidence_phrases || [],
+            m1RuleEngine: r.m1_rule_engine ?? false,
+            m2RandomForest: r.m2_random_forest ?? false,
+            m3RawText: r.m3_raw_text ?? false,
+            consensus: r.consensus || 'SAFE'
+          }));
+          setReports(mapped);
+        }
+      } catch (err) {
+        console.warn('Backend unavailable, using sample reports:', err);
+        // Keep ALL_REPORTS as fallback (already set as default)
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    fetchReports();
+  }, []);
+
+  const filteredReports = reports.filter((rep) => {
     const matchesSearch = 
       rep.excerpt.toLowerCase().includes(searchTerm.toLowerCase()) ||
       rep.site.toLowerCase().includes(searchTerm.toLowerCase()) ||

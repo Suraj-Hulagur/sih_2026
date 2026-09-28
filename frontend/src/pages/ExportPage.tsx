@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
   Download, 
   FileSpreadsheet, 
@@ -7,7 +7,9 @@ import {
   CheckCircle, 
   ShieldCheck,
   Layers,
-  Loader2
+  Loader2,
+  History,
+  FileBox
 } from 'lucide-react';
 
 export const ExportPage: React.FC = () => {
@@ -16,30 +18,63 @@ export const ExportPage: React.FC = () => {
   const [includeEvidence, setIncludeEvidence] = useState(true);
   const [generating, setGenerating] = useState(false);
   const [downloadSuccess, setDownloadSuccess] = useState(false);
+  const [uploadHistory, setUploadHistory] = useState<any[]>([]);
 
-  const handleExport = () => {
+  useEffect(() => {
+    const fetchHistory = async () => {
+      try {
+        const res = await fetch('http://localhost:8000/api/uploads');
+        if (res.ok) {
+          const data = await res.json();
+          setUploadHistory(data.uploads || []);
+        }
+      } catch (err) {
+        console.error("Failed to fetch upload history", err);
+      }
+    };
+    fetchHistory();
+  }, []);
+
+  const handleExport = async () => {
     setGenerating(true);
     setDownloadSuccess(false);
 
-    setTimeout(() => {
-      setGenerating(false);
-      setDownloadSuccess(true);
+    try {
+      const response = await fetch('http://localhost:8000/api/export', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          format: format,
+          only_sif: onlySif,
+          include_evidence: includeEvidence,
+          site: 'All Sites'
+        })
+      });
 
-      // Trigger dummy download in browser
-      const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify({
-        organization: "Oil India Limited",
-        system: "HSSE Insight AI Engine",
-        export_date: new Date().toISOString(),
-        reports_count: onlySif ? 2781 : 12482,
-        format: format
-      }, null, 2));
+      if (!response.ok) {
+        throw new Error('Export failed on the backend');
+      }
+
+      const blob = await response.blob();
+      const url = window.URL.createObjectURL(blob);
       const downloadAnchor = document.createElement('a');
-      downloadAnchor.setAttribute("href", dataStr);
-      downloadAnchor.setAttribute("download", `oil_india_hsse_sif_report.${format === 'xlsx' ? 'json' : format}`);
+      downloadAnchor.href = url;
+      const extension = format;
+      downloadAnchor.download = `oil_india_hsse_sif_report.${extension}`;
       document.body.appendChild(downloadAnchor);
       downloadAnchor.click();
       downloadAnchor.remove();
-    }, 1200);
+      window.URL.revokeObjectURL(url);
+      
+      setDownloadSuccess(true);
+    } catch (error) {
+      console.error('Export error:', error);
+      alert('Failed to generate export. Please ensure the backend is running.');
+    } finally {
+      setGenerating(false);
+    }
   };
 
   return (
@@ -191,9 +226,45 @@ export const ExportPage: React.FC = () => {
           )}
         </div>
 
-        {/* Right Info Box: Corporate Governance (5 cols) */}
-        <div className="lg:col-span-5 bg-white p-5 rounded-lg border border-slate-200/90 shadow-2xs flex flex-col justify-between">
-          <div>
+        {/* Right Column: 5 cols */}
+        <div className="lg:col-span-5 space-y-4">
+          
+          {/* Upload History Box */}
+          <div className="bg-white p-5 rounded-lg border border-slate-200/90 shadow-2xs">
+            <div className="flex items-center gap-2 mb-3">
+              <History size={16} className="text-slate-600" />
+              <h3 className="text-sm font-bold text-slate-900">Upload History</h3>
+            </div>
+            
+            {uploadHistory.length > 0 ? (
+              <div className="space-y-3 max-h-[300px] overflow-y-auto pr-1">
+                {uploadHistory.map((h, i) => (
+                  <div key={i} className="p-3 bg-slate-50 rounded border border-slate-200 flex items-start justify-between">
+                    <div>
+                      <span className="text-xs font-bold text-slate-800 flex items-center gap-1.5">
+                        <FileBox size={13} className="text-blue-500" /> 
+                        <span className="truncate max-w-[140px]" title={h.filename}>{h.filename}</span>
+                      </span>
+                      <span className="text-[10px] text-slate-500 mt-0.5 block">
+                        {new Date(h.upload_date).toLocaleString()} • {h.records_processed} records
+                      </span>
+                    </div>
+                    <div className="text-right">
+                      <span className="text-xs font-bold text-red-600">{h.sif_count} SIFs</span>
+                      <span className="text-[10px] text-slate-500 block uppercase tracking-wider">{h.file_type}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <p className="text-xs text-slate-500 text-center py-6 bg-slate-50 rounded border border-slate-100 border-dashed">
+                No files uploaded yet.
+              </p>
+            )}
+          </div>
+
+          {/* Right Info Box: Corporate Governance */}
+          <div className="bg-white p-5 rounded-lg border border-slate-200/90 shadow-2xs">
             <h3 className="text-sm font-bold text-slate-900 mb-2">
               Corporate HSE Regulatory Compliance
             </h3>
@@ -208,22 +279,17 @@ export const ExportPage: React.FC = () => {
                   Every SIF classification links directly to the extracted high-energy magnitude and the specific physical barrier missing.
                 </span>
               </div>
+            </div>
 
-              <div className="p-3 bg-slate-50 rounded border border-slate-200">
-                <span className="text-xs font-bold text-slate-800 block">IOGP Report Standard</span>
-                <span className="text-[11px] text-slate-500 mt-0.5 block">
-                  Categorized in accordance with International Association of Oil & Gas Producers (IOGP 459) Life-Saving Rules.
-                </span>
-              </div>
+            <div className="pt-4 mt-4 border-t border-slate-100 flex items-center gap-2 text-xs text-slate-500">
+              <ShieldCheck size={16} className="text-emerald-600" />
+              <span>Cryptographic checksums generated on export</span>
             </div>
           </div>
-
-          <div className="pt-4 border-t border-slate-100 flex items-center gap-2 text-xs text-slate-500">
-            <ShieldCheck size={16} className="text-emerald-600" />
-            <span>Cryptographic checksums generated on export</span>
-          </div>
+          
         </div>
       </div>
     </div>
   );
 };
+
