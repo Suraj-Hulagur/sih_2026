@@ -156,7 +156,7 @@ export function App() {
   };
 
   // When a batch file is uploaded
-  const handleUploadSuccess = (summary: UploadedFileSummary) => {
+  const handleUploadSuccess = (_summary: UploadedFileSummary) => {
     // Re-fetch the live data from the backend so charts and stats update instantly
     fetchDashboardData();
   };

@@ -220,7 +220,7 @@ const ALL_REPORTS: ReportDetail[] = [
 
 export const ReportsPage: React.FC = () => {
   const [reports, setReports] = useState<ReportDetail[]>(ALL_REPORTS);
-  const [isLoading, setIsLoading] = useState(true);
+  const [, setIsLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
   const [statusFilter, setStatusFilter] = useState('ALL');
   const [siteFilter, setSiteFilter] = useState('ALL');
