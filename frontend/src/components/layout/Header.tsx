@@ -37,10 +37,10 @@ export const Header: React.FC<HeaderProps> = ({
 
           <div>
             <h1 className="text-xl sm:text-2xl font-extrabold text-[#0f172a] tracking-tight">
-              HSSE Insight
+              SIF Sentinel
             </h1>
             <p className="text-[11px] sm:text-[13px] text-slate-500 font-medium">
-              From Observations to Prevention
+              HSSE Insight: From Observations to Prevention
             </p>
           </div>
         </div>
